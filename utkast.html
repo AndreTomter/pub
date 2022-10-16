@@ -1,0 +1,144 @@
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Making Quines Prettier</title>
+<!-- The defer attribute is not necessary for autoloading, but is necessary
+     for the script at the bottom to work as a Quine. -->
+  <script src="https://andretomter.github.io/code-prettify/src/run_prettify.js"></script>
+  <style>
+  ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
+li.L0,
+li.L1,
+li.L2,
+li.L3,
+li.L5,
+li.L6,
+li.L7,
+li.L8 { background: #fff ; list-style-type: decimal }
+/* li.L8 { list-style-type: none }
+/* Alternate shading for lines */
+li.L1,
+li.L3,
+li.L5,
+li.L7,
+li.L9 {  background: #fff  }  
+  </style>
+  
+</head>
+
+<body>
+<h1>Making Quines Pretteir</h1>
+/**
+ * Given a DOM subtree, wraps it in a list, and puts each line into its own
+ * list item.
+ *
+ * @param {Node} node modified in place.  Its content is pulled into an
+ *     HTMLOListElement, and each line is moved into a separate list item.
+ *     This requires cloning elements, so the input might not have unique
+ *     IDs after numbering.
+ * @param {number|null|boolean} startLineNum
+ *     If truthy, coerced to an integer which is the 1-indexed line number
+ *     of the first line of code.  The number of the first line will be
+ *     attached to the list.
+ * @param {boolean} isPreformatted true iff white-space in text nodes should
+ *     be treated as significant.
+ */
+<p>
+Below is the content of this page prettified.  The <code>&lt;pre&gt;</code>
+element is prettified because it has <code>class="prettyprint"</code> and
+because the sourced script loads a JavaScript library that styles source
+code.
+</p>
+
+<p>
+The line numbers to the left appear because the preceding comment
+<code>&lt;?prettify lang=html linenums=true?&gt;</code> turns on
+line-numbering and the
+<a href="https://raw.githack.com/google/code-prettify/master/styles/index.html">stylesheet</a>
+(see <code>skin=sunburst</code> in the <code>&lt;script src&gt;</code>)
+specifies that every fifth line should be numbered.
+</p>
+
+<div style="width:600px">
+<pre class="prettyprint linenums:1">
+nlp = spacy.load("en_core_web_lg")
+doc = input("Enter text to be summarized: ")
+doc = nlp(doc)
+
+
+keyword = []
+stopwords = list(STOP_WORDS)
+pos_tag = ['PROPN', 'ADJ', 'NOUN', 'VERB']
+for token in doc:
+    if (token.text in stopwords or token.text in punctuation):
+        continue
+    if (token.pos_ in pos_tag):
+        keyword.append(token.text)
+
+freq_word = Counter(keyword)
+
+max_freq = Counter(keyword).most_common(1)[0][1]
+for word in freq_word.keys():
+    freq_word[word] = (freq_word[word] / max_freq)
+freq_word.most_common(5)
+
+sent_strength={}
+for sent in doc.sents:
+    for word in sent:
+        if word.text in freq_word.keys():
+           if sent in sent_strength.keys():
+                sent_strength[sent]+=freq_word[word.text]
+            else:
+                sent_strength[sent]=freq_word[word.text]
+
+summarized_sentences = nlargest(3, sent_strength, key=sent_strength.get)
+
+final_sentences = [w.text for w in summarized_sentences]
+summary = ' '.join(final_sentences)
+print("*******************")
+print("Summary: " + summary)
+</pre>
+  </div>
+  <div style="width:600px">
+<pre class="prettyprint linenums:1">
+nlp = spacy.load("en_core_web_lg")
+doc = input("Enter text to be summarized: ")
+doc = nlp(doc)
+
+
+<span style="border: 2px solid #ff0000;">keyw</span> = []
+stopwords = list(STOP_WORDS)
+pos_tag = ['PROPN', 'ADJ', 'NOUN', 'VERB']
+for <span style="border: 2px solid #ff0000;">tok</span> in doc:
+    if (<span style="border: 2px solid #ff0000;">tok</span>.text in stopwords or <span style="border: 2px solid #ff0000;">tok</span>.text in punctuation):
+        continue
+    if (<span style="border: 2px solid #ff0000;">tok</span>.pos_ in pos_tag):
+        <span style="border: 2px solid #ff0000;">keyw</span>.append(<span style="border: 2px solid #ff0000;">tok</span>.text)
+
+<span style="border: 2px solid #ff0000;">freq_w</span> = Counter(<span style="border: 2px solid #ff0000;">keyw</span>)
+
+max_freq = Counter(<span style="border: 2px solid #ff0000;">keyw</span>).most_common(1)[0][1]
+for word in <span style="border: 2px solid #ff0000;">freq_w</span>.keys():
+    <span style="border: 2px solid #ff0000;">freq_w</span>[word] = (<span style="border: 2px solid #ff0000;">freq_w</span>[word] / max_freq)
+<span style="border: 2px solid #ff0000;">freq_w</span>.most_common(5)
+
+sent_strength={}
+for sent in doc.sents:
+    for word in sent:
+        if word.text in <span style="border: 2px solid #ff0000;">freq_w</span>.keys():
+            if sent in sent_strength.keys():
+               sent_strength[sent]+=<span style="border: 2px solid #ff0000;">freq_w</span>[word.text]
+            else:
+                sent_strength[sent]=<span style="border: 2px solid #ff0000;">freq_w</span>[word.text]
+
+summarized_sentences = nlargest(3, sent_strength, key=sent_strength.get)
+
+final_sentences = [w.text for w in summarized_sentences]
+summary = ' '.join(final_sentences)
+print("*******************")
+print("Summary: " + summary)
+</pre>
+  </div>
+script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script
+</body>
+</html>
