@@ -1,0 +1,11 @@
+name: Refresh Feed
+on: [push]
+jobs:
+  refresh-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch API Data 📦
+        uses: AndreTomter/fetch-api-data-action@v2
+        with:
+          endpoint: https://jsonplaceholder.typicode.com/todos/
+          configuration: '{ "method": "GET" }'
