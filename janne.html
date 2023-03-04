@@ -1,0 +1,148 @@
+
+<html>
+<head>
+<style>
+body { font-family: sans-serif;  }
+
+.scene {
+ display: inline-flex;
+  width: 140px;
+  height: 125px;
+/*   border: 1px solid #CCC; */
+  margin: 10px 0;
+  perspective: 600px;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+  display: inline-flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+
+.card.is-flipped {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+.card__face {
+  justify-content: center; align-items: center; 
+  display: inline-flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 25px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 17px;
+  backface-visibility: hidden;
+}
+
+.card__face--front {
+  background: crimson;
+}
+
+.card__face--back {
+  background: slateblue;
+  transform: rotateY(180deg);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div >
+    
+    <div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Støtte familien min</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Skape noe nytt eller bedre</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Ærlighet</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Påvirke andre positivt</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Fellesskap</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Bli berømt</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Lære mye</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Hjelpe andre</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Ha høy status</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Ha det gøy</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Trygghet</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Tjene mye penger</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Bruke evnene mine</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Være meg selv</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Jobbe I team</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Bidra I samfunnet</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Selvstendighet</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Spenning</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Ha makt</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Åpen</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Utfordre det etablerte</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Balanse mellom jobb og fritid</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Dele godene, rettferdighet</div><div class='card__face card__face--back'>baksiden</div></div></div>
+<div class='scene scene--card'>
+  <div class='card'>
+    <div class='card__face card__face--front'>Miljø og bærekraft</div><div class='card__face card__face--back'>baksiden</div></div></div>
+</div>
+<script>
+var cards = document.querySelectorAll('.card');
+
+[...cards].forEach((card)=>{
+  card.addEventListener( 'click', function() {
+    card.classList.toggle('is-flipped');
+  });
+});
+</script>
+</body>
+</html>
