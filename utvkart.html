@@ -34,9 +34,14 @@ table {
    min-width: 100% !important;
    border-collapse : collapse !important ;
 }
+#js-head{
+  position : sticky !important ;
+     top : 0px !important ;
+     
+}
  table th {
      position : sticky !important ;
-     top : 0px !important ;
+     
      padding-top : 8px !important ;
      padding-bottom : 8px !important ;
      padding-left : 20px !important ;
@@ -85,8 +90,8 @@ table {
   overflow: hidden;
   display:inline-block;
 }
-#tableFixHead{
-  max-height: 300px !important;
+#js-moduler{
+  max-height: 200px !important;
   overflow: scroll;
   display:inline-block;
 }
@@ -494,7 +499,7 @@ function drawVisualization() {
   }
 };
 
-	let tab =
+	let tab1 =
 		`<colgroup>
       <col style="width: 270px">
       <col style="width: 288px">
@@ -510,7 +515,12 @@ function drawVisualization() {
 			</tr>
 </thead > 
 		`;
-	
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
 	// Loop to access all rows
 	for (let r of jsonObj) {
         tab += `<tr class="emner" data-port="${r.land_kode['v']}">
@@ -521,7 +531,8 @@ function drawVisualization() {
 </tr>`;
 	}
 	// Setting innerHTML as tab variable
-	document.getElementById("js-moduler").innerHTML = tab;
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
     
     
     
@@ -539,6 +550,8 @@ function drawVisualization() {
 </div>  
     
 <div id="tableFixHead">
+      <table id="js-head" class="emner">  
+      </table>
       <table id="js-moduler" class="emner">  
       </table>
 </div>
