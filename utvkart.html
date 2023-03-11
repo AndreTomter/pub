@@ -70,7 +70,26 @@ table {
      font-size : 12px ;
      border-bottom : 1px solid #d5d5d5 ;
 }
+#visualization{
+       position: sticky !important;
+       top: 0px !important;
 
+}
+.center{
+       position: sticky !important;
+       top: 0px !important;
+
+}
+.body{
+  max-height: 900px !important;
+  overflow: hidden;
+  display:inline-block;
+}
+#tableFixHead{
+  max-height: 300px !important;
+  overflow: scroll;
+  display:inline-block;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
 <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -512,6 +531,8 @@ function drawVisualization() {
     </script>
     </head>
     <body>
+<div class="body">
+
 
 <div class="center">
     <div id="visualization"></div>
@@ -521,6 +542,6 @@ function drawVisualization() {
       <table id="js-moduler" class="emner">  
       </table>
 </div>
-
+</div>
     </body>
     </html>
