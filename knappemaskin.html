@@ -115,7 +115,7 @@ allRanges.forEach(wrap => {
     };
     linkinput.oninput = function () {
         var link = linkinput.value;
-        linkKode.innerHTML = ' href="' + link.replace(/\s/g, '') + '"'
+        linkKode.innerHTML = '"' + link.replace(/\s/g, '') + '"'
     };
     range.addEventListener("input", () => {
         setBubble(range, knappebredde, lengde);
