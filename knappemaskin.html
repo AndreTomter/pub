@@ -1,0 +1,111 @@
+<html>
+   <head>
+      <style>
+         .btn, .Button {
+         background: #F5F5F5;
+         background-color: rgb(245, 245, 245);
+         color: #2D3B45;
+         border: 1px solid;
+         border-color: #C7CDD1;
+         border-radius: 3px;
+         transition: background-color 0.2s ease-in-out;
+         display: inline-block;
+         position: relative;
+         padding: 8px 14px;
+         margin-bottom: 0;
+         font-size: 16px;
+         font-size: 1rem;
+         line-height: 20px;
+         text-align: center;
+         vertical-align: middle;
+         cursor: pointer;
+         text-decoration: none;
+         overflow: hidden;
+         text-shadow: none;
+         }
+         .range-wrap {
+         position: relative;
+         }
+         .range {
+         width: 100%;
+         }
+         .innstillinger {
+         min-height: 200px;
+         min-width:600px;
+         }
+         .tag{
+         display: inline !important;
+         color: #0B874B;
+         }
+         .atr{
+         display: inline !important;
+         color: #0374B5;
+         }
+         .con .lik{
+         display: inline !important;
+         color: #2D3B45;
+         }
+         .kode {
+         background-color: #F5F5F5; 
+         width: 600px; 
+         height: 300px; 
+         padding: 25px;
+         z-index:-1;
+         }
+      </style>
+   </head>
+   <div class="range-wrap">
+      <div class="innstillinger">
+         <input id="textinput"  type="text" class="knappetekst" name="knappetekst" value="skriv tekst her">
+         </br></br>
+         <input id="linkinput" type="text" class="knappetekst" name="linkboks" value="Lim inn adressen du vil linke til her" style="width:400px">
+         </br></br>
+         <input type="range" class="range" value="20" style="width:300px">
+         <p >
+            <a  id="textinnholdknapp" 
+               class="lengde Button" 
+               href="#" 
+               style="background-color: #c2e0f4;">
+            skriv tekst her
+            </a>
+         </p>
+      </div>
+      <div>
+         <p>
+            <span class="tag">
+            &lt;p&gt;&lt;a </span><span class="atr">class</span><span class="lik">=</span><span class="atr">"Button external" style</span><span class="lik">=</span><span class="atr">"width: <span class="atr knappebredde">120px</span>"  <span class="atr" id="linkKode" >href="#"</span> target="_blank" rel="noopener noreferrer"</span> <span class="tag">&gt;</span><span class ="con" id="textinnholdkode">skriv tekst her</span>
+            <span class="tag"> &lt;/a&gt;&lt;/p&gt;</span>
+         </p>
+      </div>
+   </div>
+   <script>
+const allRanges = document.querySelectorAll(".range-wrap");
+allRanges.forEach(wrap => {
+    const range = wrap.querySelector(".range");
+    const knappebredde = wrap.querySelector(".knappebredde");
+    const lengde = wrap.querySelector(".lengde");
+    textinput.oninput = function () {
+        textinnholdkode.innerHTML = textinput.value;
+        textinnholdknapp.innerHTML = textinput.value;
+    };
+    linkinput.oninput = function () {
+        var link = linkinput.value;
+        linkKode.innerHTML = ' href="' + link.replace(/\s/g, '') + '"'
+    };
+    range.addEventListener("input", () => {
+        setBubble(range, knappebredde, lengde);
+    });
+    setBubble(range, knappebredde, lengde);
+});
+
+function setBubble(range, knappebredde, lengde) {
+    const val = range.value;
+    const min = range.min ? range.min : 0;
+    const max = range.max ? range.max : 100;
+    const newVal = Number(((val - min) * 600) / (max - min));
+    var stilBredde = `${newVal}px;`
+    knappebredde.innerHTML = stilBredde;
+    lengde.style.width = `${newVal}px`;
+}
+   </script>
+</html>
