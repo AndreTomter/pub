@@ -1,5 +1,6 @@
 <html>
 <head>
+<script src="https://AndreTomter.github.io/code-prettify/loader/run_prettify.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"> 
@@ -8,10 +9,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
 <style>
+code{font-family: Menlo, Consolas, Monaco, "Andale Mono", monospace;}
 #code {
   padding: 10px;
   background-color: #F5F5F5;
-   border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid;
   border-color: #C7CDD1;
   font-family: Menlo, Consolas, Monaco, "Andale Mono", monospace;
@@ -60,7 +62,7 @@
   color: #0B874B;
 }
 .atr{
-  color: #0374B5 
+  color: #0374B5 !important;
 }
 .con{
   color: #2D3B45 !important;
@@ -71,6 +73,12 @@
   height: 300px; 
   padding: 25px;
   z-index:-1;
+}
+
+
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+  list-style-type: decimal !important;
 }
 </style>
 
@@ -96,8 +104,23 @@
    
   </div>
   <div>
-  
-  
+<code class="prettyprint">class Voila {
+public:
+// Voila<var>  vv</var>
+  static const string VOILA = "Voila";
+
+  // will not interfere with embedded <a href="#voila2">tags</a>.
+}</code> 
+<p>
+
+</p>
+<div id="code" >
+<code class="prettyprint linenums:1">
+<span>
+<span class="tag">&lt;p&gt;&lt;a </span><span class="atr">class<span class="lik">=</span><em>"Button external" </em>style<span class="lik">=</span><em>"width: <span class="atr knappebredde">120px</span>" </em>href<span class="lik">=</span><em><span class="atr" id="linkKode" >"#"</span> </em>target<span class="lik">=</span><em>"_blank" </em>rel<span class="lik">=</span><em>"noopener noreferrer"</em></span><span class="tag">&gt;</span><span class ="con" id="textinnholdkode">Skriv tekst her</span><span class="tag"> &lt;/a&gt;&lt;/p&gt;</span>
+</span>
+</code>  
+</div>
 <div id="code" >
 
 <p class="code"  >
