@@ -112,7 +112,7 @@ li.L5, li.L6, li.L7, li.L8 {
 <div id="code" >
 <code class="prettyprint linenums:1">
 <span>
-<span class="tag">&lt;p&gt;&lt;a </span><span class="atr">class<span class="lik">=</span><em>"Button external" </em>style<span class="lik">=</span><em>"width: <span class="atr knappebredde">120px</span>" </em>href<span class="lik">=</span><em><span class="atr" id="linkKode" >"#"</span> </em>target<span class="lik">=</span><em>"_blank" </em>rel<span class="lik">=</span><em>"noopener noreferrer"</em></span><span class="tag">&gt;</span><span class ="con" id="textinnholdkode">Skriv tekst her</span><span class="tag"> &lt;/a&gt;&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;&lt;a </span><span class="atr">class<span class="lik">=</span><em>"Button external" </em>style<span class="lik">=</span><em>"<span class="atr knappebredde">width: 120px</span>" </em>href<span class="lik">=</span><em><span class="atr" id="linkKode" >"#"</span> </em>target<span class="lik">=</span><em>"_blank" </em>rel<span class="lik">=</span><em>"noopener noreferrer"</em></span><span class="tag">&gt;</span><span class ="con" id="textinnholdkode">Skriv tekst her</span><span class="tag"> &lt;/a&gt;&lt;/p&gt;</span>
 </span>
 </code>  
 </div>
@@ -156,7 +156,7 @@ function setBubble(range, knappebredde,lengde) {
   const max = range.max ? range.max : 100;
   const newVal = Number(((val - min) * 900) / (max - min));
  
-  var stilBredde = `${newVal}px;`
+  var stilBredde = `width: ${newVal}px;`
   
   knappebredde.innerHTML =  stilBredde;
 
