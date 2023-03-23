@@ -551,9 +551,15 @@ function drawVisualization() {
   document.getElementById("js-moduler").innerHTML = tab;
     
     
-    
+    var ref = document.referrer
+var lastPart = ref.split('/')[4]
+var ny = 'https://mitt.uib.no/courses/' + lastPart + '/pages/anbefalte-avtaler'
+
+document.getElementById('js-link').innerHTML = `<a href="`+ny+`" target="_blank" rel="noopener noreferrer">link</div>`
 
 })
+
+
 
     </script>
     </head>
@@ -567,9 +573,8 @@ function drawVisualization() {
 </div>  
     
 <div id="tableFixHead">
-	<p><a title="Anbefalte avtaler" href="anbefalte-avtaler" data-api-endpoint="anbefalte-avtaler" data-api-returntype="Page" target="_top">link</a></p>	
-<p><a title="Anbefalte avtaler" href="anbefalte-avtaler" target="_top">link</a></p>	
-	<p><a title="Anbefalte avtaler" href="anbefalte-avtaler" target="_blank" rel="noopener noreferrer">link</a></p>
+	<div id="js-link"></div>	
+
       <table id="js-head" class="emner">  
       </table>
       <table id="js-moduler" class="emner">  
