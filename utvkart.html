@@ -118,47 +118,47 @@ table {
 <script >
 
 async function getData() {
-  const url1 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.11/info.json')).json()
-  const url2 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.12/info.json')).json()
-  const url3 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.13/info.json')).json()
-  const url4 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.15/info.json')).json()
-  const url5 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.17/info.json')).json()
+	const url1 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.11/info.json')).json()
+	const url2 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.12/info.json')).json()
+	const url3 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.13/info.json')).json()
+ 	const url4 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.15/info.json')).json()
+	const url5 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.17/info.json')).json()
 	const url6 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.34/info.json')).json()
 	const url7 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.41/info.json')).json()
 	const url8 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.0/info.json')).json()
 	const url9 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184/info.json')).json()
   
-  const data1 		= url1.utvekslingsavtaler
-	const data2 		= url2.utvekslingsavtaler
-	const data3 		= url3.utvekslingsavtaler
-  const data4 		= url4.utvekslingsavtaler  
-  const data5 		= url5.utvekslingsavtaler
-  const data6 		= url6.utvekslingsavtaler
-  const data7 		= url7.utvekslingsavtaler
-  const data8 		= url8.utvekslingsavtaler
-	const data9 		= url9.utvekslingsavtaler
+	const data1 			= url1.utvekslingsavtaler
+	const data2 			= url2.utvekslingsavtaler
+	const data3 			= url3.utvekslingsavtaler
+	const data4 			= url4.utvekslingsavtaler  
+	const data5 			= url5.utvekslingsavtaler
+	const data6 			= url6.utvekslingsavtaler
+	const data7 			= url7.utvekslingsavtaler
+	const data8 			= url8.utvekslingsavtaler
+	const data9 			= url9.utvekslingsavtaler
   
   	for (var i=0; i<data1.length; i++) {{data1[i].eier = "Sosiologisk institutt";}}
- 		for (var i=0; i<data2.length; i++) {{data2[i].eier = "Institutt for politikk og forvaltning";}}
-    for (var i=0; i<data3.length; i++) {{data3[i].eier = "Institutt for sammenlignende politikk";}}
-    for (var i=0; i<data4.length; i++) {{data4[i].eier = "Institutt for økonomi";}}
-    for (var i=0; i<data5.length; i++) {{data5[i].eier = "Institutt for informasjons og medievitenskap";}}
-		for (var i=0; i<data6.length; i++) {{data6[i].eier = "Institutt for sosialantropologi";}} 
-		for (var i=0; i<data7.length; i++) {{data7[i].eier = "Institutt for geografi";}}  
-		for (var i=0; i<data8.length; i++) {{data8[i].eier = "Det samfunnsvitenskaplige fakultet";}} 
-		for (var i=0; i<data9.length; i++) {{data9[i].eier = "Universitetet i Bergen";}} 
+ 	for (var i=0; i<data2.length; i++) {{data2[i].eier = "Institutt for politikk og forvaltning";}}
+    	for (var i=0; i<data3.length; i++) {{data3[i].eier = "Institutt for sammenlignende politikk";}}
+    	for (var i=0; i<data4.length; i++) {{data4[i].eier = "Institutt for økonomi";}}
+    	for (var i=0; i<data5.length; i++) {{data5[i].eier = "Institutt for informasjons og medievitenskap";}}
+	for (var i=0; i<data6.length; i++) {{data6[i].eier = "Institutt for sosialantropologi";}} 
+	for (var i=0; i<data7.length; i++) {{data7[i].eier = "Institutt for geografi";}}  
+	for (var i=0; i<data8.length; i++) {{data8[i].eier = "Det samfunnsvitenskaplige fakultet";}} 
+	for (var i=0; i<data9.length; i++) {{data9[i].eier = "Universitetet i Bergen";}} 
     
- 	const promise1	= Promise.all(url1);
-  const promise2	= Promise.all(url2);
- 	const promise3	= Promise.all(url3); 
- 	const promise4	= Promise.all(url4);
-  const promise5	= Promise.all(url5);
-  const promise6	= Promise.all(url6);
-  const promise7	= Promise.all(url7);
-  const promise8	= Promise.all(url8);
-	const promise9	= Promise.all(url9);  
+ 	const promise1			= Promise.all(url1);
+  	const promise2			= Promise.all(url2);
+ 	const promise3			= Promise.all(url3); 
+ 	const promise4			= Promise.all(url4);
+  	const promise5			= Promise.all(url5);
+  	const promise6			= Promise.all(url6);
+  	const promise7			= Promise.all(url7);
+  	const promise8			= Promise.all(url8);
+	const promise9			= Promise.all(url9);  
   
- var avtaler 	= data1.concat(data2).concat(data3).concat(data4).concat(data5).concat(data6).concat(data7).concat(data8).concat(data9);
+ 	var avtaler 	= data1.concat(data2).concat(data3).concat(data4).concat(data5).concat(data6).concat(data7).concat(data8).concat(data9);
 
 
 let type = ['BILATERAL', 'ERASMUS+','NORDPLUS', 'NORDPART','ERASMUS+ICM']
