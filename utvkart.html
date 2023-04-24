@@ -553,7 +553,10 @@ function drawVisualization() {
 	document.getElementById("js-head").innerHTML = tab1;
   document.getElementById("js-moduler").innerHTML = tab;
     
-  let meny = `<div style="display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding:10px; background-color: #fff; cursor:default; box-shadow: 0px 1px 3px #C5C5C5">
+  
+})
+.then(jsonObj => {
+let meny = `<div style="display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding:10px; background-color: #fff; cursor:default; box-shadow: 0px 1px 3px #C5C5C5">
 <div onclick="verdenFunction()">Hele verden</div> 
 <div onclick="europaFunction()">Europa</div>  
 <div onclick="afrikaFunction()">Afrika</div>  
