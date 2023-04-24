@@ -5,7 +5,9 @@
 <style>
 body {
   /* overflow: hidden !important; */ /* Hide scrollbars */
+
 }
+
 #meny{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
@@ -38,9 +40,20 @@ body {
      font-weight: normal !important;
 }
 table {
-   min-width: 100% !important;
+   max-width: 800px;
+   min-width: 50%;
    border-collapse : collapse !important ;
-	 max-width: 800px;
+   scrollbar-width: thin;
+}
+::-webkit-scrollbar  {
+   
+    width: 8px;
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    
+    
 }
 #js-head{
   position : sticky !important ;
