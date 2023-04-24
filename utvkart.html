@@ -548,12 +548,20 @@ function drawVisualization() {
     <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
 </tr>`;
 	}
+  
 	// Setting innerHTML as tab variable
 	document.getElementById("js-head").innerHTML = tab1;
   document.getElementById("js-moduler").innerHTML = tab;
     
-    
-   
+  let meny = `<div style="display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding:10px; background-color: #fff; cursor:default; box-shadow: 0px 1px 3px #C5C5C5">
+<div onclick="verdenFunction()">Hele verden</div> 
+<div onclick="europaFunction()">Europa</div>  
+<div onclick="afrikaFunction()">Afrika</div>  
+<div onclick="asiaFunction()">Asia</div>
+<div onclick="oseaniaFunction()">Oseania</div>  
+<div onclick="amerikaFunction()">Amerika</div>  
+</div>`  
+   document.getElementById("meny").innerHTML = meny;
 
 })
 function verdenFunction(){
@@ -1362,13 +1370,7 @@ function drawVisualization() {
 </div>
 
 </div>
-<div style="display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding:10px; background-color: #fff; cursor:default; box-shadow: 0px 1px 3px #C5C5C5">
-<div onclick="verdenFunction()">Hele verden</div> 
-<div onclick="europaFunction()">Europa</div>  
-<div onclick="afrikaFunction()">Afrika</div>  
-<div onclick="asiaFunction()">Asia</div>
-<div onclick="oseaniaFunction()">Oseania</div>  
-<div onclick="amerikaFunction()">Amerika</div>  
-</div>
+<div id="meny"></div>
+
     </body>
     </html>
