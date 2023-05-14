@@ -1,0 +1,337 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<script>
+	window.top.postMessage(
+		  {
+		    subject: 'lti.frameResize',
+		    height: 800
+		  },
+		  '*')
+</script>
+<style>
+html, body 
+	    {
+	     overflow-y: hidden;
+	     overflow: clip;
+	     width: 800px;     
+	    }
+ h1	
+{  
+display: block;
+margin: 0;
+font-family: "Lato Extended", "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+text-rendering: optimizelegibility;
+font-weight: 700;
+font-size: 1.8em;
+line-height: 1.5;
+color: #666
+}
+a
+{
+color:#0075af;
+font-family: Arial, Helvetica, sans-serif;
+}
+	
+p
+{
+color: #333333;
+font-family: Arial, Helvetica, sans-serif;
+}
+select
+		{
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #DB3F3D;
+		color: #ffffff !important;
+		padding: 10px;
+		font-size: 14px;
+		border: none;
+		cursor: pointer;
+		}
+
+	option
+		{
+		font-family: Arial, Helvetica, sans-serif;
+		background-color: #fff;
+		color: #333333 ;
+		padding: 12px;
+		font-size: 14px;
+		border: none;
+		cursor: pointer;
+		}
+table  {border-collapse: collapse; width: 800px; }
+ table th {
+     position : sticky !important ;
+     
+     padding-top : 8px !important ;
+     padding-bottom : 8px !important ;
+     padding-left : 20px ;
+     text-align : left !important ;
+     background-color : #DB3F3D ;
+     color : white !important ;
+     font-size : 14px !important ;
+}
+ table tbody {
+     font-family : Arial, Helvetica, sans-serif ;
+     
+}
+ table tr {
+     border : 0px collapse #ddd ;
+     padding-left : 20px !important ;
+     padding : 0px ;
+     text-align : left !important ;
+     border-bottom : 1px solid #d5d5d5 ;
+     height: 32px;
+}
+ table tr:hover {
+     background-color : #ddd;
+}
+ table td {
+     padding-top : 1px !important ;
+     padding-bottom : 1px !important ;
+     border : 0px collapse #ddd ;
+     padding-left : 20px !important ;
+     padding : 0px ;
+     text-align : left !important ;
+     font-size : 12px ;
+     border-bottom : 1px solid #d5d5d5 ;
+}
+
+.col1
+{
+max-width: 120px !important;
+min-width: 120px !important;
+display: table-col-block;
+ overflow: hidden !important;
+}
+thead .col2
+{
+max-width: 510px !important;
+min-width: 510px !important;
+display: table-col-block;
+overflow: hidden !important;
+}
+tbody .col2
+{
+max-width: 570px !important;
+min-width: 570px !important;
+display: table-col-block;
+overflow: hidden !important;
+}
+tbody .col3
+{
+max-width: 70px !important;
+min-width: 70px !important;
+display: table-col-block;
+text-align : left !important ;
+}
+thead .col3
+{
+max-width: 90px !important;
+min-width: 90px !important;
+display: table-col-block;
+text-align : left !important ;
+}
+.visible {display: none}
+.new-class {display: none}
+.toggle {
+  color:white;
+  font-size:20px;
+  width:30px;
+  height:30px;
+  background-color: #fff;
+  display: block;
+  text-align:center;
+  position: relative;
+  border: 1px solid transparent;
+  background: #9E9E9E;
+}
+.filterSted {
+  display: block;
+  margin-left: 1em;
+  font-size:20px;
+}
+#tableFixHead	{
+		position: relative;
+		left: 0px;
+		top: 50px;
+		width: 100%;
+		height: 100%;
+	}
+#emneBody{
+  max-height: 500px !important;
+  overflow: scroll;
+  display:inline-block;
+  padding-bottom:10px;
+  overflow-x: hidden  !important;
+}
+</style>
+<script>
+
+var semdato = new Date();
+	var dd = String(semdato.getDate()).padStart(2, '0');
+	var mm = String(semdato.getMonth() + 1).padStart(2, '0'); //January is 0!
+	var yyyy = semdato.getFullYear();
+
+		if (dd >= 01 	&&	mm	== 	12) 	{ semester = yyyy+1	+	"v";}
+		if (			mm	< 	06) 	{ semester = yyyy	+	"v";}
+		if (dd <  15 	&& 	mm 	== 	06) 	{ semester = yyyy	+	"v";}
+		if (dd >= 15 	&&	mm 	== 	06) 	{ semester = yyyy	+	"h";}
+		if (			mm	> 	06 === 12) 	{ semester = yyyy	+	"h";}
+		
+		if (dd >= 01 	&&	mm	== 	12) 	{ semestertekst = "våren " + (yyyy+1)	;}
+		if (			mm	< 	06) 	{ semestertekst = "våren " + yyyy	;}
+		if (dd <  15 	&& 	mm 	== 	06) 	{ semestertekst = "våren " + yyyy	;}
+		if (dd >= 15 	&&	mm 	== 	06) 	{ semestertekst = "høsten " + yyyy	;}
+		if (			mm	> 	06 === 12) 	{ semestertekst = "høsten " + yyyy	;}
+
+	const fakultet = ['15']
+	const api_url = "https://fs.data.uib.no/KEYuxumaqu6u/json/littl_emne/"	+	semester;
+  
+async function getData() {
+	
+  const semUrl = await (await fetch(api_url)).json()
+	const emne = semUrl.emne
+ 	const emneFilter = emne.filter( i => fakultet.includes( i.faknr_reglement ) );
+  
+  const emneSort = emneFilter.sort( function( a, b )
+  	 			{
+                                  a = a.instituttnr_reglement.concat(a.emnekode.toLowerCase());
+                                  b = b.instituttnr_reglement.concat(b.emnekode.toLowerCase());
+                                  return a < b ? -1 : a > b ? 1 : 0;
+	                        });
+var emnekoder = [];
+        emneSort.forEach(function (emneSort) {
+            emnekoder.push(emneSort.emnekode);
+        })
+  return emnekoder
+  }
+  
+  
+
+getData()
+
+  .then(emnner => {
+  console.log(emnner)
+
+      Promise.all(
+        emnner.map(p=>fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/'+p+'/info.json').then(r=>r.json())) 
+      )
+
+  .then(alleEmner=> {
+     /*     console.log(results); */
+
+	
+	const emneData = alleEmner
+      let tab = ``;
+      for (let e of emneData) {
+            tab += ` 
+            				<tr class = "row ${e.studierettkrav} ${e.sted[1].instituttnr}"> 
+                        <td class="col1">${e.emneid.emnekode}</td>   
+                        <td class="col2">${e.emnenavn}</td>   
+                        <td class="col3">${e.studiepoeng} sp</td> 
+                        
+                    </tr>`
+                              }
+        
+        /* document.getElementById("emner").innerHTML = resultat;	*/
+const emneHead = `<thead stype="color: #FFFFFF">
+                               			<tr data-port="stay" style="hight:20px">
+                                    <th class="col1">Emnekode</th>
+                                    <th class="col2">Emnenavn</th>
+                                    <th class="col3">Studiepoeng</th>
+                                   
+                               </tr>
+                              </thead>`
+                              
+  const emneBody = `<tbody>` + tab + `</tbody>`
+    document.getElementById("emneHead").innerHTML += emneHead;
+ document.getElementById("emneBody").innerHTML = emneBody;
+
+        }	
+        
+      );
+
+  })
+
+
+</script>
+
+</head>
+<body>
+<div style="display: flex; gap: 10px; align-items: center; justify-content: right;">
+
+<p id="toggletext">
+Alle emner
+</p> 
+<div class="toggle" >✓</div>
+
+<div class="filterSted">
+<select onclick="myStedfilterFunction()" >
+      <option value='row'>Vis alle institutt</option>
+			<option value="11">Sosiologisk institutt</option>
+			<option value="12">Institutt for politikk og forvaltning</option>
+			<option value="13">Institutt for sammenliknende politikk</option>
+			<option value="15">Institutt for økonomi</option>
+			<option value="17">Institutt for informasjons- og medievitenskap</option>
+			<option value="34">Institutt for sosialantropologi</option>
+			<option value="41">Institutt for geografi</option>
+</select>
+</div>
+</div>
+<div id="tableFixHead">
+
+      <table id="emneHead"></table>
+      <table id="emneBody" style="background-color: #fff">  
+      </table>
+</div>
+<script>
+
+
+var elements= document.getElementsByClassName('toggle')
+function handler(el){
+el[i].addEventListener('click',
+
+function(e){
+let tekst = document.getElementById('toggletext')
+ tekst.innerHTML == 'Bare åpne emner'?tekst.innerHTML='Alle emner':tekst.innerHTML='Bare åpne emner';
+
+	e.target.innerHTML==''?e.target.innerHTML='✓':e.target.innerHTML='';
+	},false)
+}
+for(var i=0;i<elements.length;++i){
+handler(elements)
+}
+const buttonToggle = document.querySelector('.toggle');
+buttonToggle.addEventListener('click', toggleClass);
+
+
+function toggleClass(){
+  const element = [...document.querySelectorAll('.true')];
+  for (const e of element) {
+  e.classList.toggle('new-class');
+}
+}
+
+
+function myStedfilterFunction() {
+let selectedFilters = [];
+const images = [...document.querySelectorAll('.row')];
+const filters = [...document.querySelectorAll('.filterSted select')];
+
+for (const filter of filters) {
+  filter.addEventListener('change', function(event) {
+    selectedFilters = filters.map(filter => filter.value).filter(Boolean);
+    console.log(selectedFilters);
+    for (const image of images) {
+      image.classList[selectedFilters.some(filter => image.classList.contains(filter)) 
+        ? 'remove'
+        : 'add']('visible');
+    }
+  })
+}
+}
+</script>
+</body>
+</html>
