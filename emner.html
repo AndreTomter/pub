@@ -228,7 +228,7 @@ getData()
       for (let e of emneData) {
             tab += ` 
             				<tr class = "row ${e.studierettkrav} ${e.sted[1].instituttnr}"> 
-                        <td class="col1">${e.emneid.emnekode}</td>   
+                        <td class="col1"><a href="https://www.uib.no/emne/${e.emneid.emnekode}?sem=${semester}"  target="_blank" rel="noopener noreferrer">${e.emneid.emnekode}</a></td>   
                         <td class="col2">${e.emnenavn}</td>   
                         <td class="col3">${e.studiepoeng} sp</td> 
                         
@@ -237,7 +237,7 @@ getData()
         
         /* document.getElementById("emner").innerHTML = resultat;	*/
 const emneHead = `<thead stype="color: #FFFFFF">
-                               			<tr data-port="stay" style="hight:20px">
+                               	<tr data-port="stay" style="hight:20px">
                                     <th class="col1">Emnekode</th>
                                     <th class="col2">Emnenavn</th>
                                     <th class="col3">Studiepoeng</th>
