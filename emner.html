@@ -60,8 +60,19 @@ select
 		border: none;
 		cursor: pointer;
 		}
-table  {border-collapse: collapse; width: 800px; }
- table th {
+table  {
+	border-collapse: collapse !important;
+	width: 800px; 
+	scrollbar-width: thin;
+	}
+::-webkit-scrollbar  {
+    width: 8px;
+    background: #f1f1f1;
+	}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;  
+	}
+table th {
      position : sticky !important ;
      
      padding-top : 8px !important ;
