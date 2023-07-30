@@ -186,13 +186,15 @@ var semdato = new Date();
 		if (			mm	< 	06) 	{ semester = yyyy	+	"v";}
 		if (dd <  15 	&& 	mm 	== 	06) 	{ semester = yyyy	+	"v";}
 		if (dd >= 15 	&&	mm 	== 	06) 	{ semester = yyyy	+	"h";}
-		if (			mm	> 	06 === 12) 	{ semester = yyyy	+	"h";}
-		
+		// if (			mm	> 	06 === 12) 	{ semester = yyyy	+	"h";}
+		if (			mm	> 	06 ) 	{ semester = yyyy	+	"h";}
+	
 		if (dd >= 01 	&&	mm	== 	12) 	{ semestertekst = "våren " + (yyyy+1)	;}
 		if (			mm	< 	06) 	{ semestertekst = "våren " + yyyy	;}
 		if (dd <  15 	&& 	mm 	== 	06) 	{ semestertekst = "våren " + yyyy	;}
 		if (dd >= 15 	&&	mm 	== 	06) 	{ semestertekst = "høsten " + yyyy	;}
-		if (			mm	> 	06 === 12) 	{ semestertekst = "høsten " + yyyy	;}
+		// if (			mm	> 	06 === 12) 	{ semestertekst = "høsten " + yyyy	;}
+	if (			mm	> 	06 ) 	{ semestertekst = "høsten " + yyyy	;}
 
 	const fakultet = ['15']
 	const api_url = "https://fs.data.uib.no/KEYuxumaqu6u/json/littl_emne/"	+	semester;
@@ -214,55 +216,45 @@ var emnekoder = [];
             emnekoder.push(emneSort.emnekode);
         })
   document.getElementById("semestertekst").innerHTML = semestertekst;
-  return emnekoder
-  }
   
+   console.log(emnekoder.length)
   
 
-getData()
-
-  .then(emnner => {
-  console.log(emnner)
-
-      Promise.all(
-        emnner.map(p=>fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/'+p+'/info.json').then(r=>r.json())) 
-      )
-
-  .then(alleEmner=> {
-     /*     console.log(results); */
-
-	
-	const emneData = alleEmner
-      let tab = ``;
-      for (let e of emneData) {
-            tab += ` 
-            				<tr class = "row ${e.studierettkrav} ${e.sted[1].instituttnr}"> 
-                        <td class="col1"><a href="https://www.uib.no/emne/${e.emneid.emnekode}?sem=${semester}"  target="_blank" rel="noopener noreferrer">${e.emneid.emnekode}</a></td>   
-                        <td class="col2">${e.emnenavn}</td>   
-                        <td class="col3">${e.studiepoeng} sp</td> 
-                        
-                    </tr>`
-                              }
-        
-        /* document.getElementById("emner").innerHTML = resultat;	*/
-const emneHead = `<thead stype="color: #FFFFFF">
+    document.getElementById("emneHead").innerHTML += `<thead stype="color: #FFFFFF">
                                	<tr data-port="stay" style="hight:20px">
                                     <th class="col1">Emnekode</th>
                                     <th class="col2">Emnenavn</th>
                                     <th class="col3">Studiepoeng</th>
                                    
                                </tr>
-                              </thead>`
-                              
-  const emneBody = `<tbody>` + tab + `</tbody>`
-    document.getElementById("emneHead").innerHTML += emneHead;
- document.getElementById("emneBody").innerHTML = emneBody;
+                              </thead>`;
+    
+   document.getElementById("emneBody").innerHTML += `<tbody>`;  
 
-        }	
-        
-      );
+  
+  for (let i = 0; i < emnekoder.length; i++) {
+   
+    var e = await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/'+emnekoder[i]+'/info.json')).json();
+    console.log(e.emneid.emnekode)
+    var tab = ` 
+            				<tr class = "row `+ e.studierettkrav+` `+e.sted[1].instituttnr+`"> 
+                        <td class="col1"><a href="https://www.uib.no/emne/`+ e.emneid.emnekode +`?sem="  target="_blank" rel="noopener noreferrer">`+e.emneid.emnekode+`</a></td>   
+                        <td class="col2">` + e.emnenavn +`</td>   
+                        <td class="col3">` + e.studiepoeng +` sp</td> 
+                        
+                    </tr>`
+  document.getElementById("emneBody").innerHTML += tab;  
+}
 
-  })
+  document.getElementById("emneBody").innerHTML += `</tbody>`; 
+      
+
+  }
+  
+  
+
+getData()
+
 
 
 </script>
@@ -270,6 +262,10 @@ const emneHead = `<thead stype="color: #FFFFFF">
 </head>
 <body>
 <h1>Emner med undervisning <span id="semestertekst"></span></h1>
+<div id='test'>
+
+</div>
+
 <div style="display: flex; gap: 10px; align-items: center; justify-content: right;">
 
 <p id="toggletext">
