@@ -178,47 +178,66 @@ thead .col3 {
 <script>
 
 var semdato = new Date();
-	var dd = String(semdato.getDate()).padStart(2, '0');
-	var mm = String(semdato.getMonth() + 1).padStart(2, '0'); //January is 0!
-	var yyyy = semdato.getFullYear();
+var dd = String(semdato.getDate()).padStart(2, '0');
+var mm = String(semdato.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = semdato.getFullYear();
 
-		if (dd >= 01 	&&	mm	== 	12) 	{ semester = yyyy+1	+	"v";}
-		if (			mm	< 	06) 	{ semester = yyyy	+	"v";}
-		if (dd <  15 	&& 	mm 	== 	06) 	{ semester = yyyy	+	"v";}
-		if (dd >= 15 	&&	mm 	== 	06) 	{ semester = yyyy	+	"h";}
-		// if (			mm	> 	06 === 12) 	{ semester = yyyy	+	"h";}
-		if (			mm	> 	06 ) 	{ semester = yyyy	+	"h";}
-	
-		if (dd >= 01 	&&	mm	== 	12) 	{ semestertekst = "våren " + (yyyy+1)	;}
-		if (			mm	< 	06) 	{ semestertekst = "våren " + yyyy	;}
-		if (dd <  15 	&& 	mm 	== 	06) 	{ semestertekst = "våren " + yyyy	;}
-		if (dd >= 15 	&&	mm 	== 	06) 	{ semestertekst = "høsten " + yyyy	;}
-		// if (			mm	> 	06 === 12) 	{ semestertekst = "høsten " + yyyy	;}
-	if (			mm	> 	06 ) 	{ semestertekst = "høsten " + yyyy	;}
+if (dd >= 01 && mm == 12) {
+    semester = yyyy + 1 + "v";
+}
+if (mm < 06) {
+    semester = yyyy + "v";
+}
+if (dd < 15 && mm == 06) {
+    semester = yyyy + "v";
+}
+if (dd >= 15 && mm == 06) {
+    semester = yyyy + "h";
+}
+// if (			mm	> 	06 === 12) 	{ semester = yyyy	+	"h";}
+if (mm > 06) {
+    semester = yyyy + "h";
+}
 
-	const fakultet = ['15']
-	const api_url = "https://fs.data.uib.no/KEYuxumaqu6u/json/littl_emne/"	+	semester;
-  
+if (dd >= 01 && mm == 12) {
+    semestertekst = "våren " + (yyyy + 1);
+}
+if (mm < 06) {
+    semestertekst = "våren " + yyyy;
+}
+if (dd < 15 && mm == 06) {
+    semestertekst = "våren " + yyyy;
+}
+if (dd >= 15 && mm == 06) {
+    semestertekst = "høsten " + yyyy;
+}
+// if (			mm	> 	06 === 12) 	{ semestertekst = "høsten " + yyyy	;}
+if (mm > 06) {
+    semestertekst = "høsten " + yyyy;
+}
+
+const fakultet = ['15']
+const api_url = "https://fs.data.uib.no/KEYuxumaqu6u/json/littl_emne/" + semester;
+
 async function getData() {
-	
-  const semUrl = await (await fetch(api_url)).json()
-	const emne = semUrl.emne
- 	const emneFilter = emne.filter( i => fakultet.includes( i.faknr_reglement ) );
-  
-  const emneSort = emneFilter.sort( function( a, b )
-  	 			{
-                                  a = a.instituttnr_reglement.concat(a.emnekode.toLowerCase());
-                                  b = b.instituttnr_reglement.concat(b.emnekode.toLowerCase());
-                                  return a < b ? -1 : a > b ? 1 : 0;
-	                        });
-var emnekoder = [];
-        emneSort.forEach(function (emneSort) {
-            emnekoder.push(emneSort.emnekode);
-        })
-  document.getElementById("semestertekst").innerHTML = semestertekst;
-  
-   console.log(emnekoder.length)
-  
+
+    const semUrl = await (await fetch(api_url)).json()
+    const emne = semUrl.emne
+    const emneFilter = emne.filter(i => fakultet.includes(i.faknr_reglement));
+
+    const emneSort = emneFilter.sort(function(a, b) {
+        a = a.instituttnr_reglement.concat(a.emnekode.toLowerCase());
+        b = b.instituttnr_reglement.concat(b.emnekode.toLowerCase());
+        return a < b ? -1 : a > b ? 1 : 0;
+    });
+    var emnekoder = [];
+    emneSort.forEach(function(emneSort) {
+        emnekoder.push(emneSort.emnekode);
+    })
+    document.getElementById("semestertekst").innerHTML = semestertekst;
+
+    console.log(emnekoder.length)
+
 
     document.getElementById("emneHead").innerHTML += `<thead stype="color: #FFFFFF">
                                	<tr data-port="stay" style="hight:20px">
@@ -228,28 +247,30 @@ var emnekoder = [];
                                    
                                </tr>
                               </thead>`;
-    
 
-	var l = emnekoder.length
-  
-  for (let i = 0; i < l ; i++) {
-   
-    var e = await (await fetch(`https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/`+emnekoder[i]+`/info.json`)).json();
 
-    var tab = ` 
-            				<tr class = "row `+ e.studierettkrav+` `+e.sted[1].instituttnr+`"> 
-                        <td class="col1"><a href="https://www.uib.no/emne/`+ e.emneid.emnekode +`?sem="  target="_blank" rel="noopener noreferrer">`+e.emneid.emnekode+`</a></td>   
-                        <td class="col2">` + e.emnenavn +`</td>   
-                        <td class="col3">` + e.studiepoeng +` sp</td> 
+    var l = emnekoder.length
+
+
+    for (let i = 0; i < emnekoder.length; i++) {
+        try {
+            var e = await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/' + emnekoder[i] + '/info.json')).json();
+            var tab = ` 
+            				<tr class = "row ` + e.studierettkrav + ` ` + e.sted[1].instituttnr + `"> 
+                        <td class="col1"><a href="https://www.uib.no/emne/` + e.emneid.emnekode + `?sem="  target="_blank" rel="noopener noreferrer">` + e.emneid.emnekode + `</a></td>   
+                        <td class="col2">` + e.emnenavn + `</td>   
+                        <td class="col3">` + e.studiepoeng + ` sp</td> 
                         
                     </tr>`
-  document.getElementById("emneBody").innerHTML += tab;  
-};
-      
+            document.getElementById("emneBody").innerHTML += tab;
+        } catch (error) {
+            console.error('Error fetching data for', emnekoder[i], error);
+        }
+    }
 
-  }
-  
-  
+}
+
+
 
 getData()
 
@@ -296,48 +317,49 @@ Alle emner
 <script>
 
 
-var elements= document.getElementsByClassName('toggle')
-function handler(el){
-el[i].addEventListener('click',
+var elements = document.getElementsByClassName('toggle')
 
-function(e){
-let tekst = document.getElementById('toggletext')
- tekst.innerHTML == 'Bare åpne emner'?tekst.innerHTML='Alle emner':tekst.innerHTML='Bare åpne emner';
+function handler(el) {
+    el[i].addEventListener('click',
 
-	e.target.innerHTML==''?e.target.innerHTML='✓':e.target.innerHTML='';
-	},false)
+        function(e) {
+            let tekst = document.getElementById('toggletext')
+            tekst.innerHTML == 'Bare åpne emner' ? tekst.innerHTML = 'Alle emner' : tekst.innerHTML = 'Bare åpne emner';
+
+            e.target.innerHTML == '' ? e.target.innerHTML = '✓' : e.target.innerHTML = '';
+        }, false)
 }
-for(var i=0;i<elements.length;++i){
-handler(elements)
+for (var i = 0; i < elements.length; ++i) {
+    handler(elements)
 }
 const buttonToggle = document.querySelector('.toggle');
 buttonToggle.addEventListener('click', toggleClass);
 
 
-function toggleClass(){
-  const element = [...document.querySelectorAll('.true')];
-  for (const e of element) {
-  e.classList.toggle('new-class');
-}
+function toggleClass() {
+    const element = [...document.querySelectorAll('.true')];
+    for (const e of element) {
+        e.classList.toggle('new-class');
+    }
 }
 
 
 function myStedfilterFunction() {
-let selectedFilters = [];
-const images = [...document.querySelectorAll('.row')];
-const filters = [...document.querySelectorAll('.filterSted select')];
+    let selectedFilters = [];
+    const images = [...document.querySelectorAll('.row')];
+    const filters = [...document.querySelectorAll('.filterSted select')];
 
-for (const filter of filters) {
-  filter.addEventListener('change', function(event) {
-    selectedFilters = filters.map(filter => filter.value).filter(Boolean);
-    console.log(selectedFilters);
-    for (const image of images) {
-      image.classList[selectedFilters.some(filter => image.classList.contains(filter)) 
-        ? 'remove'
-        : 'add']('visible');
+    for (const filter of filters) {
+        filter.addEventListener('change', function(event) {
+            selectedFilters = filters.map(filter => filter.value).filter(Boolean);
+            console.log(selectedFilters);
+            for (const image of images) {
+                image.classList[selectedFilters.some(filter => image.classList.contains(filter)) ?
+                    'remove' :
+                    'add']('visible');
+            }
+        })
     }
-  })
-}
 }
 </script>
 </body>
