@@ -229,13 +229,13 @@ var emnekoder = [];
                                </tr>
                               </thead>`;
     
-   document.getElementById("emneBody").innerHTML += `<tbody>`;  
 
+	var l = emnekoder.length
   
-  for (let i = 0; i < emnekoder.length; i++) {
+  for (let i = 0; i < l ; i++) {
    
-    var e = await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/'+emnekoder[i]+'/info.json')).json();
-    console.log(e.emneid.emnekode)
+    var e = await (await fetch(`https://fs-pres.data.uib.no/KEYuxumaqu6u/emne/`+emnekoder[i]+`/info.json`)).json();
+
     var tab = ` 
             				<tr class = "row `+ e.studierettkrav+` `+e.sted[1].instituttnr+`"> 
                         <td class="col1"><a href="https://www.uib.no/emne/`+ e.emneid.emnekode +`?sem="  target="_blank" rel="noopener noreferrer">`+e.emneid.emnekode+`</a></td>   
@@ -244,9 +244,7 @@ var emnekoder = [];
                         
                     </tr>`
   document.getElementById("emneBody").innerHTML += tab;  
-}
-
-  document.getElementById("emneBody").innerHTML += `</tbody>`; 
+};
       
 
   }
@@ -289,7 +287,9 @@ Alle emner
 <div id="tableFixHead">
 
       <table id="emneHead"></table>
-      <table id="emneBody" style="background-color: #fff">  
+      <table style="background-color: #fff">
+      <tbody id="emneBody">
+      </tbody>
       </table>    
 </div>
 <p style="font-size: 10px;">Oversikten viser emner som undervises inneværende semester. Bacheloroppgave, masteroppgave og PhD emner vises ikke. <br>Visningen endrer semester 01 desember og 15 juni. </p>
