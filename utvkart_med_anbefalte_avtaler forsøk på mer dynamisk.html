@@ -1,17 +1,3 @@
-/* 
-Bør gjøre høyde på tabellen avhengig av synlig høyde - brukt høyde på kart (tror det heter offsetHeight). bruk denne koden som utgangpsunkt:
-window.parent.postMessage({ subject: "lti.fetchWindowSize" }, "*");
-
-    // Lytt etter svar fra foreldrelementet
-window.addEventListener('message', function(event) {
-      const data = event.data;
-      console.log(data);
-      console.log(data.width);
-      console.log(data.height);
-    });
-
-*/
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
@@ -129,13 +115,7 @@ table {
  left: 0px;
  top: 0px;
 }
-#js-moduler{
-  max-height: 200px !important;
-  overflow: scroll;
-  display: inline-block;
-  padding-bottom: 10px;
-  overflow-x: hidden  !important;
-}
+
 	#tableFixHead	{
 		position: relative;
 		left: 0px;
@@ -594,7 +574,9 @@ function drawVisualization() {
 	// Setting innerHTML as tab variable
 	document.getElementById("js-head").innerHTML = tab1;
   document.getElementById("js-moduler").innerHTML = tab;
-    
+   
+
+ 
   
 })
 .then(jsonObj => {
@@ -608,8 +590,18 @@ let meny = `<div id="meny2" >
 <span onclick="anbefaltFunction()">Anbefalte avtaler</span>
 </div>`  
    document.getElementById("meny").innerHTML = meny;
+
+window.parent.postMessage({ subject: "lti.fetchWindowSize" }, "*");
+window.addEventListener('message', function(event) {
+	var data = event.data;
+	var wh = data.height;
 	
-  var css = '#meny2{display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:7px; background: rgba(255, 255, 255, 0.5); cursor:default; box-shadow: 0px 1px 3px #C5C5C5} #meny2:hover{background-color: #fff;}';
+	var hcalc = wh-799;
+	var hoyde = hcalc + 'px !important'
+	
+
+	
+  var css = '#meny2{display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:7px; background: rgba(255, 255, 255, 0.5); cursor:default; box-shadow: 0px 1px 3px #C5C5C5} #meny2:hover{background-color: #fff;} #js-moduler{max-height: '+hoyde+';overflow: scroll;display: inline-block;padding-bottom: 10px;overflow-x: hidden !important;}';
 var style = document.createElement('style');
 
 if (style.styleSheet) {
@@ -619,7 +611,6 @@ if (style.styleSheet) {
 }
 
 document.getElementsByTagName('head')[0].appendChild(style);
-
 
 
 
@@ -1601,6 +1592,9 @@ function anbefaltFunction() {
       }
 
 
+    
+
+	});
     </script>
     </head>
     <body>
@@ -1608,7 +1602,7 @@ function anbefaltFunction() {
 <div class="body">
   
 
-<div class="center" style="display: flex; align-items: center; justify-content: center;">
+<div class="center" >
     <div id="visualization" style="width: 100%; "></div>  
 </div>
 
@@ -1624,6 +1618,11 @@ function anbefaltFunction() {
 
 <div id="meny"></div>  
 
+    <script>
+
+
+
+    </script>
 
     </body>
     </html>
