@@ -1,0 +1,1597 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+<style>
+body {
+  /* overflow: hidden !important; */ /* Hide scrollbars */
+
+}
+
+#meny{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+	.google-visualization-tooltip {
+     padding: 1px !important;
+}
+ .google-visualization-tooltip-item-list {
+     padding: 5px !important;
+     margin: 5px !important;
+}
+ .google-visualization-tooltip-item {
+     overflow: hidden;
+     max-width: 210px !important;
+     height: 20px !important;
+     padding-top: 5px !important;
+     margin: 0px !important;
+     white-space: nowrap;
+}
+ .google-visualization-tooltip-item span:nth-child(1) {
+     display: inline-block;
+     width: auto !important;
+     text-align: left !important;
+}
+ .google-visualization-tooltip-item span:nth-child(2) {
+     display: inline-block;
+     width: auto !important;
+     text-align: left !important;
+     margin-left: 7px !important;
+     font-weight: normal !important;
+}
+table {
+   max-width: 800px;
+   min-width: 50%;
+   border-collapse: collapse !important;
+   scrollbar-width: thin;
+}
+::-webkit-scrollbar  {
+   
+    width: 8px;
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    
+    
+}
+#js-head{
+    position: sticky !important;
+    top: 0px !important;
+     
+}
+ table th {
+     position: sticky !important;
+     
+     padding-top: 8px !important;
+     padding-bottom: 8px !important;
+     padding-left: 20px !important;
+     text-align: left !important;
+     background-color: #DB3F3D;
+     color: white !important;
+     font-size: 14px !important;
+}
+ table tbody {
+     font-family: Arial, Helvetica, sans-serif;
+     
+}
+ table tr {
+     border: 0px collapse #ddd;
+     padding: 0px;
+     padding-left: 20px !important;
+     
+     text-align: left !important;
+     border-bottom: 1px solid #d5d5d5;
+     height: 32px;
+}
+ table tr:hover {
+     background-color: #ddd;
+}
+ table td {
+     padding: 0px;
+     padding-top: 1px !important;
+     padding-bottom: 1px !important;
+     padding-left: 20px !important;
+     border: 0px collapse #ddd;
+     text-align: left !important;
+     font-size: 12px;
+     border-bottom: 1px solid #d5d5d5;
+}
+
+
+.body{
+  /*max-height: 900px !important;*/
+  overflow: hidden;
+  display: inline-block;
+  
+
+ position: absolute;
+ left: 0px;
+ top: 0px;
+}
+#js-moduler{
+  max-height: 200px !important;
+  overflow: scroll;
+  display: inline-block;
+  padding-bottom: 10px;
+  overflow-x: hidden  !important;
+}
+	#tableFixHead	{
+		position: relative;
+		left: 0px;
+		top: -50px;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script >
+ var ref = document.referrer;
+ var lastPart = ref.split('/')[4];
+ var ny = 'https://mitt.uib.no/api/v1/courses/' + 886 //lastPart;
+
+
+
+async function getData() {
+
+
+	const url1 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.11/info.json')).json()
+	const url2 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.12/info.json')).json()
+	const url3 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.13/info.json')).json()
+ 	const url4 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.15/info.json')).json()
+	const url5 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.17/info.json')).json()
+	const url6 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.34/info.json')).json()
+	const url7 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.41/info.json')).json()
+	const url8 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184.15.0/info.json')).json()
+	const url9 			= await (await fetch('https://fs-pres.data.uib.no/KEYuxumaqu6u/sted/184/info.json')).json()
+  
+
+	const data1 			= url1.utvekslingsavtaler
+	const data2 			= url2.utvekslingsavtaler
+	const data3 			= url3.utvekslingsavtaler
+	const data4 			= url4.utvekslingsavtaler  
+	const data5 			= url5.utvekslingsavtaler
+	const data6 			= url6.utvekslingsavtaler
+	const data7 			= url7.utvekslingsavtaler
+	const data8 			= url8.utvekslingsavtaler
+	const data9 			= url9.utvekslingsavtaler
+  
+  	for (var i=0; i<data1.length; i++) {{data1[i].eier = "Sosiologisk institutt";}}
+ 	for (var i=0; i<data2.length; i++) {{data2[i].eier = "Institutt for politikk og forvaltning";}}
+    	for (var i=0; i<data3.length; i++) {{data3[i].eier = "Institutt for sammenlignende politikk";}}
+    	for (var i=0; i<data4.length; i++) {{data4[i].eier = "Institutt for økonomi";}}
+    	for (var i=0; i<data5.length; i++) {{data5[i].eier = "Institutt for informasjons og medievitenskap";}}
+	for (var i=0; i<data6.length; i++) {{data6[i].eier = "Institutt for sosialantropologi";}} 
+	for (var i=0; i<data7.length; i++) {{data7[i].eier = "Institutt for geografi";}}  
+	for (var i=0; i<data8.length; i++) {{data8[i].eier = "Det samfunnsvitenskaplige fakultet";}} 
+	for (var i=0; i<data9.length; i++) {{data9[i].eier = "Universitetet i Bergen";}} 
+    
+ 
+ 	const promise1			= Promise.all(url1);
+  const promise2			= Promise.all(url2);
+ 	const promise3			= Promise.all(url3); 
+ 	const promise4			= Promise.all(url4);
+  const promise5			= Promise.all(url5);
+  const promise6			= Promise.all(url6);
+  const promise7			= Promise.all(url7);
+  const promise8			= Promise.all(url8);
+	const promise9			= Promise.all(url9);  
+  
+ 	var avtaler 	= data1.concat(data2).concat(data3).concat(data4).concat(data5).concat(data6).concat(data7).concat(data8).concat(data9);
+
+
+let type = ['BILATERAL', 'ERASMUS+','NORDPLUS', 'NORDPART','ERASMUS+ICM']
+
+const personFilter =  avtaler.filter(el => { return el.category_persons[0]; });
+const avtalerFilter = personFilter.filter( i => type.includes( i.category ) );
+
+
+
+
+var jsonObj = avtalerFilter
+
+for (var i=0; i<avtalerFilter.length; i++) {
+
+if (jsonObj[i].ref_countries[0] ===114) { jsonObj[i].land_norsk = 'Andorra';} if (jsonObj[i].ref_countries[0] ===114) { jsonObj[i].land_kode = {v:'AD', f:'Andorra'};} if (jsonObj[i].ref_countries[0] ===114) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===426) { jsonObj[i].land_norsk = 'De forente arabiske emirater';} if (jsonObj[i].ref_countries[0] ===426) { jsonObj[i].land_kode = {v:'AE', f:'De forente arabiske emirater'};} if (jsonObj[i].ref_countries[0] ===426) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===404) { jsonObj[i].land_norsk = 'Afghanistan';} if (jsonObj[i].ref_countries[0] ===404) { jsonObj[i].land_kode = {v:'AF', f:'Afghanistan'};} if (jsonObj[i].ref_countries[0] ===404) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===603) { jsonObj[i].land_norsk = 'Antigua og Barbuda';} if (jsonObj[i].ref_countries[0] ===603) { jsonObj[i].land_kode = {v:'AG', f:'Antigua og Barbuda'};} if (jsonObj[i].ref_countries[0] ===603) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===660) { jsonObj[i].land_norsk = 'Anguilla';} if (jsonObj[i].ref_countries[0] ===660) { jsonObj[i].land_kode = {v:'AI', f:'Anguilla'};} if (jsonObj[i].ref_countries[0] ===660) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===111) { jsonObj[i].land_norsk = 'Albania';} if (jsonObj[i].ref_countries[0] ===111) { jsonObj[i].land_kode = {v:'AL', f:'Albania'};} if (jsonObj[i].ref_countries[0] ===111) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===406) { jsonObj[i].land_norsk = 'Armenia';} if (jsonObj[i].ref_countries[0] ===406) { jsonObj[i].land_kode = {v:'AM', f:'Armenia'};} if (jsonObj[i].ref_countries[0] ===406) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===204) { jsonObj[i].land_norsk = 'Angola';} if (jsonObj[i].ref_countries[0] ===204) { jsonObj[i].land_kode = {v:'AO', f:'Angola'};} if (jsonObj[i].ref_countries[0] ===204) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===705) { jsonObj[i].land_norsk = 'Argentina';} if (jsonObj[i].ref_countries[0] ===705) { jsonObj[i].land_kode = {v:'AR', f:'Argentina'};} if (jsonObj[i].ref_countries[0] ===705) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===802) { jsonObj[i].land_norsk = 'Amerikansk Samoa';} if (jsonObj[i].ref_countries[0] ===802) { jsonObj[i].land_kode = {v:'AS', f:'Amerikansk Samoa'};} if (jsonObj[i].ref_countries[0] ===802) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===153) { jsonObj[i].land_norsk = 'Østerrike';} if (jsonObj[i].ref_countries[0] ===153) { jsonObj[i].land_kode = {v:'AT', f:'Østerrike'};} if (jsonObj[i].ref_countries[0] ===153) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===805) { jsonObj[i].land_norsk = 'Australia';} if (jsonObj[i].ref_countries[0] ===805) { jsonObj[i].land_kode = {v:'AU', f:'Australia'};} if (jsonObj[i].ref_countries[0] ===805) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===657) { jsonObj[i].land_norsk = 'Aruba';} if (jsonObj[i].ref_countries[0] ===657) { jsonObj[i].land_kode = {v:'AW', f:'Aruba'};} if (jsonObj[i].ref_countries[0] ===657) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===407) { jsonObj[i].land_norsk = 'Aserbajdsjan';} if (jsonObj[i].ref_countries[0] ===407) { jsonObj[i].land_kode = {v:'AZ', f:'Aserbajdsjan'};} if (jsonObj[i].ref_countries[0] ===407) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===155) { jsonObj[i].land_norsk = 'Bosnia-Hercegovina';} if (jsonObj[i].ref_countries[0] ===155) { jsonObj[i].land_kode = {v:'BA', f:'Bosnia-Hercegovina'};} if (jsonObj[i].ref_countries[0] ===155) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===602) { jsonObj[i].land_norsk = 'Barbados';} if (jsonObj[i].ref_countries[0] ===602) { jsonObj[i].land_kode = {v:'BB', f:'Barbados'};} if (jsonObj[i].ref_countries[0] ===602) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===410) { jsonObj[i].land_norsk = 'Bangladesh';} if (jsonObj[i].ref_countries[0] ===410) { jsonObj[i].land_kode = {v:'BD', f:'Bangladesh'};} if (jsonObj[i].ref_countries[0] ===410) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===112) { jsonObj[i].land_norsk = 'Belgia';} if (jsonObj[i].ref_countries[0] ===112) { jsonObj[i].land_kode = {v:'BE', f:'Belgia'};} if (jsonObj[i].ref_countries[0] ===112) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===393) { jsonObj[i].land_norsk = 'Burkina Faso';} if (jsonObj[i].ref_countries[0] ===393) { jsonObj[i].land_kode = {v:'BF', f:'Burkina Faso'};} if (jsonObj[i].ref_countries[0] ===393) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===113) { jsonObj[i].land_norsk = 'Bulgaria';} if (jsonObj[i].ref_countries[0] ===113) { jsonObj[i].land_kode = {v:'BG', f:'Bulgaria'};} if (jsonObj[i].ref_countries[0] ===113) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===409) { jsonObj[i].land_norsk = 'Bahrain';} if (jsonObj[i].ref_countries[0] ===409) { jsonObj[i].land_kode = {v:'BH', f:'Bahrain'};} if (jsonObj[i].ref_countries[0] ===409) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===216) { jsonObj[i].land_norsk = 'Burundi';} if (jsonObj[i].ref_countries[0] ===216) { jsonObj[i].land_kode = {v:'BI', f:'Burundi'};} if (jsonObj[i].ref_countries[0] ===216) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===229) { jsonObj[i].land_norsk = 'Benin';} if (jsonObj[i].ref_countries[0] ===229) { jsonObj[i].land_kode = {v:'BJ', f:'Benin'};} if (jsonObj[i].ref_countries[0] ===229) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===687) { jsonObj[i].land_norsk = 'Saint-Barthélemy';} if (jsonObj[i].ref_countries[0] ===687) { jsonObj[i].land_kode = {v:'BL', f:'Saint-Barthélemy'};} if (jsonObj[i].ref_countries[0] ===687) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===606) { jsonObj[i].land_norsk = 'Bermuda';} if (jsonObj[i].ref_countries[0] ===606) { jsonObj[i].land_kode = {v:'BM', f:'Bermuda'};} if (jsonObj[i].ref_countries[0] ===606) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===416) { jsonObj[i].land_norsk = 'Brunei';} if (jsonObj[i].ref_countries[0] ===416) { jsonObj[i].land_kode = {v:'BN', f:'Brunei'};} if (jsonObj[i].ref_countries[0] ===416) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===710) { jsonObj[i].land_norsk = 'Bolivia';} if (jsonObj[i].ref_countries[0] ===710) { jsonObj[i].land_kode = {v:'BO', f:'Bolivia'};} if (jsonObj[i].ref_countries[0] ===710) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===659) { jsonObj[i].land_norsk = 'Bonaire, Sint Eustatius og Saba';} if (jsonObj[i].ref_countries[0] ===659) { jsonObj[i].land_kode = {v:'BQ', f:'Bonaire, Sint Eustatius og Saba'};} if (jsonObj[i].ref_countries[0] ===659) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===715) { jsonObj[i].land_norsk = 'Brasil';} if (jsonObj[i].ref_countries[0] ===715) { jsonObj[i].land_kode = {v:'BR', f:'Brasil'};} if (jsonObj[i].ref_countries[0] ===715) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===605) { jsonObj[i].land_norsk = 'Bahamas';} if (jsonObj[i].ref_countries[0] ===605) { jsonObj[i].land_kode = {v:'BS', f:'Bahamas'};} if (jsonObj[i].ref_countries[0] ===605) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===412) { jsonObj[i].land_norsk = 'Bhutan';} if (jsonObj[i].ref_countries[0] ===412) { jsonObj[i].land_kode = {v:'BT', f:'Bhutan'};} if (jsonObj[i].ref_countries[0] ===412) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===205) { jsonObj[i].land_norsk = 'Botswana';} if (jsonObj[i].ref_countries[0] ===205) { jsonObj[i].land_kode = {v:'BW', f:'Botswana'};} if (jsonObj[i].ref_countries[0] ===205) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===120) { jsonObj[i].land_norsk = 'Belarus';} if (jsonObj[i].ref_countries[0] ===120) { jsonObj[i].land_kode = {v:'BY', f:'Belarus'};} if (jsonObj[i].ref_countries[0] ===120) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===604) { jsonObj[i].land_norsk = 'Belize';} if (jsonObj[i].ref_countries[0] ===604) { jsonObj[i].land_kode = {v:'BZ', f:'Belize'};} if (jsonObj[i].ref_countries[0] ===604) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===612) { jsonObj[i].land_norsk = 'Canada';} if (jsonObj[i].ref_countries[0] ===612) { jsonObj[i].land_kode = {v:'CA', f:'Canada'};} if (jsonObj[i].ref_countries[0] ===612) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===808) { jsonObj[i].land_norsk = 'Kokosøyene';} if (jsonObj[i].ref_countries[0] ===808) { jsonObj[i].land_kode = {v:'CC', f:'Kokosøyene'};} if (jsonObj[i].ref_countries[0] ===808) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===279) { jsonObj[i].land_norsk = 'Kongo';} if (jsonObj[i].ref_countries[0] ===279) { jsonObj[i].land_kode = {v:'CD', f:'Kongo'};} if (jsonObj[i].ref_countries[0] ===279) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===337) { jsonObj[i].land_norsk = 'Den sentralafrikanske republikk';} if (jsonObj[i].ref_countries[0] ===337) { jsonObj[i].land_kode = {v:'CF', f:'Den sentralafrikanske republikk'};} if (jsonObj[i].ref_countries[0] ===337) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===278) { jsonObj[i].land_norsk = 'Kongo - Brazzaville';} if (jsonObj[i].ref_countries[0] ===278) { jsonObj[i].land_kode = {v:'CG', f:'Kongo - Brazzaville'};} if (jsonObj[i].ref_countries[0] ===278) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===141) { jsonObj[i].land_norsk = 'Sveits';} if (jsonObj[i].ref_countries[0] ===141) { jsonObj[i].land_kode = {v:'CH', f:'Sveits'};} if (jsonObj[i].ref_countries[0] ===141) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===239) { jsonObj[i].land_norsk = 'Elfenbeinskysten';} if (jsonObj[i].ref_countries[0] ===239) { jsonObj[i].land_kode = {v:'CI', f:'Elfenbeinskysten'};} if (jsonObj[i].ref_countries[0] ===239) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===809) { jsonObj[i].land_norsk = 'Cookøyene';} if (jsonObj[i].ref_countries[0] ===809) { jsonObj[i].land_kode = {v:'CK', f:'Cookøyene'};} if (jsonObj[i].ref_countries[0] ===809) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===725) { jsonObj[i].land_norsk = 'Chile';} if (jsonObj[i].ref_countries[0] ===725) { jsonObj[i].land_kode = {v:'CL', f:'Chile'};} if (jsonObj[i].ref_countries[0] ===725) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===270) { jsonObj[i].land_norsk = 'Kamerun';} if (jsonObj[i].ref_countries[0] ===270) { jsonObj[i].land_kode = {v:'CM', f:'Kamerun'};} if (jsonObj[i].ref_countries[0] ===270) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===484) { jsonObj[i].land_norsk = 'Kina';} if (jsonObj[i].ref_countries[0] ===484) { jsonObj[i].land_kode = {v:'CN', f:'Kina'};} if (jsonObj[i].ref_countries[0] ===484) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===730) { jsonObj[i].land_norsk = 'Colombia';} if (jsonObj[i].ref_countries[0] ===730) { jsonObj[i].land_kode = {v:'CO', f:'Colombia'};} if (jsonObj[i].ref_countries[0] ===730) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===616) { jsonObj[i].land_norsk = 'Costa Rica';} if (jsonObj[i].ref_countries[0] ===616) { jsonObj[i].land_kode = {v:'CR', f:'Costa Rica'};} if (jsonObj[i].ref_countries[0] ===616) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===620) { jsonObj[i].land_norsk = 'Cuba';} if (jsonObj[i].ref_countries[0] ===620) { jsonObj[i].land_kode = {v:'CU', f:'Cuba'};} if (jsonObj[i].ref_countries[0] ===620) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===273) { jsonObj[i].land_norsk = 'Kapp Verde';} if (jsonObj[i].ref_countries[0] ===273) { jsonObj[i].land_kode = {v:'CV', f:'Kapp Verde'};} if (jsonObj[i].ref_countries[0] ===273) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===661) { jsonObj[i].land_norsk = 'Curaçao';} if (jsonObj[i].ref_countries[0] ===661) { jsonObj[i].land_kode = {v:'CW', f:'Curaçao'};} if (jsonObj[i].ref_countries[0] ===661) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===807) { jsonObj[i].land_norsk = 'Christmasøya';} if (jsonObj[i].ref_countries[0] ===807) { jsonObj[i].land_kode = {v:'CX', f:'Christmasøya'};} if (jsonObj[i].ref_countries[0] ===807) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===500) { jsonObj[i].land_norsk = 'Kypros';} if (jsonObj[i].ref_countries[0] ===500) { jsonObj[i].land_kode = {v:'CY', f:'Kypros'};} if (jsonObj[i].ref_countries[0] ===500) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===158) { jsonObj[i].land_norsk = 'Tsjekkia';} if (jsonObj[i].ref_countries[0] ===158) { jsonObj[i].land_kode = {v:'CZ', f:'Tsjekkia'};} if (jsonObj[i].ref_countries[0] ===158) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===144) { jsonObj[i].land_norsk = 'Tyskland';} if (jsonObj[i].ref_countries[0] ===144) { jsonObj[i].land_kode = {v:'DE', f:'Tyskland'};} if (jsonObj[i].ref_countries[0] ===144) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===250) { jsonObj[i].land_norsk = 'Djibouti';} if (jsonObj[i].ref_countries[0] ===250) { jsonObj[i].land_kode = {v:'DJ', f:'Djibouti'};} if (jsonObj[i].ref_countries[0] ===250) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===101) { jsonObj[i].land_norsk = 'Danmark';} if (jsonObj[i].ref_countries[0] ===101) { jsonObj[i].land_kode = {v:'DK', f:'Danmark'};} if (jsonObj[i].ref_countries[0] ===101) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===622) { jsonObj[i].land_norsk = 'Dominica';} if (jsonObj[i].ref_countries[0] ===622) { jsonObj[i].land_kode = {v:'DM', f:'Dominica'};} if (jsonObj[i].ref_countries[0] ===622) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===624) { jsonObj[i].land_norsk = 'Den dominikanske republikk';} if (jsonObj[i].ref_countries[0] ===624) { jsonObj[i].land_kode = {v:'DO', f:'Den dominikanske republikk'};} if (jsonObj[i].ref_countries[0] ===624) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===203) { jsonObj[i].land_norsk = 'Algerie';} if (jsonObj[i].ref_countries[0] ===203) { jsonObj[i].land_kode = {v:'DZ', f:'Algerie'};} if (jsonObj[i].ref_countries[0] ===203) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===735) { jsonObj[i].land_norsk = 'Ecuador';} if (jsonObj[i].ref_countries[0] ===735) { jsonObj[i].land_kode = {v:'EC', f:'Ecuador'};} if (jsonObj[i].ref_countries[0] ===735) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===115) { jsonObj[i].land_norsk = 'Estland';} if (jsonObj[i].ref_countries[0] ===115) { jsonObj[i].land_kode = {v:'EE', f:'Estland'};} if (jsonObj[i].ref_countries[0] ===115) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===249) { jsonObj[i].land_norsk = 'Egypt';} if (jsonObj[i].ref_countries[0] ===249) { jsonObj[i].land_kode = {v:'EG', f:'Egypt'};} if (jsonObj[i].ref_countries[0] ===249) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===304) { jsonObj[i].land_norsk = 'Vest-Sahara';} if (jsonObj[i].ref_countries[0] ===304) { jsonObj[i].land_kode = {v:'EH', f:'Vest-Sahara'};} if (jsonObj[i].ref_countries[0] ===304) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===241) { jsonObj[i].land_norsk = 'Eritrea';} if (jsonObj[i].ref_countries[0] ===241) { jsonObj[i].land_kode = {v:'ER', f:'Eritrea'};} if (jsonObj[i].ref_countries[0] ===241) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===137) { jsonObj[i].land_norsk = 'Spania';} if (jsonObj[i].ref_countries[0] ===137) { jsonObj[i].land_kode = {v:'ES', f:'Spania'};} if (jsonObj[i].ref_countries[0] ===137) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===246) { jsonObj[i].land_norsk = 'Etiopia';} if (jsonObj[i].ref_countries[0] ===246) { jsonObj[i].land_kode = {v:'ET', f:'Etiopia'};} if (jsonObj[i].ref_countries[0] ===246) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===103) { jsonObj[i].land_norsk = 'Finland';} if (jsonObj[i].ref_countries[0] ===103) { jsonObj[i].land_kode = {v:'FI', f:'Finland'};} if (jsonObj[i].ref_countries[0] ===103) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===811) { jsonObj[i].land_norsk = 'Fiji';} if (jsonObj[i].ref_countries[0] ===811) { jsonObj[i].land_kode = {v:'FJ', f:'Fiji'};} if (jsonObj[i].ref_countries[0] ===811) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===740) { jsonObj[i].land_norsk = 'Falklandsøyene';} if (jsonObj[i].ref_countries[0] ===740) { jsonObj[i].land_kode = {v:'FK', f:'Falklandsøyene'};} if (jsonObj[i].ref_countries[0] ===740) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===826) { jsonObj[i].land_norsk = 'Mikronesiaføderasjonen';} if (jsonObj[i].ref_countries[0] ===826) { jsonObj[i].land_kode = {v:'FM', f:'Mikronesiaføderasjonen'};} if (jsonObj[i].ref_countries[0] ===826) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===104) { jsonObj[i].land_norsk = 'Færøyene';} if (jsonObj[i].ref_countries[0] ===104) { jsonObj[i].land_kode = {v:'FO', f:'Færøyene'};} if (jsonObj[i].ref_countries[0] ===104) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===117) { jsonObj[i].land_norsk = 'Frankrike';} if (jsonObj[i].ref_countries[0] ===117) { jsonObj[i].land_kode = {v:'FR', f:'Frankrike'};} if (jsonObj[i].ref_countries[0] ===117) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===254) { jsonObj[i].land_norsk = 'Gabon';} if (jsonObj[i].ref_countries[0] ===254) { jsonObj[i].land_kode = {v:'GA', f:'Gabon'};} if (jsonObj[i].ref_countries[0] ===254) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===139) { jsonObj[i].land_norsk = 'Storbritannia';} if (jsonObj[i].ref_countries[0] ===139) { jsonObj[i].land_kode = {v:'GB', f:'Storbritannia'};} if (jsonObj[i].ref_countries[0] ===139) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===629) { jsonObj[i].land_norsk = 'Grenada';} if (jsonObj[i].ref_countries[0] ===629) { jsonObj[i].land_kode = {v:'GD', f:'Grenada'};} if (jsonObj[i].ref_countries[0] ===629) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===430) { jsonObj[i].land_norsk = 'Georgia';} if (jsonObj[i].ref_countries[0] ===430) { jsonObj[i].land_kode = {v:'GE', f:'Georgia'};} if (jsonObj[i].ref_countries[0] ===430) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===745) { jsonObj[i].land_norsk = 'Fransk Guyana';} if (jsonObj[i].ref_countries[0] ===745) { jsonObj[i].land_kode = {v:'GF', f:'Fransk Guyana'};} if (jsonObj[i].ref_countries[0] ===745) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===162) { jsonObj[i].land_norsk = 'Guernsey';} if (jsonObj[i].ref_countries[0] ===162) { jsonObj[i].land_kode = {v:'GG', f:'Guernsey'};} if (jsonObj[i].ref_countries[0] ===162) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===260) { jsonObj[i].land_norsk = 'Ghana';} if (jsonObj[i].ref_countries[0] ===260) { jsonObj[i].land_kode = {v:'GH', f:'Ghana'};} if (jsonObj[i].ref_countries[0] ===260) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===118) { jsonObj[i].land_norsk = 'Gibraltar';} if (jsonObj[i].ref_countries[0] ===118) { jsonObj[i].land_kode = {v:'GI', f:'Gibraltar'};} if (jsonObj[i].ref_countries[0] ===118) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===102) { jsonObj[i].land_norsk = 'Grønland';} if (jsonObj[i].ref_countries[0] ===102) { jsonObj[i].land_kode = {v:'GL', f:'Grønland'};} if (jsonObj[i].ref_countries[0] ===102) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===256) { jsonObj[i].land_norsk = 'Gambia';} if (jsonObj[i].ref_countries[0] ===256) { jsonObj[i].land_kode = {v:'GM', f:'Gambia'};} if (jsonObj[i].ref_countries[0] ===256) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===264) { jsonObj[i].land_norsk = 'Guinea';} if (jsonObj[i].ref_countries[0] ===264) { jsonObj[i].land_kode = {v:'GN', f:'Guinea'};} if (jsonObj[i].ref_countries[0] ===264) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===631) { jsonObj[i].land_norsk = 'Guadeloupe';} if (jsonObj[i].ref_countries[0] ===631) { jsonObj[i].land_kode = {v:'GP', f:'Guadeloupe'};} if (jsonObj[i].ref_countries[0] ===631) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===235) { jsonObj[i].land_norsk = 'Ekvatorial-Guinea';} if (jsonObj[i].ref_countries[0] ===235) { jsonObj[i].land_kode = {v:'GQ', f:'Ekvatorial-Guinea'};} if (jsonObj[i].ref_countries[0] ===235) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===119) { jsonObj[i].land_norsk = 'Hellas';} if (jsonObj[i].ref_countries[0] ===119) { jsonObj[i].land_kode = {v:'GR', f:'Hellas'};} if (jsonObj[i].ref_countries[0] ===119) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===632) { jsonObj[i].land_norsk = 'Guatemala';} if (jsonObj[i].ref_countries[0] ===632) { jsonObj[i].land_kode = {v:'GT', f:'Guatemala'};} if (jsonObj[i].ref_countries[0] ===632) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===817) { jsonObj[i].land_norsk = 'Guam';} if (jsonObj[i].ref_countries[0] ===817) { jsonObj[i].land_kode = {v:'GU', f:'Guam'};} if (jsonObj[i].ref_countries[0] ===817) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===266) { jsonObj[i].land_norsk = 'Guinea-Bissau';} if (jsonObj[i].ref_countries[0] ===266) { jsonObj[i].land_kode = {v:'GW', f:'Guinea-Bissau'};} if (jsonObj[i].ref_countries[0] ===266) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===720) { jsonObj[i].land_norsk = 'Guyana';} if (jsonObj[i].ref_countries[0] ===720) { jsonObj[i].land_kode = {v:'GY', f:'Guyana'};} if (jsonObj[i].ref_countries[0] ===720) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===436) { jsonObj[i].land_norsk = 'Hongkong';} if (jsonObj[i].ref_countries[0] ===436) { jsonObj[i].land_kode = {v:'HK', f:'Hongkong'};} if (jsonObj[i].ref_countries[0] ===436) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===644) { jsonObj[i].land_norsk = 'Honduras';} if (jsonObj[i].ref_countries[0] ===644) { jsonObj[i].land_kode = {v:'HN', f:'Honduras'};} if (jsonObj[i].ref_countries[0] ===644) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===122) { jsonObj[i].land_norsk = 'Kroatia';} if (jsonObj[i].ref_countries[0] ===122) { jsonObj[i].land_kode = {v:'HR', f:'Kroatia'};} if (jsonObj[i].ref_countries[0] ===122) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===636) { jsonObj[i].land_norsk = 'Haiti';} if (jsonObj[i].ref_countries[0] ===636) { jsonObj[i].land_kode = {v:'HT', f:'Haiti'};} if (jsonObj[i].ref_countries[0] ===636) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===152) { jsonObj[i].land_norsk = 'Ungarn';} if (jsonObj[i].ref_countries[0] ===152) { jsonObj[i].land_kode = {v:'HU', f:'Ungarn'};} if (jsonObj[i].ref_countries[0] ===152) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===448) { jsonObj[i].land_norsk = 'Indonesia';} if (jsonObj[i].ref_countries[0] ===448) { jsonObj[i].land_kode = {v:'ID', f:'Indonesia'};} if (jsonObj[i].ref_countries[0] ===448) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===121) { jsonObj[i].land_norsk = 'Irland';} if (jsonObj[i].ref_countries[0] ===121) { jsonObj[i].land_kode = {v:'IE', f:'Irland'};} if (jsonObj[i].ref_countries[0] ===121) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===460) { jsonObj[i].land_norsk = 'Israel';} if (jsonObj[i].ref_countries[0] ===460) { jsonObj[i].land_kode = {v:'IL', f:'Israel'};} if (jsonObj[i].ref_countries[0] ===460) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===164) { jsonObj[i].land_norsk = 'Man';} if (jsonObj[i].ref_countries[0] ===164) { jsonObj[i].land_kode = {v:'IM', f:'Man'};} if (jsonObj[i].ref_countries[0] ===164) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===444) { jsonObj[i].land_norsk = 'India';} if (jsonObj[i].ref_countries[0] ===444) { jsonObj[i].land_kode = {v:'IN', f:'India'};} if (jsonObj[i].ref_countries[0] ===444) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===213) { jsonObj[i].land_norsk = 'Det britiske territorium i Indiahavet';} if (jsonObj[i].ref_countries[0] ===213) { jsonObj[i].land_kode = {v:'IO', f:'Det britiske territorium i Indiahavet'};} if (jsonObj[i].ref_countries[0] ===213) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===452) { jsonObj[i].land_norsk = 'Irak';} if (jsonObj[i].ref_countries[0] ===452) { jsonObj[i].land_kode = {v:'IQ', f:'Irak'};} if (jsonObj[i].ref_countries[0] ===452) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===456) { jsonObj[i].land_norsk = 'Iran';} if (jsonObj[i].ref_countries[0] ===456) { jsonObj[i].land_kode = {v:'IR', f:'Iran'};} if (jsonObj[i].ref_countries[0] ===456) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===105) { jsonObj[i].land_norsk = 'Island';} if (jsonObj[i].ref_countries[0] ===105) { jsonObj[i].land_kode = {v:'IS', f:'Island'};} if (jsonObj[i].ref_countries[0] ===105) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===123) { jsonObj[i].land_norsk = 'Italia';} if (jsonObj[i].ref_countries[0] ===123) { jsonObj[i].land_kode = {v:'IT', f:'Italia'};} if (jsonObj[i].ref_countries[0] ===123) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===163) { jsonObj[i].land_norsk = 'Jersey';} if (jsonObj[i].ref_countries[0] ===163) { jsonObj[i].land_kode = {v:'JE', f:'Jersey'};} if (jsonObj[i].ref_countries[0] ===163) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===648) { jsonObj[i].land_norsk = 'Jamaica';} if (jsonObj[i].ref_countries[0] ===648) { jsonObj[i].land_kode = {v:'JM', f:'Jamaica'};} if (jsonObj[i].ref_countries[0] ===648) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===476) { jsonObj[i].land_norsk = 'Jordan';} if (jsonObj[i].ref_countries[0] ===476) { jsonObj[i].land_kode = {v:'JO', f:'Jordan'};} if (jsonObj[i].ref_countries[0] ===476) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===464) { jsonObj[i].land_norsk = 'Japan';} if (jsonObj[i].ref_countries[0] ===464) { jsonObj[i].land_kode = {v:'JP', f:'Japan'};} if (jsonObj[i].ref_countries[0] ===464) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===276) { jsonObj[i].land_norsk = 'Kenya';} if (jsonObj[i].ref_countries[0] ===276) { jsonObj[i].land_kode = {v:'KE', f:'Kenya'};} if (jsonObj[i].ref_countries[0] ===276) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===502) { jsonObj[i].land_norsk = 'Kirgisistan';} if (jsonObj[i].ref_countries[0] ===502) { jsonObj[i].land_kode = {v:'KG', f:'Kirgisistan'};} if (jsonObj[i].ref_countries[0] ===502) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===478) { jsonObj[i].land_norsk = 'Kambodsja';} if (jsonObj[i].ref_countries[0] ===478) { jsonObj[i].land_kode = {v:'KH', f:'Kambodsja'};} if (jsonObj[i].ref_countries[0] ===478) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===815) { jsonObj[i].land_norsk = 'Kiribati';} if (jsonObj[i].ref_countries[0] ===815) { jsonObj[i].land_kode = {v:'KI', f:'Kiribati'};} if (jsonObj[i].ref_countries[0] ===815) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===220) { jsonObj[i].land_norsk = 'Komorene';} if (jsonObj[i].ref_countries[0] ===220) { jsonObj[i].land_kode = {v:'KM', f:'Komorene'};} if (jsonObj[i].ref_countries[0] ===220) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===677) { jsonObj[i].land_norsk = 'St. Kitts og Nevis';} if (jsonObj[i].ref_countries[0] ===677) { jsonObj[i].land_kode = {v:'KN', f:'St. Kitts og Nevis'};} if (jsonObj[i].ref_countries[0] ===677) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===488) { jsonObj[i].land_norsk = 'Nord-Korea';} if (jsonObj[i].ref_countries[0] ===488) { jsonObj[i].land_kode = {v:'KP', f:'Nord-Korea'};} if (jsonObj[i].ref_countries[0] ===488) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===492) { jsonObj[i].land_norsk = 'Sør-Korea';} if (jsonObj[i].ref_countries[0] ===492) { jsonObj[i].land_kode = {v:'KR', f:'Sør-Korea'};} if (jsonObj[i].ref_countries[0] ===492) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===496) { jsonObj[i].land_norsk = 'Kuwait';} if (jsonObj[i].ref_countries[0] ===496) { jsonObj[i].land_kode = {v:'KW', f:'Kuwait'};} if (jsonObj[i].ref_countries[0] ===496) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===613) { jsonObj[i].land_norsk = 'Caymanøyene';} if (jsonObj[i].ref_countries[0] ===613) { jsonObj[i].land_kode = {v:'KY', f:'Caymanøyene'};} if (jsonObj[i].ref_countries[0] ===613) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===480) { jsonObj[i].land_norsk = 'Kasakhstan';} if (jsonObj[i].ref_countries[0] ===480) { jsonObj[i].land_kode = {v:'KZ', f:'Kasakhstan'};} if (jsonObj[i].ref_countries[0] ===480) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===504) { jsonObj[i].land_norsk = 'Laos';} if (jsonObj[i].ref_countries[0] ===504) { jsonObj[i].land_kode = {v:'LA', f:'Laos'};} if (jsonObj[i].ref_countries[0] ===504) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===508) { jsonObj[i].land_norsk = 'Libanon';} if (jsonObj[i].ref_countries[0] ===508) { jsonObj[i].land_kode = {v:'LB', f:'Libanon'};} if (jsonObj[i].ref_countries[0] ===508) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===678) { jsonObj[i].land_norsk = 'St. Lucia';} if (jsonObj[i].ref_countries[0] ===678) { jsonObj[i].land_kode = {v:'LC', f:'St. Lucia'};} if (jsonObj[i].ref_countries[0] ===678) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===128) { jsonObj[i].land_norsk = 'Liechtenstein';} if (jsonObj[i].ref_countries[0] ===128) { jsonObj[i].land_kode = {v:'LI', f:'Liechtenstein'};} if (jsonObj[i].ref_countries[0] ===128) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===424) { jsonObj[i].land_norsk = 'Sri Lanka';} if (jsonObj[i].ref_countries[0] ===424) { jsonObj[i].land_kode = {v:'LK', f:'Sri Lanka'};} if (jsonObj[i].ref_countries[0] ===424) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===283) { jsonObj[i].land_norsk = 'Liberia';} if (jsonObj[i].ref_countries[0] ===283) { jsonObj[i].land_kode = {v:'LR', f:'Liberia'};} if (jsonObj[i].ref_countries[0] ===283) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===281) { jsonObj[i].land_norsk = 'Lesotho';} if (jsonObj[i].ref_countries[0] ===281) { jsonObj[i].land_kode = {v:'LS', f:'Lesotho'};} if (jsonObj[i].ref_countries[0] ===281) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===136) { jsonObj[i].land_norsk = 'Litauen';} if (jsonObj[i].ref_countries[0] ===136) { jsonObj[i].land_kode = {v:'LT', f:'Litauen'};} if (jsonObj[i].ref_countries[0] ===136) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===129) { jsonObj[i].land_norsk = 'Luxembourg';} if (jsonObj[i].ref_countries[0] ===129) { jsonObj[i].land_kode = {v:'LU', f:'Luxembourg'};} if (jsonObj[i].ref_countries[0] ===129) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===124) { jsonObj[i].land_norsk = 'Latvia';} if (jsonObj[i].ref_countries[0] ===124) { jsonObj[i].land_kode = {v:'LV', f:'Latvia'};} if (jsonObj[i].ref_countries[0] ===124) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===286) { jsonObj[i].land_norsk = 'Libya';} if (jsonObj[i].ref_countries[0] ===286) { jsonObj[i].land_kode = {v:'LY', f:'Libya'};} if (jsonObj[i].ref_countries[0] ===286) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===303) { jsonObj[i].land_norsk = 'Marokko';} if (jsonObj[i].ref_countries[0] ===303) { jsonObj[i].land_kode = {v:'MA', f:'Marokko'};} if (jsonObj[i].ref_countries[0] ===303) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===130) { jsonObj[i].land_norsk = 'Monaco';} if (jsonObj[i].ref_countries[0] ===130) { jsonObj[i].land_kode = {v:'MC', f:'Monaco'};} if (jsonObj[i].ref_countries[0] ===130) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===138) { jsonObj[i].land_norsk = 'Moldova';} if (jsonObj[i].ref_countries[0] ===138) { jsonObj[i].land_kode = {v:'MD', f:'Moldova'};} if (jsonObj[i].ref_countries[0] ===138) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===160) { jsonObj[i].land_norsk = 'Montenegro';} if (jsonObj[i].ref_countries[0] ===160) { jsonObj[i].land_kode = {v:'ME', f:'Montenegro'};} if (jsonObj[i].ref_countries[0] ===160) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===686) { jsonObj[i].land_norsk = 'Saint-Martin (FR)';} if (jsonObj[i].ref_countries[0] ===686) { jsonObj[i].land_kode = {v:'MF', f:'Saint-Martin (FR)'};} if (jsonObj[i].ref_countries[0] ===686) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===289) { jsonObj[i].land_norsk = 'Madagaskar';} if (jsonObj[i].ref_countries[0] ===289) { jsonObj[i].land_kode = {v:'MG', f:'Madagaskar'};} if (jsonObj[i].ref_countries[0] ===289) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===835) { jsonObj[i].land_norsk = 'Marshalløyene';} if (jsonObj[i].ref_countries[0] ===835) { jsonObj[i].land_kode = {v:'MH', f:'Marshalløyene'};} if (jsonObj[i].ref_countries[0] ===835) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===156) { jsonObj[i].land_norsk = 'Nord-Makedonia';} if (jsonObj[i].ref_countries[0] ===156) { jsonObj[i].land_kode = {v:'MK', f:'Nord-Makedonia'};} if (jsonObj[i].ref_countries[0] ===156) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===299) { jsonObj[i].land_norsk = 'Mali';} if (jsonObj[i].ref_countries[0] ===299) { jsonObj[i].land_kode = {v:'ML', f:'Mali'};} if (jsonObj[i].ref_countries[0] ===299) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===420) { jsonObj[i].land_norsk = 'Myanmar';} if (jsonObj[i].ref_countries[0] ===420) { jsonObj[i].land_kode = {v:'MM', f:'Myanmar'};} if (jsonObj[i].ref_countries[0] ===420) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===516) { jsonObj[i].land_norsk = 'Mongolia';} if (jsonObj[i].ref_countries[0] ===516) { jsonObj[i].land_kode = {v:'MN', f:'Mongolia'};} if (jsonObj[i].ref_countries[0] ===516) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===510) { jsonObj[i].land_norsk = 'Macao';} if (jsonObj[i].ref_countries[0] ===510) { jsonObj[i].land_kode = {v:'MO', f:'Macao'};} if (jsonObj[i].ref_countries[0] ===510) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===840) { jsonObj[i].land_norsk = 'Nord-Marianene';} if (jsonObj[i].ref_countries[0] ===840) { jsonObj[i].land_kode = {v:'MP', f:'Nord-Marianene'};} if (jsonObj[i].ref_countries[0] ===840) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===650) { jsonObj[i].land_norsk = 'Martinique';} if (jsonObj[i].ref_countries[0] ===650) { jsonObj[i].land_kode = {v:'MQ', f:'Martinique'};} if (jsonObj[i].ref_countries[0] ===650) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===306) { jsonObj[i].land_norsk = 'Mauritania';} if (jsonObj[i].ref_countries[0] ===306) { jsonObj[i].land_kode = {v:'MR', f:'Mauritania'};} if (jsonObj[i].ref_countries[0] ===306) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===654) { jsonObj[i].land_norsk = 'Montserrat';} if (jsonObj[i].ref_countries[0] ===654) { jsonObj[i].land_kode = {v:'MS', f:'Montserrat'};} if (jsonObj[i].ref_countries[0] ===654) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===126) { jsonObj[i].land_norsk = 'Malta';} if (jsonObj[i].ref_countries[0] ===126) { jsonObj[i].land_kode = {v:'MT', f:'Malta'};} if (jsonObj[i].ref_countries[0] ===126) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===307) { jsonObj[i].land_norsk = 'Mauritius';} if (jsonObj[i].ref_countries[0] ===307) { jsonObj[i].land_kode = {v:'MU', f:'Mauritius'};} if (jsonObj[i].ref_countries[0] ===307) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===513) { jsonObj[i].land_norsk = 'Maldivene';} if (jsonObj[i].ref_countries[0] ===513) { jsonObj[i].land_kode = {v:'MV', f:'Maldivene'};} if (jsonObj[i].ref_countries[0] ===513) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===296) { jsonObj[i].land_norsk = 'Malawi';} if (jsonObj[i].ref_countries[0] ===296) { jsonObj[i].land_kode = {v:'MW', f:'Malawi'};} if (jsonObj[i].ref_countries[0] ===296) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===652) { jsonObj[i].land_norsk = 'Mexico';} if (jsonObj[i].ref_countries[0] ===652) { jsonObj[i].land_kode = {v:'MX', f:'Mexico'};} if (jsonObj[i].ref_countries[0] ===652) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===512) { jsonObj[i].land_norsk = 'Malaysia';} if (jsonObj[i].ref_countries[0] ===512) { jsonObj[i].land_kode = {v:'MY', f:'Malaysia'};} if (jsonObj[i].ref_countries[0] ===512) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===319) { jsonObj[i].land_norsk = 'Mosambik';} if (jsonObj[i].ref_countries[0] ===319) { jsonObj[i].land_kode = {v:'MZ', f:'Mosambik'};} if (jsonObj[i].ref_countries[0] ===319) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===308) { jsonObj[i].land_norsk = 'Namibia';} if (jsonObj[i].ref_countries[0] ===308) { jsonObj[i].land_kode = {v:'NA', f:'Namibia'};} if (jsonObj[i].ref_countries[0] ===308) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===833) { jsonObj[i].land_norsk = 'Ny-Caledonia';} if (jsonObj[i].ref_countries[0] ===833) { jsonObj[i].land_kode = {v:'NC', f:'Ny-Caledonia'};} if (jsonObj[i].ref_countries[0] ===833) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===309) { jsonObj[i].land_norsk = 'Niger';} if (jsonObj[i].ref_countries[0] ===309) { jsonObj[i].land_kode = {v:'NE', f:'Niger'};} if (jsonObj[i].ref_countries[0] ===309) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===822) { jsonObj[i].land_norsk = 'Norfolkøya';} if (jsonObj[i].ref_countries[0] ===822) { jsonObj[i].land_kode = {v:'NF', f:'Norfolkøya'};} if (jsonObj[i].ref_countries[0] ===822) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===313) { jsonObj[i].land_norsk = 'Nigeria';} if (jsonObj[i].ref_countries[0] ===313) { jsonObj[i].land_kode = {v:'NG', f:'Nigeria'};} if (jsonObj[i].ref_countries[0] ===313) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===664) { jsonObj[i].land_norsk = 'Nicaragua';} if (jsonObj[i].ref_countries[0] ===664) { jsonObj[i].land_kode = {v:'NI', f:'Nicaragua'};} if (jsonObj[i].ref_countries[0] ===664) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===127) { jsonObj[i].land_norsk = 'Nederland';} if (jsonObj[i].ref_countries[0] ===127) { jsonObj[i].land_kode = {v:'NL', f:'Nederland'};} if (jsonObj[i].ref_countries[0] ===127) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===0) { jsonObj[i].land_norsk = 'Norge';} if (jsonObj[i].ref_countries[0] ===0) { jsonObj[i].land_kode = {v:'NO', f:'Norge'};} if (jsonObj[i].ref_countries[0] ===0) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===528) { jsonObj[i].land_norsk = 'Nepal';} if (jsonObj[i].ref_countries[0] ===528) { jsonObj[i].land_kode = {v:'NP', f:'Nepal'};} if (jsonObj[i].ref_countries[0] ===528) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===818) { jsonObj[i].land_norsk = 'Nauru';} if (jsonObj[i].ref_countries[0] ===818) { jsonObj[i].land_kode = {v:'NR', f:'Nauru'};} if (jsonObj[i].ref_countries[0] ===818) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===821) { jsonObj[i].land_norsk = 'Niue';} if (jsonObj[i].ref_countries[0] ===821) { jsonObj[i].land_kode = {v:'NU', f:'Niue'};} if (jsonObj[i].ref_countries[0] ===821) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===820) { jsonObj[i].land_norsk = 'New Zealand';} if (jsonObj[i].ref_countries[0] ===820) { jsonObj[i].land_kode = {v:'NZ', f:'New Zealand'};} if (jsonObj[i].ref_countries[0] ===820) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===520) { jsonObj[i].land_norsk = 'Oman';} if (jsonObj[i].ref_countries[0] ===520) { jsonObj[i].land_kode = {v:'OM', f:'Oman'};} if (jsonObj[i].ref_countries[0] ===520) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===668) { jsonObj[i].land_norsk = 'Panama';} if (jsonObj[i].ref_countries[0] ===668) { jsonObj[i].land_kode = {v:'PA', f:'Panama'};} if (jsonObj[i].ref_countries[0] ===668) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===760) { jsonObj[i].land_norsk = 'Peru';} if (jsonObj[i].ref_countries[0] ===760) { jsonObj[i].land_kode = {v:'PE', f:'Peru'};} if (jsonObj[i].ref_countries[0] ===760) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===814) { jsonObj[i].land_norsk = 'Fransk Polynesia';} if (jsonObj[i].ref_countries[0] ===814) { jsonObj[i].land_kode = {v:'PF', f:'Fransk Polynesia'};} if (jsonObj[i].ref_countries[0] ===814) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===827) { jsonObj[i].land_norsk = 'Papua Ny-Guinea';} if (jsonObj[i].ref_countries[0] ===827) { jsonObj[i].land_kode = {v:'PG', f:'Papua Ny-Guinea'};} if (jsonObj[i].ref_countries[0] ===827) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===428) { jsonObj[i].land_norsk = 'Filippinene';} if (jsonObj[i].ref_countries[0] ===428) { jsonObj[i].land_kode = {v:'PH', f:'Filippinene'};} if (jsonObj[i].ref_countries[0] ===428) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===534) { jsonObj[i].land_norsk = 'Pakistan';} if (jsonObj[i].ref_countries[0] ===534) { jsonObj[i].land_kode = {v:'PK', f:'Pakistan'};} if (jsonObj[i].ref_countries[0] ===534) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===131) { jsonObj[i].land_norsk = 'Polen';} if (jsonObj[i].ref_countries[0] ===131) { jsonObj[i].land_kode = {v:'PL', f:'Polen'};} if (jsonObj[i].ref_countries[0] ===131) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===676) { jsonObj[i].land_norsk = 'Saint-Pierre-et-Miquelon';} if (jsonObj[i].ref_countries[0] ===676) { jsonObj[i].land_kode = {v:'PM', f:'Saint-Pierre-et-Miquelon'};} if (jsonObj[i].ref_countries[0] ===676) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===828) { jsonObj[i].land_norsk = 'Pitcairn';} if (jsonObj[i].ref_countries[0] ===828) { jsonObj[i].land_kode = {v:'PN', f:'Pitcairn'};} if (jsonObj[i].ref_countries[0] ===828) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===685) { jsonObj[i].land_norsk = 'Puerto Rico';} if (jsonObj[i].ref_countries[0] ===685) { jsonObj[i].land_kode = {v:'PR', f:'Puerto Rico'};} if (jsonObj[i].ref_countries[0] ===685) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===524) { jsonObj[i].land_norsk = 'Palestina';} if (jsonObj[i].ref_countries[0] ===524) { jsonObj[i].land_kode = {v:'PS', f:'Palestina'};} if (jsonObj[i].ref_countries[0] ===524) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===132) { jsonObj[i].land_norsk = 'Portugal';} if (jsonObj[i].ref_countries[0] ===132) { jsonObj[i].land_kode = {v:'PT', f:'Portugal'};} if (jsonObj[i].ref_countries[0] ===132) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===839) { jsonObj[i].land_norsk = 'Palau';} if (jsonObj[i].ref_countries[0] ===839) { jsonObj[i].land_kode = {v:'PW', f:'Palau'};} if (jsonObj[i].ref_countries[0] ===839) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===755) { jsonObj[i].land_norsk = 'Paraguay';} if (jsonObj[i].ref_countries[0] ===755) { jsonObj[i].land_kode = {v:'PY', f:'Paraguay'};} if (jsonObj[i].ref_countries[0] ===755) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===540) { jsonObj[i].land_norsk = 'Qatar';} if (jsonObj[i].ref_countries[0] ===540) { jsonObj[i].land_kode = {v:'QA', f:'Qatar'};} if (jsonObj[i].ref_countries[0] ===540) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===323) { jsonObj[i].land_norsk = 'Réunion';} if (jsonObj[i].ref_countries[0] ===323) { jsonObj[i].land_kode = {v:'RE', f:'Réunion'};} if (jsonObj[i].ref_countries[0] ===323) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===133) { jsonObj[i].land_norsk = 'Romania';} if (jsonObj[i].ref_countries[0] ===133) { jsonObj[i].land_kode = {v:'RO', f:'Romania'};} if (jsonObj[i].ref_countries[0] ===133) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===159) { jsonObj[i].land_norsk = 'Serbia';} if (jsonObj[i].ref_countries[0] ===159) { jsonObj[i].land_kode = {v:'RS', f:'Serbia'};} if (jsonObj[i].ref_countries[0] ===159) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===140) { jsonObj[i].land_norsk = 'Russland';} if (jsonObj[i].ref_countries[0] ===140) { jsonObj[i].land_kode = {v:'RU', f:'Russland'};} if (jsonObj[i].ref_countries[0] ===140) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===329) { jsonObj[i].land_norsk = 'Rwanda';} if (jsonObj[i].ref_countries[0] ===329) { jsonObj[i].land_kode = {v:'RW', f:'Rwanda'};} if (jsonObj[i].ref_countries[0] ===329) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===544) { jsonObj[i].land_norsk = 'Saudi-Arabia';} if (jsonObj[i].ref_countries[0] ===544) { jsonObj[i].land_kode = {v:'SA', f:'Saudi-Arabia'};} if (jsonObj[i].ref_countries[0] ===544) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===806) { jsonObj[i].land_norsk = 'Salomonøyene';} if (jsonObj[i].ref_countries[0] ===806) { jsonObj[i].land_kode = {v:'SB', f:'Salomonøyene'};} if (jsonObj[i].ref_countries[0] ===806) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===338) { jsonObj[i].land_norsk = 'Seychellene';} if (jsonObj[i].ref_countries[0] ===338) { jsonObj[i].land_kode = {v:'SC', f:'Seychellene'};} if (jsonObj[i].ref_countries[0] ===338) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===356) { jsonObj[i].land_norsk = 'Sudan';} if (jsonObj[i].ref_countries[0] ===356) { jsonObj[i].land_kode = {v:'SD', f:'Sudan'};} if (jsonObj[i].ref_countries[0] ===356) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===106) { jsonObj[i].land_norsk = 'Sverige';} if (jsonObj[i].ref_countries[0] ===106) { jsonObj[i].land_kode = {v:'SE', f:'Sverige'};} if (jsonObj[i].ref_countries[0] ===106) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===548) { jsonObj[i].land_norsk = 'Singapore';} if (jsonObj[i].ref_countries[0] ===548) { jsonObj[i].land_kode = {v:'SG', f:'Singapore'};} if (jsonObj[i].ref_countries[0] ===548) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===209) { jsonObj[i].land_norsk = 'Sankt Helena, Ascension og Tristan da Cunha';} if (jsonObj[i].ref_countries[0] ===209) { jsonObj[i].land_kode = {v:'SH', f:'Sankt Helena, Ascension og Tristan da Cunha'};} if (jsonObj[i].ref_countries[0] ===209) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===146) { jsonObj[i].land_norsk = 'Slovenia';} if (jsonObj[i].ref_countries[0] ===146) { jsonObj[i].land_kode = {v:'SI', f:'Slovenia'};} if (jsonObj[i].ref_countries[0] ===146) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===157) { jsonObj[i].land_norsk = 'Slovakia';} if (jsonObj[i].ref_countries[0] ===157) { jsonObj[i].land_kode = {v:'SK', f:'Slovakia'};} if (jsonObj[i].ref_countries[0] ===157) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===339) { jsonObj[i].land_norsk = 'Sierra Leone';} if (jsonObj[i].ref_countries[0] ===339) { jsonObj[i].land_kode = {v:'SL', f:'Sierra Leone'};} if (jsonObj[i].ref_countries[0] ===339) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===134) { jsonObj[i].land_norsk = 'San Marino';} if (jsonObj[i].ref_countries[0] ===134) { jsonObj[i].land_kode = {v:'SM', f:'San Marino'};} if (jsonObj[i].ref_countries[0] ===134) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===336) { jsonObj[i].land_norsk = 'Senegal';} if (jsonObj[i].ref_countries[0] ===336) { jsonObj[i].land_kode = {v:'SN', f:'Senegal'};} if (jsonObj[i].ref_countries[0] ===336) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===346) { jsonObj[i].land_norsk = 'Somalia';} if (jsonObj[i].ref_countries[0] ===346) { jsonObj[i].land_kode = {v:'SO', f:'Somalia'};} if (jsonObj[i].ref_countries[0] ===346) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===765) { jsonObj[i].land_norsk = 'Surinam';} if (jsonObj[i].ref_countries[0] ===765) { jsonObj[i].land_kode = {v:'SR', f:'Surinam'};} if (jsonObj[i].ref_countries[0] ===765) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===355) { jsonObj[i].land_norsk = 'Sør-Sudan';} if (jsonObj[i].ref_countries[0] ===355) { jsonObj[i].land_kode = {v:'SS', f:'Sør-Sudan'};} if (jsonObj[i].ref_countries[0] ===355) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===333) { jsonObj[i].land_norsk = 'São Tomé og Príncipe';} if (jsonObj[i].ref_countries[0] ===333) { jsonObj[i].land_kode = {v:'ST', f:'São Tomé og Príncipe'};} if (jsonObj[i].ref_countries[0] ===333) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===672) { jsonObj[i].land_norsk = 'El Salvador';} if (jsonObj[i].ref_countries[0] ===672) { jsonObj[i].land_kode = {v:'SV', f:'El Salvador'};} if (jsonObj[i].ref_countries[0] ===672) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===658) { jsonObj[i].land_norsk = 'Sint Maarten (NL)';} if (jsonObj[i].ref_countries[0] ===658) { jsonObj[i].land_kode = {v:'SX', f:'Sint Maarten (NL)'};} if (jsonObj[i].ref_countries[0] ===658) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===564) { jsonObj[i].land_norsk = 'Syria';} if (jsonObj[i].ref_countries[0] ===564) { jsonObj[i].land_kode = {v:'SY', f:'Syria'};} if (jsonObj[i].ref_countries[0] ===564) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===357) { jsonObj[i].land_norsk = 'Eswatini';} if (jsonObj[i].ref_countries[0] ===357) { jsonObj[i].land_kode = {v:'SZ', f:'Eswatini'};} if (jsonObj[i].ref_countries[0] ===357) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===681) { jsonObj[i].land_norsk = 'Turks- og Caicosøyene';} if (jsonObj[i].ref_countries[0] ===681) { jsonObj[i].land_kode = {v:'TC', f:'Turks- og Caicosøyene'};} if (jsonObj[i].ref_countries[0] ===681) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===373) { jsonObj[i].land_norsk = 'Tsjad';} if (jsonObj[i].ref_countries[0] ===373) { jsonObj[i].land_kode = {v:'TD', f:'Tsjad'};} if (jsonObj[i].ref_countries[0] ===373) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===376) { jsonObj[i].land_norsk = 'Togo';} if (jsonObj[i].ref_countries[0] ===376) { jsonObj[i].land_kode = {v:'TG', f:'Togo'};} if (jsonObj[i].ref_countries[0] ===376) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===568) { jsonObj[i].land_norsk = 'Thailand';} if (jsonObj[i].ref_countries[0] ===568) { jsonObj[i].land_kode = {v:'TH', f:'Thailand'};} if (jsonObj[i].ref_countries[0] ===568) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===550) { jsonObj[i].land_norsk = 'Tadsjikistan';} if (jsonObj[i].ref_countries[0] ===550) { jsonObj[i].land_kode = {v:'TJ', f:'Tadsjikistan'};} if (jsonObj[i].ref_countries[0] ===550) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===829) { jsonObj[i].land_norsk = 'Tokelau';} if (jsonObj[i].ref_countries[0] ===829) { jsonObj[i].land_kode = {v:'TK', f:'Tokelau'};} if (jsonObj[i].ref_countries[0] ===829) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===537) { jsonObj[i].land_norsk = 'Øst-Timor';} if (jsonObj[i].ref_countries[0] ===537) { jsonObj[i].land_kode = {v:'TL', f:'Øst-Timor'};} if (jsonObj[i].ref_countries[0] ===537) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===552) { jsonObj[i].land_norsk = 'Turkmenistan';} if (jsonObj[i].ref_countries[0] ===552) { jsonObj[i].land_kode = {v:'TM', f:'Turkmenistan'};} if (jsonObj[i].ref_countries[0] ===552) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===379) { jsonObj[i].land_norsk = 'Tunisia';} if (jsonObj[i].ref_countries[0] ===379) { jsonObj[i].land_kode = {v:'TN', f:'Tunisia'};} if (jsonObj[i].ref_countries[0] ===379) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===813) { jsonObj[i].land_norsk = 'Tonga';} if (jsonObj[i].ref_countries[0] ===813) { jsonObj[i].land_kode = {v:'TO', f:'Tonga'};} if (jsonObj[i].ref_countries[0] ===813) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===143) { jsonObj[i].land_norsk = 'Tyrkia';} if (jsonObj[i].ref_countries[0] ===143) { jsonObj[i].land_kode = {v:'TR', f:'Tyrkia'};} if (jsonObj[i].ref_countries[0] ===143) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===680) { jsonObj[i].land_norsk = 'Trinidad og Tobago';} if (jsonObj[i].ref_countries[0] ===680) { jsonObj[i].land_kode = {v:'TT', f:'Trinidad og Tobago'};} if (jsonObj[i].ref_countries[0] ===680) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===816) { jsonObj[i].land_norsk = 'Tuvalu';} if (jsonObj[i].ref_countries[0] ===816) { jsonObj[i].land_kode = {v:'TV', f:'Tuvalu'};} if (jsonObj[i].ref_countries[0] ===816) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===432) { jsonObj[i].land_norsk = 'Taiwan';} if (jsonObj[i].ref_countries[0] ===432) { jsonObj[i].land_kode = {v:'TW', f:'Taiwan'};} if (jsonObj[i].ref_countries[0] ===432) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===369) { jsonObj[i].land_norsk = 'Tanzania';} if (jsonObj[i].ref_countries[0] ===369) { jsonObj[i].land_kode = {v:'TZ', f:'Tanzania'};} if (jsonObj[i].ref_countries[0] ===369) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===148) { jsonObj[i].land_norsk = 'Ukraina';} if (jsonObj[i].ref_countries[0] ===148) { jsonObj[i].land_kode = {v:'UA', f:'Ukraina'};} if (jsonObj[i].ref_countries[0] ===148) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===386) { jsonObj[i].land_norsk = 'Uganda';} if (jsonObj[i].ref_countries[0] ===386) { jsonObj[i].land_kode = {v:'UG', f:'Uganda'};} if (jsonObj[i].ref_countries[0] ===386) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===819) { jsonObj[i].land_norsk = 'USAs ytre småøyer';} if (jsonObj[i].ref_countries[0] ===819) { jsonObj[i].land_kode = {v:'UM', f:'USAs ytre småøyer'};} if (jsonObj[i].ref_countries[0] ===819) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===684) { jsonObj[i].land_norsk = 'USA';} if (jsonObj[i].ref_countries[0] ===684) { jsonObj[i].land_kode = {v:'US', f:'USA'};} if (jsonObj[i].ref_countries[0] ===684) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===770) { jsonObj[i].land_norsk = 'Uruguay';} if (jsonObj[i].ref_countries[0] ===770) { jsonObj[i].land_kode = {v:'UY', f:'Uruguay'};} if (jsonObj[i].ref_countries[0] ===770) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===554) { jsonObj[i].land_norsk = 'Usbekistan';} if (jsonObj[i].ref_countries[0] ===554) { jsonObj[i].land_kode = {v:'UZ', f:'Usbekistan'};} if (jsonObj[i].ref_countries[0] ===554) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===154) { jsonObj[i].land_norsk = 'Vatikanstaten';} if (jsonObj[i].ref_countries[0] ===154) { jsonObj[i].land_kode = {v:'VA', f:'Vatikanstaten'};} if (jsonObj[i].ref_countries[0] ===154) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===679) { jsonObj[i].land_norsk = 'St. Vincent og Grenadinene';} if (jsonObj[i].ref_countries[0] ===679) { jsonObj[i].land_kode = {v:'VC', f:'St. Vincent og Grenadinene'};} if (jsonObj[i].ref_countries[0] ===679) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===775) { jsonObj[i].land_norsk = 'Venezuela';} if (jsonObj[i].ref_countries[0] ===775) { jsonObj[i].land_kode = {v:'VE', f:'Venezuela'};} if (jsonObj[i].ref_countries[0] ===775) { jsonObj[i].kontinent = 'SA';}
+if (jsonObj[i].ref_countries[0] ===608) { jsonObj[i].land_norsk = 'De britiske Jomfruøyer';} if (jsonObj[i].ref_countries[0] ===608) { jsonObj[i].land_kode = {v:'VG', f:'De britiske Jomfruøyer'};} if (jsonObj[i].ref_countries[0] ===608) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===601) { jsonObj[i].land_norsk = 'De amerikanske Jomfruøyer';} if (jsonObj[i].ref_countries[0] ===601) { jsonObj[i].land_kode = {v:'VI', f:'De amerikanske Jomfruøyer'};} if (jsonObj[i].ref_countries[0] ===601) { jsonObj[i].kontinent = 'NA';}
+if (jsonObj[i].ref_countries[0] ===575) { jsonObj[i].land_norsk = 'Vietnam';} if (jsonObj[i].ref_countries[0] ===575) { jsonObj[i].land_kode = {v:'VN', f:'Vietnam'};} if (jsonObj[i].ref_countries[0] ===575) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===812) { jsonObj[i].land_norsk = 'Vanuatu';} if (jsonObj[i].ref_countries[0] ===812) { jsonObj[i].land_kode = {v:'VU', f:'Vanuatu'};} if (jsonObj[i].ref_countries[0] ===812) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===832) { jsonObj[i].land_norsk = 'Wallis- og Futunaøyene';} if (jsonObj[i].ref_countries[0] ===832) { jsonObj[i].land_kode = {v:'WF', f:'Wallis- og Futunaøyene'};} if (jsonObj[i].ref_countries[0] ===832) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===830) { jsonObj[i].land_norsk = 'Samoa';} if (jsonObj[i].ref_countries[0] ===830) { jsonObj[i].land_kode = {v:'WS', f:'Samoa'};} if (jsonObj[i].ref_countries[0] ===830) { jsonObj[i].kontinent = 'OC';}
+if (jsonObj[i].ref_countries[0] ===161) { jsonObj[i].land_norsk = 'Kosovo';} if (jsonObj[i].ref_countries[0] ===161) { jsonObj[i].land_kode = {v:'XK', f:'Kosovo'};} if (jsonObj[i].ref_countries[0] ===161) { jsonObj[i].kontinent = 'EU';}
+if (jsonObj[i].ref_countries[0] ===578) { jsonObj[i].land_norsk = 'Jemen';} if (jsonObj[i].ref_countries[0] ===578) { jsonObj[i].land_kode = {v:'YE', f:'Jemen'};} if (jsonObj[i].ref_countries[0] ===578) { jsonObj[i].kontinent = 'AS';}
+if (jsonObj[i].ref_countries[0] ===322) { jsonObj[i].land_norsk = 'Mayotte';} if (jsonObj[i].ref_countries[0] ===322) { jsonObj[i].land_kode = {v:'YT', f:'Mayotte'};} if (jsonObj[i].ref_countries[0] ===322) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===359) { jsonObj[i].land_norsk = 'Sør-Afrika';} if (jsonObj[i].ref_countries[0] ===359) { jsonObj[i].land_kode = {v:'ZA', f:'Sør-Afrika'};} if (jsonObj[i].ref_countries[0] ===359) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===389) { jsonObj[i].land_norsk = 'Zambia';} if (jsonObj[i].ref_countries[0] ===389) { jsonObj[i].land_kode = {v:'ZM', f:'Zambia'};} if (jsonObj[i].ref_countries[0] ===389) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].ref_countries[0] ===326) { jsonObj[i].land_norsk = 'Zimbabwe';} if (jsonObj[i].ref_countries[0] ===326) { jsonObj[i].land_kode = {v:'ZW', f:'Zimbabwe'};} if (jsonObj[i].ref_countries[0] ===326) { jsonObj[i].kontinent = 'AF';}
+if (jsonObj[i].id === "901-2") { jsonObj[i].sted = "Mid-America Universities International"; }
+
+else {jsonObj[i].sted = jsonObj[i].title_no.substring(0, jsonObj[i].title_no.indexOf(" og ")) }
+
+
+}
+
+
+ return jsonObj 
+ } 
+ getData()
+
+.then(jsonObj => {
+//console.log(jsonObj)
+
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+  
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+    
+  
+})
+.then(jsonObj => {
+let meny = `<div style="display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding:10px; background-color: #fff; cursor:default; box-shadow: 0px 1px 3px #C5C5C5">
+<div onclick="verdenFunction()">Hele verden</div> 
+<div onclick="europaFunction()">Europa</div>  
+<div onclick="afrikaFunction()">Afrika</div>  
+<div onclick="asiaFunction()">Asia</div>
+<div onclick="oseaniaFunction()">Oseania</div>  
+<div onclick="amerikaFunction()">Amerika</div>  
+<div onclick="anbefaltFunction()">Anbefalte avtaler</div>
+</div>`  
+   document.getElementById("meny").innerHTML = meny;
+
+
+
+})
+function verdenFunction(){
+getData()
+
+.then(jsonObj => {
+//console.log(jsonObj)
+
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+    
+    
+   
+
+})
+}
+function europaFunction(){
+getData()
+
+.then(jsonObj => {
+var jsonObj = jsonObj.filter( element => element.kontinent =="EU")
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                region:'150',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+
+})
+}
+function afrikaFunction(){
+getData()
+
+.then(jsonObj => {
+var jsonObj = jsonObj.filter( element => element.kontinent =="AF")
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                region:'002',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+
+})
+}
+function asiaFunction(){
+getData()
+
+.then(jsonObj => {
+var jsonObj = jsonObj.filter( element => element.kontinent =="AS")
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                region:'142',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+
+})
+}
+
+function oseaniaFunction(){
+getData()
+
+.then(jsonObj => {
+var jsonObj = jsonObj.filter( element => element.kontinent =="OC")
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                region:'009',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+
+})
+}
+
+function amerikaFunction(){
+getData()
+
+.then(jsonObj => {
+let kontinent = ['SA','NA']
+
+var f = jsonObj
+//const jsonObj =  jsonObj.filter(el => { return el.category_persons[0]; });
+var jsonObj = f.filter( i => kontinent.includes( i.kontinent ) );
+
+
+const counts= jsonObj.reduce(
+  (prev, curr) => prev.some(
+    (item) => item.land_kode === curr.land_kode)  //does the county already exist ?
+      ? prev // if yes dont add to the new array
+      : prev.concat({ // if no add to the new array
+         // ...curr, 
+          akode: curr.land_kode,
+          bland: curr.land_norsk,
+          count: jsonObj.filter((item) => item.land_norsk === curr.land_norsk).length
+      }), 
+  [])
+//console.log(counts)
+//{v:"005", f:"South America"}
+var uniq = [];
+//var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+//console.log(arrFiltered);
+ 
+ var result = 
+arrFiltered.reduce(function(result, item, index) {
+  var key1 = Object.keys(item)[0]; //first property: a, b, c
+  var value1 = item[key1];
+  var key2 = Object.keys(item)[2]; //first property: a, b, c
+  var value2 = item[key2];
+  var key3 = Object.keys(item)[1]; //first property: a, b, c
+  var value3 = item[key3];
+  var obj = [];
+//  obj[value] = key1;
+  result.push([value1, value2]);
+  return result;
+}, []); //an empty array
+
+
+//console.log(result);
+ 
+ var landliste = result
+ //console.log(landliste)
+ 
+  google.charts.load('current', {
+  callback: drawVisualization,
+  packages:['geochart']
+});
+
+
+function drawVisualization() {
+     
+		var data = new google.visualization.DataTable();
+      data.addColumn({label: 'Land', id: 'Land',  textStyle: {bold: true}, role: 'tooltip', 'p': {'html': true}});
+      data.addColumn({label: 'Antall avtaler', id: 'Antall', type: 'number',  role: 'tooltip', 'p': {'html': true}});
+      data.addRows(landliste);
+
+  var view = new google.visualization.DataView(data);
+
+  var options = {
+								displayMode: 'regions',
+                legend: 'none',
+                region:'019',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: { colors: ['#c3d1d7', '#6b8e9b', '#35474d'] },
+                tooltip: { textStyle: { color: '#333333' }, 
+                                        trigger:'focus',
+                                        isHtml: true
+                        },
+    					};
+
+  var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+  google.visualization.events.addListener(chart, 'select', myClickHandler);
+  chart.draw(view, options);
+
+  function myClickHandler(){
+    var selection = chart.getSelection();
+    if (selection.length > 0) {
+      var port = data.getValue(selection[0].row, 0);
+      $("tr[data-port!=" + port+ "]").css('display', 'none');
+      $("tr[data-port=" + port+ "]").css('display', 'table-row');
+      $("tr[data-port=" + 'overskrift'+ "]").css('display', 'table-row');
+
+    } else {
+      $("tr").css('display', 'table-row');
+    }
+  }
+};
+
+	let tab1 =
+		`<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+	let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+	// Loop to access all rows
+	for (let r of jsonObj) {
+        tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+	}
+	// Setting innerHTML as tab variable
+	document.getElementById("js-head").innerHTML = tab1;
+  document.getElementById("js-moduler").innerHTML = tab;
+
+})
+}
+
+
+
+
+
+
+function fetchData() {
+  return fetch('https://mitt.uib.no/api/v1/courses/'+ lastPart)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Nettverksfeil: ' + response.status);
+      }
+      return response.json(); // Returner responsen som JSON-format
+    })
+    .catch(error => {
+      console.error('Det oppstod en feil:', error.message); // Skriver ut feilmeldingen
+      throw error; // Kast feilen videre om nødvendig
+    });
+}
+
+
+
+function anbefaltFunction() {
+        getData()
+          .then(jsonObj => {
+          var jsonObj = jsonObj
+          fetchData()
+    	  .then(fetchedData => {
+      		console.log(fetchedData); // Gjør noe med dataene hentet med fetch i den synkrone funksjonen
+    
+          var sandkasse = fetchedData.course_code;
+          console.log(sandkasse)
+          
+            //var jsonObj = jsonObj.filter(item => item.ref_programs.includes(sandkasse));
+            const filteredData = jsonObj.filter(item => {
+            return item.ref_programs.includes(sandkasse);
+})
+	    console.log(filteredData); // Sjekk filtrerte jsonObj	
+
+            const counts = filteredData.reduce(
+              (prev, curr) => prev.some(
+                (item) => item.land_kode === curr.land_kode) //does the county already exist ?
+              ?
+              prev // if yes dont add to the new array
+              :
+              prev.concat({ // if no add to the new array
+                // ...curr, 
+                akode: curr.land_kode,
+                bland: curr.land_norsk,
+                count: filteredData.filter((item) => item.land_norsk === curr.land_norsk).length
+              }),
+              [])
+            //console.log(counts)
+            //{v:"005", f:"South America"}
+            var uniq = [];
+            //var arr  = [{"id":"1"},{"id":"1"},{"id":"2"}];
+            var arrFiltered = counts.filter(obj => !uniq[obj.bland] && (uniq[obj.bland] = true));
+            //console.log(arrFiltered);
+
+            var result =
+              arrFiltered.reduce(function(result, item, index) {
+                var key1 = Object.keys(item)[0]; //first property: a, b, c
+                var value1 = item[key1];
+                var key2 = Object.keys(item)[2]; //first property: a, b, c
+                var value2 = item[key2];
+                var key3 = Object.keys(item)[1]; //first property: a, b, c
+                var value3 = item[key3];
+                var obj = [];
+                //  obj[value] = key1;
+                result.push([value1, value2]);
+                return result;
+              }, []); //an empty array
+
+
+            //console.log(result);
+
+            var landliste = result
+            //console.log(landliste)
+
+            google.charts.load('current', {
+              callback: drawVisualization,
+              packages: ['geochart']
+            });
+
+
+            function drawVisualization() {
+
+              var data = new google.visualization.DataTable();
+              data.addColumn({
+                label: 'Land',
+                id: 'Land',
+                textStyle: {
+                  bold: true
+                },
+                role: 'tooltip',
+                'p': {
+                  'html': true
+                }
+              });
+              data.addColumn({
+                label: 'Antall avtaler',
+                id: 'Antall',
+                type: 'number',
+                role: 'tooltip',
+                'p': {
+                  'html': true
+                }
+              });
+              data.addRows(landliste);
+
+              var view = new google.visualization.DataView(data);
+
+              var options = {
+                displayMode: 'regions',
+                legend: 'none',
+                //region: '150',
+                
+                
+                backgroundColor: '#0000ffff',
+                datalessRegionColor: '#f5f5f5',
+                defaultColor: '#6b8e9b',
+                colorAxis: {
+                  colors: ['#c3d1d7', '#6b8e9b', '#35474d']
+                },
+                tooltip: {
+                  textStyle: {
+                    color: '#333333'
+                  },
+                  trigger: 'focus',
+                  isHtml: true
+                },
+              };
+
+              var chart = new google.visualization.GeoChart(document.getElementById('visualization'));
+              google.visualization.events.addListener(chart, 'select', myClickHandler);
+              chart.draw(view, options);
+
+              function myClickHandler() {
+                var selection = chart.getSelection();
+                if (selection.length > 0) {
+                  var port = data.getValue(selection[0].row, 0);
+                  $("tr[data-port!=" + port + "]").css('display', 'none');
+                  $("tr[data-port=" + port + "]").css('display', 'table-row');
+                  $("tr[data-port=" + 'overskrift' + "]").css('display', 'table-row');
+
+                } else {
+                  $("tr").css('display', 'table-row');
+                }
+              }
+            }  ;
+
+            let tab1 =
+              `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>
+<thead >  
+			<tr data-port="overskrift" stype="color: #FFFFFF">
+				<th >Avtale eier</th>
+				<th >Eksternt sted</th>
+				<th >Land</th>
+				<th >Avtale-id</th>
+			</tr>
+</thead > 
+		`;
+            let tab = `<colgroup>
+      <col style="width: 270px">
+      <col style="width: 288px">
+      <col style="width: 180px">
+      <col style="width: 105px">
+      </colgrioup>`
+            // Loop to access all rows
+            for (let r of filteredData) {
+              tab += `<tr class="emner" data-port="${r.land_kode['v']}">
+    <td>${r.eier} </td>
+    <td>${r.sted}</td>
+    <td>${r.land_norsk} </td>
+    <td><a href="https://www.uib.no/utvekslingsavtale/${r.id}" target="_blank" rel="noopener noreferrer">${r.id}</a> </td>
+</tr>`;
+            }
+            // Setting innerHTML as tab variable
+            document.getElementById("js-head").innerHTML = tab1;
+            document.getElementById("js-moduler").innerHTML = tab;
+
+         })
+           })
+      }
+
+
+    </script>
+    </head>
+    <body>
+ 
+<div class="body">
+  
+
+<div class="center1" style="display: flex; align-items: center; justify-content: center;">
+    <div id="visualization" style="width: 75%; "></div>
+
+    
+</div>
+
+<div id="tableFixHead">
+
+      <table id="js-head" class="emner">  
+      </table>
+      <table id="js-moduler" class="emner" style="background-color: #fff">  
+      </table>
+</div>
+
+</div>
+
+<div id="meny" style="margin:20px"></div>  
+
+
+    </body>
+    </html>
