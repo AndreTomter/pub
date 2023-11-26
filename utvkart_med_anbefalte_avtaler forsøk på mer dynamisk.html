@@ -7,7 +7,7 @@ body {
   /* overflow: hidden !important; */ /* Hide scrollbars */
 
 }
-
+#meny2{display:inline-block; position: absolute; border:solid 1px #C5C5C5; padding-top:10px;padding-bottom:10px;padding-left:10px;padding-right:7px; background: rgba(255, 255, 255, 0.5); cursor:default; box-shadow: 0px 1px 3px #C5C5C5} #meny2:hover{background-color: #fff;} #js-moduler{max-height: 500px ;overflow: scroll;display: inline-block;padding-bottom: 10px;overflow-x: hidden !important;}
 #meny{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
@@ -595,8 +595,8 @@ window.parent.postMessage({ subject: "lti.fetchWindowSize" }, "*");
 window.addEventListener('message', function(event) {
 	var data = event.data;
 	var wh = data.height;
-	console.log(data)
-	var hcalc = wh-699;
+	
+	var hcalc = wh-650;
 	var hoyde = hcalc + 'px !important'
 	
 
