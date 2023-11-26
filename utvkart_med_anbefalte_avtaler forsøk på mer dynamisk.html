@@ -595,7 +595,7 @@ window.parent.postMessage({ subject: "lti.fetchWindowSize" }, "*");
 window.addEventListener('message', function(event) {
 	var data = event.data;
 	var wh = data.height;
-	
+	console.log(data)
 	var hcalc = wh-699;
 	var hoyde = hcalc + 'px !important'
 	
