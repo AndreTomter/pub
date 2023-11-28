@@ -1,0 +1,114 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+  
+</head>
+
+<body>
+	<div id='myDiv' style="width:800px"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+  år = [2019, 2020, 2021, 2022, 2023]
+var trace1 = {
+  x: år,
+  y: [25,34,27,37,42],
+  mode: 'lines+markers',
+  name: 'Sosiologi',
+  showlegend: true,
+  line: {
+    color: '#1a2640',
+    width: 2
+  }
+};
+
+var trace2 = {
+  x: år,
+  y: [31,34,29,27,34],
+  mode: 'lines+markers',
+  name: 'Politikk og forvaltning',
+  showlegend: true,
+  line: {
+    color: '#cdab3f',
+    width: 2
+  }
+};
+
+var trace3 = {
+  x: år,
+  y: [32,34,28,40,32],
+  mode: 'lines+markers',
+  name: 'Sammenliknende politikk',
+  showlegend: true,
+  line: {
+    color: '#4ea0b7',
+    width: 2
+  }
+};
+
+var trace4 = {
+  x: år,
+  y: [34,71,58,64,57],
+  mode: 'lines+markers',
+  name: 'Samfunnsøkonomi',
+  showlegend: true,
+  line: {
+    color: '#789a5b',
+    width: 2
+  }
+};
+
+var trace5 = {
+  x: år,
+  y: [33,66,74,35,42],
+  mode: 'lines+markers',
+  name: 'Informasjonsvitenskap',
+  showlegend: true,
+  line: {
+    color: '#705686',
+    width: 2
+  }
+};
+
+var trace6 = {
+  x: år,
+  y: [25,26,22,28,24],
+  mode: 'lines+markers',
+  name: 'Medier og kommunikasjon',
+  showlegend: true,
+  line: {
+    color: '#db3f3d',
+    width: 2
+  }
+};
+
+var trace7 = {
+  x: år,
+  y: [22,32,28,24,30],
+  mode: 'lines+markers',
+  name: 'Sosialantropologi',
+  showlegend: true,
+  line: {
+    color: '#640000',
+    width: 2
+  }
+};
+
+var trace8 = {
+  x: år,
+  y: [18,17,22,24,23],
+  mode: 'lines+markers',
+  name: 'Geografi',
+  showlegend: true,
+  line: {
+    color: '#5c86c5',
+    width: 2
+  }
+};
+var data = [ trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8 ];
+
+var layout = {
+  title:'Adding Names to Line and Scatter Plot'
+};
+
+Plotly.newPlot('myDiv', data, layout);
+  </script>
+</body>
