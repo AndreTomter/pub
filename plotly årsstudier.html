@@ -106,7 +106,9 @@ var trace8 = {
 var data = [ trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8 ];
 
 var layout = {
-  title:'Adding Names to Line and Scatter Plot'
+  title:'Adding Names to Line and Scatter Plot',
+  yaxis: {fixedrange: true},
+  xaxis : {fixedrange: true}
 };
 
 Plotly.newPlot('myDiv', data, layout);
