@@ -43,13 +43,23 @@ var colors = [
 
 var lineSize = [2, 2, 4, 2];
 
-var labels = ['Sosiologi', 'Politikk og forvaltning', 'Sammenliknende politikk', 'Samfunnsøkonomi','Informasjonsvitenskap','Medier og kommunikasjon','Sosialantropologi','Geografi'];
+var labels = [
+	'Sosiologi', 
+	'Politikk og forvaltning', 
+	'Sammenliknende politikk', 
+	'Samfunnsøkonomi',
+	'Informasjonsvitenskap',
+	'Medier og kommunikasjon',
+	'Sosialantropologi',
+	'Geografi'
+	];
 
 var data = [];
 for ( var i = 0 ; i < xData.length ; i++ ) {
   var result = {
     x: xData[i],
     y: yData[i],
+    name: labels[i],
     type: 'lines+markers',
     mode: 'lines+markers',
     line: {
