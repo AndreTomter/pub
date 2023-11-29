@@ -1,0 +1,171 @@
+<head>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+  
+</head>
+
+<body>
+	<div id='myDiv' style="width:800px"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+ var xData = [
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023],
+  [2019, 2020, 2021, 2022, 2023]
+];
+
+var yData = [
+  [25,34,27,37,42],
+  [31,34,29,27,34],
+  [32,34,28,40,32],
+  [34,71,58,64,57],
+  [33,66,74,35,42],
+  [25,26,22,28,24],
+  [22,32,28,24,30],
+  [18,17,22,24,23]
+];
+
+var colors = [
+'#1a2640',
+'#cdab3f',
+'#4ea0b7',
+'#789a5b',
+'#705686',
+'#db3f3d',
+'#640000',
+'#5c86c5',
+
+];
+
+var lineSize = [2, 2, 4, 2];
+
+var labels = ['Sosiologi', 'Politikk og forvaltning', 'Sammenliknende politikk', 'Samfunnsøkonomi','Informasjonsvitenskap','Medier og kommunikasjon','Sosialantropologi','Geografi'];
+
+var data = [];
+for ( var i = 0 ; i < xData.length ; i++ ) {
+  var result = {
+    x: xData[i],
+    y: yData[i],
+    type: 'lines+markers',
+    mode: 'lines+markers',
+    line: {
+      color: colors[i],
+      width: lineSize[i]
+    },
+     marker: {
+      color: colors[i],
+      size: 7
+    }
+  };
+  var result2 = {
+    x: [xData[i][0], xData[i][11]],
+    y: [yData[i][0], yData[i][11]],
+    type: 'lines+markers',
+    mode: 'lines+markers',
+    marker: {
+      color: colors[i],
+      size: 12
+    }
+  };
+  data.push(result);
+}
+
+
+var layout = {
+  showlegend: false,
+  height: 600,
+  width: 600,
+  xaxis: {
+  	fixedrange: true,
+    showline: true,
+    showgrid: false,
+    showticklabels: true,
+    linecolor: 'rgb(204,204,204)',
+    linewidth: 2,
+    autotick: false,
+    ticks: 'outside',
+    tickcolor: 'rgb(204,204,204)',
+    tickwidth: 2,
+    ticklen: 5,
+    tickfont: {
+      family: 'Arial',
+      size: 12,
+      color: 'rgb(82, 82, 82)'
+    }
+  },
+  yaxis: {
+  	fixedrange: true,
+    showgrid: true,
+    zeroline: false,
+    showline: false,
+    showticklabels: true
+  },
+  autosize: false,
+  margin: {
+    autoexpand: false,
+    l: 20,
+    r: 100,
+    t: 100
+  },
+  annotations: [
+    {
+      xref: 'paper',
+      yref: 'paper',
+      x: 0.0,
+      y: 1.05,
+      xanchor: 'left',
+      yanchor: 'bottom',
+      text: '',
+      font:{
+        family: 'Arial',
+        size: 30,
+        color: 'rgb(37,37,37)'
+      },
+      showarrow: false
+    },
+    {
+      xref: 'paper',
+      yref: 'paper',
+      x: 0.5,
+      y: 5.1,
+      xanchor: 'center',
+      yanchor: 'top',
+      text: '',
+      showarrow: false,
+      font: {
+        family: 'Arial',
+        size: 12,
+        color: 'rgb(150,150,150)'
+      }
+    }
+  ]
+};
+
+for( var i = 0 ; i < xData.length ; i++ ) {
+  
+  var result2 = {
+    xref: 'paper',
+    x: 1,
+    y: yData[i][4],
+    xanchor: 'left',
+    yanchor: 'middle',
+    text: labels[i],
+    font: {
+      family: 'Arial',
+      size: 16,
+      color: 'black'
+    },
+    showarrow: false
+  };
+
+  layout.annotations.push( result2);
+}
+
+Plotly.newPlot('myDiv', data, layout);
+
+  </script>
+</body>
