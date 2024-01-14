@@ -1,18 +1,26 @@
 [
   {
     "land": "Afghanistan",
-    "eier": "Institutt for økonomi"
+    "eier": "Institutt for økonomi",
+    "sted": "Galtvort",
+    "avtaleid": "130-2"
   },
   {
     "land": "Afghanistan",
-    "eier": "Institutt for sosialantropologi"
+    "eier": "Institutt for sosialantropologi",
+    "sted": "Galtvort",
+    "avtaleid": "130-2"
   },
   {
     "land": "Norway",
-    "eier": "Institutt for geografi"
+    "eier": "Institutt for geografi",
+    "sted": "Galtvort",
+    "avtaleid": "130-2"
   },
   {
     "land": "Sweden",
-    "eier": "Institutt for informasjonsvitenskap"
+    "eier": "Institutt for informasjonsvitenskap",
+    "sted": "Galtvort",
+    "avtaleid": "130-2"
   }
 ]
