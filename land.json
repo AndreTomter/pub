@@ -1,26 +1,1945 @@
-[
-  {
-    "land": "Afghanistan",
-    "eier": "Institutt for økonomi",
-    "sted": "Galtvort",
-    "avtaleid": "130-2"
-  },
-  {
-    "land": "Afghanistan",
-    "eier": "Institutt for sosialantropologi",
-    "sted": "Galtvort",
-    "avtaleid": "130-2"
-  },
-  {
-    "land": "Norway",
-    "eier": "Institutt for geografi",
-    "sted": "Galtvort",
-    "avtaleid": "130-2"
-  },
-  {
-    "land": "Sweden",
-    "eier": "Institutt for informasjonsvitenskap",
-    "sted": "Galtvort",
-    "avtaleid": "130-2"
-  }
-]
+{
+  "Oversikt": [
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "University of Manchester",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Manchester",
+      "AVTALEID": 1009,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Universidad Nacional de Colombia",
+      "LANDNAVN_NORSK": "Colombia",
+      "BYNAVN": "Santafé de Bogotá",
+      "AVTALEID": 1021,
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "CO"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Scuola Normale Superiore",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Pisa",
+      "AVTALEID": 1031,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Università degli Studi di Torino",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Torino",
+      "AVTALEID": "104-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Sciences Po Rennes",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Rennes",
+      "AVTALEID": 1049,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Ollscoil Luimnigh",
+      "LANDNAVN_NORSK": "Irland",
+      "BYNAVN": "Limerick",
+      "AVTALEID": "108-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Ollscoil Luimnigh",
+      "LANDNAVN_NORSK": "Irland",
+      "BYNAVN": "Limerick",
+      "AVTALEID": "108-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universiteit van Amsterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Amsterdam",
+      "AVTALEID": "109-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sosialantropologi",
+      "EKSTERNT_STED": "Universiteit van Amsterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Amsterdam",
+      "AVTALEID": "109-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Vrije Universiteit Amsterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Amsterdam",
+      "AVTALEID": "110-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sosialantropologi",
+      "EKSTERNT_STED": "Vrije Universiteit Amsterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Amsterdam",
+      "AVTALEID": "110-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Universiteit Leiden",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Leiden",
+      "AVTALEID": "113-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universiteit Leiden",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Leiden",
+      "AVTALEID": "113-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Radboud Universiteit",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Nijmegen",
+      "AVTALEID": "114-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Radboud Universiteit",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Nijmegen",
+      "AVTALEID": "114-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sosialantropologi",
+      "EKSTERNT_STED": "Radboud Universiteit",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Nijmegen",
+      "AVTALEID": "114-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Radboud Universiteit",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Nijmegen",
+      "AVTALEID": "114-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Radboud Universiteit",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Nijmegen",
+      "AVTALEID": "114-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Radboud Universiteit",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Nijmegen",
+      "AVTALEID": "114-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Erasmus Universiteit Rotterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Rotterdam",
+      "AVTALEID": "115-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Erasmus Universiteit Rotterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Rotterdam",
+      "AVTALEID": "115-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Erasmus Universiteit Rotterdam",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Rotterdam",
+      "AVTALEID": "115-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Universiteit Utrecht",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Utrecht",
+      "AVTALEID": "116-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universiteit Utrecht",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Utrecht",
+      "AVTALEID": "116-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Zeppelin Universität",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Friedrichshafen",
+      "AVTALEID": 1166,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Institut d'études politiques de Lille",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Lille",
+      "AVTALEID": 1168,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Beijing Foreign Studies University",
+      "LANDNAVN_NORSK": "Kina",
+      "BYNAVN": "Beijing",
+      "AVTALEID": "1203-1",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "CN"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universidade Nova de Lisboa",
+      "LANDNAVN_NORSK": "Portugal",
+      "BYNAVN": "Lisboa",
+      "AVTALEID": "122-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Université du Luxembourg",
+      "LANDNAVN_NORSK": "Luxembourg",
+      "AVTALEID": 1223,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "LU"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Háskólinn í Reykjavík",
+      "LANDNAVN_NORSK": "Island",
+      "BYNAVN": "Reykjavik",
+      "AVTALEID": "1233-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IS"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Sciences Po Toulouse",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Toulouse",
+      "AVTALEID": 1245,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sosialantropologi",
+      "EKSTERNT_STED": "Lunds universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Lund",
+      "AVTALEID": "126-13",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "University of St Andrews",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "St Andrews",
+      "AVTALEID": 1265,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Örebro universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Örebro",
+      "AVTALEID": "127-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "İhsan Dogramaci Bilkent Üniversitesi",
+      "LANDNAVN_NORSK": "Tyrkia",
+      "BYNAVN": "Bilkent/Ankara",
+      "AVTALEID": 1272,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "TR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Örebro universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Örebro",
+      "AVTALEID": "127-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Stockholms universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Stockholm",
+      "AVTALEID": "128-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Lviv National University named after Ivan Franko",
+      "LANDNAVN_NORSK": "Ukraina",
+      "BYNAVN": "Lviv",
+      "AVTALEID": 1312,
+      "UTVPROGRAMKODE": "ERASMUS+ICM",
+      "A2": "UA"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Jyväskylän yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Jyväskylä",
+      "AVTALEID": "132-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Tampereen yliopisto / Tammerfors universitet",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Tampere University",
+      "AVTALEID": "1328-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Lappeenrannan teknillinen korkeakoulu",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Lappeenranta",
+      "AVTALEID": 1330,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Vaasan yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Vaasa",
+      "AVTALEID": 1331,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Oulun yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "University of Oulu",
+      "AVTALEID": "133-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Åbo Akademi",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Turku",
+      "AVTALEID": "134-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Aberystwyth University",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Aberystwyth",
+      "AVTALEID": "136-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "University of North Carolina at Chapel Hill",
+      "LANDNAVN_NORSK": "USA",
+      "BYNAVN": "Chapel Hill",
+      "AVTALEID": 1367,
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "US"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "École pour l'Informatique et les Techniques Avancées",
+      "LANDNAVN_NORSK": "Frankrike",
+      "AVTALEID": 1370,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sosialantropologi",
+      "EKSTERNT_STED": "Panteion Panepestimion Ikonomikon kai Politicon Epistimon",
+      "LANDNAVN_NORSK": "Hellas",
+      "BYNAVN": "Athinai",
+      "AVTALEID": 1371,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Université catholique de Lille",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Lille",
+      "AVTALEID": 1374,
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Ivane Javakhishvili Tbilisi State University",
+      "LANDNAVN_NORSK": "Georgia",
+      "BYNAVN": "Tbilisi",
+      "AVTALEID": 1375,
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "GE"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "University of Essex",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Colchester, Essex",
+      "AVTALEID": "138-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "University of Essex",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Colchester, Essex",
+      "AVTALEID": "138-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "University of Glasgow",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Glasgow",
+      "AVTALEID": "142-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "University of Glasgow",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Glasgow",
+      "AVTALEID": "142-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Loughborough University",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Loughborough, Leicestershire",
+      "AVTALEID": "146-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "University of York",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "York",
+      "AVTALEID": "151-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "University of York",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "York",
+      "AVTALEID": "151-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universiteit Gent",
+      "LANDNAVN_NORSK": "Belgia",
+      "BYNAVN": "Gent",
+      "AVTALEID": "152-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "BE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universität Salzburg",
+      "LANDNAVN_NORSK": "Østerrike",
+      "BYNAVN": "Salzburg",
+      "AVTALEID": "153-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "AT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universität Salzburg",
+      "LANDNAVN_NORSK": "Østerrike",
+      "BYNAVN": "Salzburg",
+      "AVTALEID": "153-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "AT"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Humboldt-Universität zu Berlin",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Berlin",
+      "AVTALEID": "155-12",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Humboldt-Universität zu Berlin",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Berlin",
+      "AVTALEID": "155-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Rheinische Friedrich-Wilhelms-Universität Bonn",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Bonn",
+      "AVTALEID": "158-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Erlangen",
+      "AVTALEID": "159-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Freie Universität Berlin",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Berlin",
+      "AVTALEID": "161-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Freie Universität Berlin",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Berlin",
+      "AVTALEID": "161-12",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Freie Universität Berlin",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Berlin",
+      "AVTALEID": "161-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Leopold-Franzens Universität Innsbruck (Universität Innsbruck)",
+      "LANDNAVN_NORSK": "Østerrike",
+      "BYNAVN": "Innsbruck",
+      "AVTALEID": "163-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "AT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universität Wien",
+      "LANDNAVN_NORSK": "Østerrike",
+      "BYNAVN": "Wien",
+      "AVTALEID": "165-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "AT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universiteit Antwerpen",
+      "LANDNAVN_NORSK": "Belgia",
+      "BYNAVN": "Antwerpen",
+      "AVTALEID": "166-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "BE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "KU Leuven",
+      "LANDNAVN_NORSK": "Belgia",
+      "BYNAVN": "Leuven",
+      "AVTALEID": "169-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "BE"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "KU Leuven",
+      "LANDNAVN_NORSK": "Belgia",
+      "BYNAVN": "Leuven",
+      "AVTALEID": "169-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "BE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Universität Bern",
+      "LANDNAVN_NORSK": "Sveits",
+      "BYNAVN": "Bern",
+      "AVTALEID": "173-3",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "CH"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universität Bern",
+      "LANDNAVN_NORSK": "Sveits",
+      "BYNAVN": "Bern",
+      "AVTALEID": "173-4",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "CH"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Vrije Universiteit Brussel",
+      "LANDNAVN_NORSK": "Belgia",
+      "BYNAVN": "Brussel",
+      "AVTALEID": "181-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "BE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Universität Konstanz",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Konstanz",
+      "AVTALEID": "186-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Johann Wolfgang Goethe-Universität Frankfurt am Main",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Frankfurt am Main",
+      "AVTALEID": "189-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universität Osnabrück",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Osnabrück",
+      "AVTALEID": "190-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Julius-Maximilian-Universität Würzburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Würzburg",
+      "AVTALEID": "193-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Universidad de Granada",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Granada",
+      "AVTALEID": "197-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universidad de Granada",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Granada",
+      "AVTALEID": "197-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universidad de Salamanca",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Salamanca",
+      "AVTALEID": "202-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universidad de Santiago de Compostela",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Santiago de Compostela",
+      "AVTALEID": "203-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Universitat de València",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Valencia",
+      "AVTALEID": "205-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universitat de València",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Valencia",
+      "AVTALEID": "205-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Université de Caen Normandie",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Caen",
+      "AVTALEID": "211-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Université de Lille ",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Lille",
+      "AVTALEID": "214-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Université Lumière - Lyon 2",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Lyon",
+      "AVTALEID": "217-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Institut d'études politiques d'Aix-en-Provence",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Aix-en-Provence",
+      "AVTALEID": "219-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Université Paris Nanterre",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Nanterre",
+      "AVTALEID": "226-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Université Paris Nanterre",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Nanterre",
+      "AVTALEID": "226-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Université Paris Nanterre",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Nanterre",
+      "AVTALEID": "226-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Université Sorbonne Paris Nord",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Villetaneuse",
+      "AVTALEID": "228-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Institut d'Etudes politiques de Paris-'Sciences Po'",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Paris Cedex 07",
+      "AVTALEID": "229-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Université Rennes II",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Rennes",
+      "AVTALEID": "230-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Université Toulouse 1 Capitole",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Toulouse",
+      "AVTALEID": "233-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": " Università degli Studi di Bologna",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Bologna",
+      "AVTALEID": "242-11",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": " Università degli Studi di Bologna",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Bologna",
+      "AVTALEID": "242-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Università degli Studi di Genova",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Genova",
+      "AVTALEID": "247-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Università degli Studi di Padova",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Padova",
+      "AVTALEID": "251-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Institut d'Etudes Politiques de Bordeaux",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Pessac-Cedex",
+      "AVTALEID": "283-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Institut d'Etudes Politiques de Bordeaux",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Pessac-Cedex",
+      "AVTALEID": "283-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Institut d'Etudes Politiques de Bordeaux",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Pessac-Cedex",
+      "AVTALEID": "283-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Institut d'études politiques de Grenoble",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Grenoble",
+      "AVTALEID": "285-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Institut d'études politiques de Lyon",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Lyon",
+      "AVTALEID": "286-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Nantes Université",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Nantes",
+      "AVTALEID": "288-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "University College Dublin - National University of Ireland, Dublin",
+      "LANDNAVN_NORSK": "Irland",
+      "BYNAVN": "Dublin",
+      "AVTALEID": "293-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Université de Strasbourg",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Strasbourg",
+      "AVTALEID": "298-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Vilniaus Universitetas",
+      "LANDNAVN_NORSK": "Litauen",
+      "BYNAVN": "Vilnius",
+      "AVTALEID": "302-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "LT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Università degli Studi di Palermo",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Palermo",
+      "AVTALEID": "306-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universiteit Maastricht",
+      "LANDNAVN_NORSK": "Nederland",
+      "BYNAVN": "Maastricht",
+      "AVTALEID": "309-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "NL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Università degli Studi di Roma Tre",
+      "LANDNAVN_NORSK": "Italia",
+      "BYNAVN": "Roma",
+      "AVTALEID": "316-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Philipps-Universität Marburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Marburg/Lahn",
+      "AVTALEID": "324-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "University of California, Berkeley",
+      "LANDNAVN_NORSK": "USA",
+      "BYNAVN": "Berkeley",
+      "AVTALEID": "343-6",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "US"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "University of Reading",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Reading",
+      "AVTALEID": "345-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "University of Southampton",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Southampton",
+      "AVTALEID": "346-12",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "University of Southampton",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Southampton",
+      "AVTALEID": "346-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "University of Southampton",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Southampton",
+      "AVTALEID": "346-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Masarykova univerzita",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Brno",
+      "AVTALEID": "347-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Masarykova univerzita",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Brno",
+      "AVTALEID": "347-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sosialantropologi",
+      "EKSTERNT_STED": "Masarykova univerzita",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Brno",
+      "AVTALEID": "347-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Masarykova univerzita",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Brno",
+      "AVTALEID": "347-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Universidad de Alicante",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "San Vicente del Raspeig",
+      "AVTALEID": "348-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universidad de Alicante",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "San Vicente del Raspeig",
+      "AVTALEID": "348-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universidad de Castilla-La Mancha",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Ciudad Real",
+      "AVTALEID": "353-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Univerza v Ljubljani",
+      "LANDNAVN_NORSK": "Slovenia",
+      "BYNAVN": "Ljubljana",
+      "AVTALEID": "364-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Univerza v Ljubljani",
+      "LANDNAVN_NORSK": "Slovenia",
+      "BYNAVN": "Ljubljana",
+      "AVTALEID": "364-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Uniwersytet Jagiellonski w Krakowie",
+      "LANDNAVN_NORSK": "Polen",
+      "BYNAVN": "Kraków",
+      "AVTALEID": "374-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Christian-Albrechts-Universität zu Kiel",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Kiel",
+      "AVTALEID": "375-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Albert-Ludwigs-Universität Freiburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Freiburg im Breisgau",
+      "AVTALEID": "378-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Albert-Ludwigs-Universität Freiburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Freiburg im Breisgau",
+      "AVTALEID": "378-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universität Greifswald",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Greifswald",
+      "AVTALEID": "381-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universität Hamburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Hamburg",
+      "AVTALEID": "382-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Ruprecht-Karls-Universität Heidelberg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Heidelberg",
+      "AVTALEID": "383-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Ruprecht-Karls-Universität Heidelberg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Heidelberg",
+      "AVTALEID": "383-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Ludwig-Maximilians-Universität München",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "München",
+      "AVTALEID": "384-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Ludwig-Maximilians-Universität München",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "München",
+      "AVTALEID": "384-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universität Münster",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Münster",
+      "AVTALEID": "385-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Carl von Ossietzky Universität Oldenburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Oldenburg",
+      "AVTALEID": "386-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Universität Potsdam",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Potsdam",
+      "AVTALEID": "387-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universität Potsdam",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Potsdam",
+      "AVTALEID": "387-10",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Universität Potsdam",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Potsdam",
+      "AVTALEID": "387-12",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Universität Potsdam",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Potsdam",
+      "AVTALEID": "387-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universität Potsdam",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Potsdam",
+      "AVTALEID": "387-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universität Potsdam",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Potsdam",
+      "AVTALEID": "387-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Aalborg Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Aalborg",
+      "AVTALEID": "391-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Aalborg Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Aalborg",
+      "AVTALEID": "391-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Aarhus Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Aarhus",
+      "AVTALEID": "392-11",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Aarhus Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Aarhus",
+      "AVTALEID": "392-12",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Aarhus Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Aarhus",
+      "AVTALEID": "392-18",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Københavns Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "København",
+      "AVTALEID": "393-14",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Københavns Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "København",
+      "AVTALEID": "393-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Syddansk Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Odense",
+      "AVTALEID": "394-10",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "Roskilde Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Roskilde",
+      "AVTALEID": "395-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universitat Autònoma de Barcelona",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Bellaterra (Barcelona)",
+      "AVTALEID": "397-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universitat Autònoma de Barcelona",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Bellaterra (Barcelona)",
+      "AVTALEID": "397-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Universitat Autònoma de Barcelona",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Bellaterra (Barcelona)",
+      "AVTALEID": "397-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Centro de Investigación y Docencia Económicas, A.C.",
+      "LANDNAVN_NORSK": "Mexico",
+      "BYNAVN": "México",
+      "AVTALEID": "458-1",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "MX"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "University of Southampton",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Southampton",
+      "AVTALEID": "506-3",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Universidad Complutense de Madrid",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Madrid",
+      "AVTALEID": "533-10",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Universidad Complutense de Madrid",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Madrid",
+      "AVTALEID": "533-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "National University of Ireland, Maynooth",
+      "LANDNAVN_NORSK": "Irland",
+      "BYNAVN": "Maynooth",
+      "AVTALEID": "534-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Bangor University",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Bangor",
+      "AVTALEID": "535-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Technische Universität Dresden",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Dresden",
+      "AVTALEID": "547-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Univerzita Komenského v Bratislave",
+      "LANDNAVN_NORSK": "Slovakia",
+      "BYNAVN": "Bratislava",
+      "AVTALEID": "555-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "CY Cergy Paris Université",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Cergy",
+      "AVTALEID": "558-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "CY Cergy Paris Université",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Cergy",
+      "AVTALEID": "558-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Eötvös Loránd Tudományegyetem",
+      "LANDNAVN_NORSK": "Ungarn",
+      "BYNAVN": "Budapest",
+      "AVTALEID": "571-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "HU"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "University of Leeds",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Leeds",
+      "AVTALEID": "575-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Univerza v Mariboru",
+      "LANDNAVN_NORSK": "Slovenia",
+      "BYNAVN": "Maribor",
+      "AVTALEID": "604-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Linköpings universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Linköping",
+      "AVTALEID": "651-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+      "LANDNAVN_NORSK": "Polen",
+      "BYNAVN": "Poznan",
+      "AVTALEID": "684-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Uniwersytet im. Adama Mickiewicza w Poznaniu",
+      "LANDNAVN_NORSK": "Polen",
+      "BYNAVN": "Poznan",
+      "AVTALEID": "684-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Uniwersytet Warszawski",
+      "LANDNAVN_NORSK": "Polen",
+      "BYNAVN": "Warszawa",
+      "AVTALEID": "686-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Uniwersytet Dolnośląski DSW we Wrocławiu",
+      "LANDNAVN_NORSK": "Polen",
+      "BYNAVN": "Wroclaw",
+      "AVTALEID": "688-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PL"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Univerzita Karlova v Praze",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Praha",
+      "AVTALEID": "689-13",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Univerzita Karlova v Praze",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Praha",
+      "AVTALEID": "689-18",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Univerzita Karlova v Praze",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Praha",
+      "AVTALEID": "689-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Univerzita Karlova v Praze",
+      "LANDNAVN_NORSK": "Tsjekkia",
+      "BYNAVN": "Praha",
+      "AVTALEID": "689-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "CZ"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Göteborgs universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Göteborg",
+      "AVTALEID": "691-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Umeå universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Umeå",
+      "AVTALEID": "692-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universität Duisburg-Essen",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Essen",
+      "AVTALEID": "696-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Det samfunnsvitenskapelige fakultet",
+      "EKSTERNT_STED": "University of East Anglia",
+      "LANDNAVN_NORSK": "Storbritannia",
+      "BYNAVN": "Norwich",
+      "AVTALEID": "704-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "GB"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Universität Mannheim",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Mannheim",
+      "AVTALEID": "719-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Universität Mannheim",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Mannheim",
+      "AVTALEID": "719-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Universität Mannheim",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Mannheim",
+      "AVTALEID": "719-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "Universität Mannheim",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Mannheim",
+      "AVTALEID": "719-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Universitat Pompeu Fabra",
+      "LANDNAVN_NORSK": "Spania",
+      "BYNAVN": "Barcelona",
+      "AVTALEID": "736-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "ES"
+    },
+    {
+      "AVTALE_EIER": "Institutt for politikk og forvaltning",
+      "EKSTERNT_STED": "Universidad Autónoma Metropolitana",
+      "LANDNAVN_NORSK": "Mexico",
+      "BYNAVN": "Naucalpán de Juárez",
+      "AVTALEID": "760-1",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "MX"
+    },
+    {
+      "AVTALE_EIER": "Sosiologisk institutt",
+      "EKSTERNT_STED": "ISCTE - Instituto Universitário de Lisboa",
+      "LANDNAVN_NORSK": "Portugal",
+      "BYNAVN": "Lisboa",
+      "AVTALEID": "779-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "PT"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Université Jean Moulin - Lyon 3",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Lyon",
+      "AVTALEID": "780-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Université d'Avignon et des Pays de Vaucluse",
+      "LANDNAVN_NORSK": "Frankrike",
+      "BYNAVN": "Avignon",
+      "AVTALEID": "781-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "University of California, San Diego",
+      "LANDNAVN_NORSK": "USA",
+      "BYNAVN": "La Jolla",
+      "AVTALEID": "798-2",
+      "UTVPROGRAMKODE": "BILATERAL",
+      "A2": "US"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Aix-Marseille Université",
+      "LANDNAVN_NORSK": "Frankrike",
+      "AVTALEID": "810-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for informasjons- og medievitenskap",
+      "EKSTERNT_STED": "Technische Universität Clausthal",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Clausthal-Zellerfeld",
+      "AVTALEID": "815-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Vaasan yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Vaasa",
+      "AVTALEID": "843-10",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Åbo Akademi",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Turku",
+      "AVTALEID": "843-11",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Göteborgs universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Göteborg",
+      "AVTALEID": "843-14",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Lunds universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Lund",
+      "AVTALEID": "843-15",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Stockholms universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Stockholm",
+      "AVTALEID": "843-16",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Umeå universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Umeå",
+      "AVTALEID": "843-17",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Uppsala universitet",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Uppsala",
+      "AVTALEID": "843-18",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Aarhus Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Aarhus",
+      "AVTALEID": "843-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Københavns Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "København",
+      "AVTALEID": "843-3",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Syddansk Universitet",
+      "LANDNAVN_NORSK": "Danmark",
+      "BYNAVN": "Odense",
+      "AVTALEID": "843-4",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DK"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Jyväskylän yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Jyväskylä",
+      "AVTALEID": "843-6",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Lapin yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Rovaniemi",
+      "AVTALEID": "843-7",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Tampereen yliopisto / Tammerfors universitet",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Tampere University",
+      "AVTALEID": "843-8",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Turun yliopisto",
+      "LANDNAVN_NORSK": "Finland",
+      "BYNAVN": "Turku",
+      "AVTALEID": "843-9",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "FI"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Stiftelsen Högskolan i Jönköping / Jönköping University",
+      "LANDNAVN_NORSK": "Sverige",
+      "BYNAVN": "Jönköping",
+      "AVTALEID": "849-22",
+      "UTVPROGRAMKODE": "NORDPLUS",
+      "A2": "SE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Ege Üniversitesi",
+      "LANDNAVN_NORSK": "Tyrkia",
+      "BYNAVN": "Izmir",
+      "AVTALEID": "878-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "TR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Europa-Universität Flensburg",
+      "LANDNAVN_NORSK": "Tyskland",
+      "BYNAVN": "Flensburg",
+      "AVTALEID": "879-2",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "DE"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "Háskóli Íslands",
+      "LANDNAVN_NORSK": "Island",
+      "BYNAVN": "Reykjavík",
+      "AVTALEID": "882-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IS"
+    },
+    {
+      "AVTALE_EIER": "Institutt for økonomi",
+      "EKSTERNT_STED": "Háskóli Íslands",
+      "LANDNAVN_NORSK": "Island",
+      "BYNAVN": "Reykjavík",
+      "AVTALEID": "882-5",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "IS"
+    },
+    {
+      "AVTALE_EIER": "Institutt for sammenliknende politikk",
+      "EKSTERNT_STED": "Bogaziçi Üniversitesi",
+      "LANDNAVN_NORSK": "Tyrkia",
+      "BYNAVN": "Bebek/Istanbul",
+      "AVTALEID": "889-1",
+      "UTVPROGRAMKODE": "ERASMUS+",
+      "A2": "TR"
+    },
+    {
+      "AVTALE_EIER": "Institutt for geografi",
+      "EKSTERNT_STED": "National University of \"Kyiv-Mohyla Academy\"",
+      "LANDNAVN_NORSK": "Ukraina",
+      "BYNAVN": "Kyiv",
+      "AVTALEID": 981,
+      "UTVPROGRAMKODE": "ERASMUS+ICM",
+      "A2": "UA"
+    }
+  ]
+}
