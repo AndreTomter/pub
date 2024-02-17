@@ -74,6 +74,29 @@ ul li{
   margin:1em;
 }
 </style>
+<script>
+// Sender body-høyden til foreldresiden
+function sendBodyHeight() {
+  // Beregn høyden på body-elementet
+  var bodyHeight = document.body.scrollHeight;
+
+  // Lag meldingsobjektet med riktig høyde
+  var message = {
+    subject: 'lti.frameResize',
+    height: bodyHeight
+  };
+
+  // Send meldingen til den overordnede siden
+  window.top.postMessage(message, '*');
+}
+
+// Lytter etter endringer i høyden av body-elementet
+window.addEventListener('resize', sendBodyHeight);
+
+// Sender body-høyden umiddelbart etter lasting
+window.addEventListener('DOMContentLoaded', sendBodyHeight);
+
+</script>
 </head>
 <body>
 <ul>
