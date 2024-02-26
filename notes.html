@@ -83,6 +83,14 @@ ul li{
 }
 </style>
 <script>
+window.onblur = function() {
+  if (window.getSelection) {
+    window.getSelection().removeAllRanges();
+  } else if (document.selection) {
+    document.selection.empty();
+  }
+}
+   
 // Sender body-høyden til foreldresiden
 function sendBodyHeight() {
   // Beregn høyden på body-elementet
