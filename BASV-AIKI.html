@@ -76,11 +76,11 @@
 
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-             document.getElementById('includeNav').innerHTML= '<object type="text/html" data="nav.html"></object>';
+             document.getElementById('includeNav').innerHTML= '<object type="text/html" data="https://andretomter.github.io/pub/nav.html"></object>';
         }
     }
 
-    xhttp.open('POST', 'nav.html', true); // method, location, async
+    xhttp.open('POST', 'https://andretomter.github.io/pub/nav.html', true); // method, location, async
     xhttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhttp.send(); }
     </script>
