@@ -1,7 +1,41 @@
+<h2>Tabs</h2>
+<p>Click on the buttons inside the tabbed menu:</p>
 <nav>
-    <ul>
-        <li>link 1</li>
-        <li>link 2</li>
-        <li>link 3</li>
-    </ul>
-</nav>
+<div class="tab">
+  <button class="tablinks active" onclick="valgtArstallKull(event, '2024')">2024</button>
+  <button class="tablinks" onclick="valgtArstallKull(event, '2023')">2023</button>
+  <button class="tablinks" onclick="valgtArstallKull(event, '2022')">2022</button>
+</div>
+
+<div id="2024" class="tabcontent" style="display:block">
+  <h3>2024</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="2023" class="tabcontent" style="display:none">
+  <h3>2023</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="2022" class="tabcontent" style="display:none">
+  <h3>2022</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+
+<script>
+function valgtArstallKull(evt, arstallKull) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(arstallKull).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+</script>
+</nav> 
