@@ -5,14 +5,3 @@
         <li>link 3</li>
     </ul>
 </nav>
-<script>
-    var navProto = Object.create(HTMLElement.prototype);
-    var navDoc = document.currentScript.ownerDocument;
-    navProto.createdCallback = function() {
-        var shadow = this.createShadowRoot();
-        var nav = navDoc.querySelector('nav');
-        var clone = document.importNode(nav, true);
-        shadow.appendChild(clone);
-    };
-    document.registerElement('my-nav', { prototype: navProto });
-</script>
