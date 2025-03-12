@@ -143,7 +143,10 @@ ar=[2024,2023,2022,2021,2020,2019,2018]
 
 for arstall in ar:
   ar_tab_tag = soup_nav.new_tag("button")
-  ar_tab_tag.attrs['class']='tablinks'
+  if arstall == max(ar):
+    ar_tab_tag.attrs['class']='tablinks active'
+  if arstall != max(ar):
+    ar_tab_tag.attrs['class']='tablinks'
   ar_tab_tag.string=f'''{arstall}'''
   ar_tab_tag.attrs['onclick']=f'''valgtArstallKull(event, '{arstall}')'''
   find_tag_tag = soup_nav.find(class_='tab')
@@ -536,6 +539,14 @@ for arstall in ar:
     border-left:solid;
     width:300px;
   }
+aside * {
+      text-indent: 0;
+      text-decoration:none
+    }
+button {
+  background: none;
+  border: none;
+}
     """
 
     head_tag.append(style_tag)
@@ -761,7 +772,7 @@ for arstall in ar:
               if tag_to_move['data-sort']:
                   sort_value = int(tag_to_move['data-sort'])
               else:
-                  sort_value=int(0.1)
+                  sort_value=int(-1)
               # Finn destinasjonen
               destination = soup.find(id=emnekomeier)
 
@@ -769,7 +780,7 @@ for arstall in ar:
               if tag_to_move and destination:
                   tag_to_move.extract()  # Fjern fra originalen
                   
-                  destination.insert(int(sort_value)+1,tag_to_move)
+                  destination.insert(int(sort_value),tag_to_move)
 
               # Fjern elementet etter at det er behandlet
               #tk.remove(t)  
@@ -804,11 +815,12 @@ for arstall in ar:
   div_tab = soup1.new_tag("div")
   div_tab.attrs['id']=arstall
   div_tab.attrs['class']='tabcontent'
-  if arstall == innevar:
+  if arstall == max(ar):
     div_tab.attrs['style']='display: block;'
-  if arstall != innevar:
+  if arstall != max(ar):
     div_tab.attrs['style']='display: none;'
   ul_tag = soup1.new_tag("ul")
+  
   for f in filer:
       li_tag = soup1.new_tag("li")
       a_tag = soup1.new_tag("a")
