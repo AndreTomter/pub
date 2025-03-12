@@ -107,3 +107,10 @@ button {
   background: none;
   border: none;
 }
+ul {
+  list-style: none;
+  padding-left: 1em;
+}
+.tab{
+      padding-left: 0.7em;
+}
