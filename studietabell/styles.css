@@ -99,3 +99,7 @@
     border-left:solid;
     width:300px;
   }
+aside * {
+      text-indent: 0;
+      text-decoration:none
+    }
