@@ -1,0 +1,101 @@
+*{
+      text-indent:.6em;
+      line-height:2em;
+      color:#191919;
+      text-decoration:none
+    }
+    #tabell {
+      width: 650px;
+      border: solid 1px #aaaaaa;
+      margin:.5em
+    }
+
+    .valgstatus.O,
+    .valgstatus.OBL {
+      display: none;
+    }
+
+    .emnekombnavn {
+      font-weight: bold;
+      padding-top:2px;
+      padding-bottom:2px;
+      background-color: #f1eeea;
+
+      text-indent: .6rem;
+      margin: 0;
+      font-size: inherit;
+      
+    }
+
+    
+
+    .veivalg>.emnekombnavn {
+      font-style: italic;
+      
+    }
+
+    .veivalg>div>.emnekombnavn {
+      font-weight: bold;
+
+    }
+
+    .veivalg>div>.emnekombnavn {
+      font-weight: bold;
+    
+    }
+    a{
+      display: block;
+    }
+    a:not(:last-child), div:not(:last-child) {
+      border-bottom: 1px solid #aaaaaa;
+    }
+    a:hover {
+      background-color: #faf9f8;
+      text-decoration: underline;
+    }
+    .valgstatus {
+      font-style: italic;
+    }
+
+    .veivalg>div * {
+      text-indent: 1.6em
+    }
+
+    .emnekombnavn>* {
+      text-indent: 1em
+    }
+
+    #tabell > div > .emnekombnavn {
+      font-weight: bold;
+      background-color:#e2ddd5;
+      padding-top:2px;
+      padding-bottom:2px
+
+    }
+
+  .emnekombnavn:not(:last-child){
+    border-bottom: 1px solid #aaa;
+  }
+
+
+    .valgstatus{
+      font-style: italic;
+      text-indent: .6rem;
+      margin: 0;
+      font-size: inherit;
+      border-bottom: 1px solid #aaaaaa;
+      font-weight: unset;
+      }
+
+      
+  .flex-container {
+    display: flex;
+  }
+
+  .flex-container section {
+    flex: 1; // By your image example it looks like you want this element to stretch
+  }
+  .flex-container aside {
+    border-left:solid;
+    width:300px;
+  }
