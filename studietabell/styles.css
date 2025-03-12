@@ -114,3 +114,8 @@ ul {
 .tab{
       padding-left: 0.7em;
 }
+.active{
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  font-weight: 600;
+}
