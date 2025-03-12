@@ -1,1 +1,16 @@
 <div class="tab"><button class="tablinks" onclick="valgtArstallKull(event, '2019')"></button><button class="tablinks" onclick="valgtArstallKull(event, '2018')"></button></div><div class="tabcontent" id="2019"><ul><li><a href="BASV-GEOG-2019H.html">Bachelorprogram i geografi</a></li><li><a href="BASV-SANT-2019H.html">Bachelorprogram i sosialantropologi</a></li><li><a href="BASV-AORG-2019H.html">Utveksling </a></li><li><a href="BASV-INFO-2019H.html">Bachelorprogram i informasjonsvitenskap</a></li><li><a href="BASV-MEVI-2019H.html">Utveksling </a></li><li><a href="BASV-SAPO-2019H.html">Utveksling </a></li><li><a href="BASV-IKT-2019H.html">Bachelorprogram i informasjons- og kommunikasjonsteknologi (IKT)</a></li><li><a href="BASV-EUR-2019H.html">Bachelorprogram i Europastudier</a></li><li><a href="BASV-JOU-2019H.html">Bachelorprogram i journalistikk</a></li><li><a href="BASV-MIX-2019H.html">Bachelorprogram i medie- og interaksjonsdesign </a></li><li><a href="BASV-TVP-2019H.html">Bachelorprogram i TV-produksjon</a></li><li><a href="BASV-SØK-2019H.html">Bachelorprogram i samfunnsøkonomi</a></li><li><a href="PROF-SØK-2019H.html">Profesjonsstudium i samfunnsøkonomi</a></li><li><a href="BASV-KOGNI-2019H.html">Bachelorprogram i kognitiv vitenskap</a></li><li><a href="BASV-SOS-2019H.html">Bachelorprogram i sosiologi</a></li></ul></div><div class="tabcontent" id="2018"><ul><li><a href="BASV-GEOG-2018H.html">Utveksling </a></li><li><a href="BASV-SANT-2018H.html">Bachelorprogram i sosialantropologi</a></li><li><a href="BASV-AORG-2018H.html">Utveksling </a></li><li><a href="BASV-INFO-2018H.html">Bachelorprogram i informasjonsvitenskap</a></li><li><a href="BASV-MEVI-2018H.html">Utveksling </a></li><li><a href="BASV-SAPO-2018H.html">Utveksling </a></li><li><a href="BASV-IKT-2018H.html">Bachelorprogram i informasjons- og kommunikasjonsteknologi (IKT)</a></li><li><a href="BASV-EUR-2018H.html">Bachelorprogram i Europastudier</a></li><li><a href="BASV-JOU-2018H.html">Bachelorprogram i journalistikk</a></li><li><a href="BASV-MIX-2018H.html">Bachelorprogram i medie- og interaksjonsdesign </a></li><li><a href="BASV-TVP-2018H.html">Bachelorprogram i TV-produksjon</a></li><li><a href="BASV-SØK-2018H.html">Bachelorprogram i samfunnsøkonomi</a></li><li><a href="PROF-SØK-2018H.html">Profesjonsstudium i samfunnsøkonomi</a></li><li><a href="BASV-KOGNI-2018H.html">Utveksling </a></li><li><a href="BASV-SOS-2018H.html">Bachelorprogram i sosiologi</a></li></ul></div>
+<script>
+      // Finn alle div-er med klassen "tab" og skjul dem
+    document.querySelectorAll('.tab').forEach(div => {
+        div.style.display = 'none';
+    });
+
+    // Finn årets år
+    const year = new Date().getFullYear();
+
+    // Finn div-en med ID lik årets år og vis den
+    const activeTab = document.getElementById(year);
+    if (activeTab) {
+        activeTab.style.display = 'block';
+    }
+</script>
