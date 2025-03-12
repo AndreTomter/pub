@@ -1,0 +1,116 @@
+<html><head><style>
+      *{
+      text-indent:.6em;
+      line-height:2em;
+      color:#191919;
+      text-decoration:none
+    }
+    #tabell {
+      width: 650px;
+      border: solid 1px #aaaaaa;
+      margin:.5em
+    }
+
+    .valgstatus.O,
+    .valgstatus.OBL {
+      display: none;
+    }
+
+    .emnekombnavn {
+      font-weight: bold;
+      padding-top:2px;
+      padding-bottom:2px;
+      background-color: #f1eeea;
+
+      text-indent: .6rem;
+      margin: 0;
+      font-size: inherit;
+      
+    }
+
+    
+
+    .veivalg>.emnekombnavn {
+      font-style: italic;
+      
+    }
+
+    .veivalg>div>.emnekombnavn {
+      font-weight: bold;
+
+    }
+
+    .veivalg>div>.emnekombnavn {
+      font-weight: bold;
+    
+    }
+    a{
+      display: block;
+    }
+    a:not(:last-child), div:not(:last-child) {
+      border-bottom: 1px solid #aaaaaa;
+    }
+    a:hover {
+      background-color: #faf9f8;
+      text-decoration: underline;
+    }
+    .valgstatus {
+      font-style: italic;
+    }
+
+    .veivalg>div * {
+      text-indent: 1.6em
+    }
+
+    .emnekombnavn>* {
+      text-indent: 1em
+    }
+
+    #tabell > div > .emnekombnavn {
+      font-weight: bold;
+      background-color:#e2ddd5;
+      padding-top:2px;
+      padding-bottom:2px
+
+    }
+
+  .emnekombnavn:not(:last-child){
+    border-bottom: 1px solid #aaa;
+  }
+
+
+    .valgstatus{
+      font-style: italic;
+      text-indent: .6rem;
+      margin: 0;
+      font-size: inherit;
+      border-bottom: 1px solid #aaaaaa;
+      font-weight: unset;
+      }
+
+      
+  .flex-container {
+    display: flex;
+  }
+
+  .flex-container section {
+    flex: 1; // By your image example it looks like you want this element to stretch
+  }
+  .flex-container aside {
+    border-left:solid;
+    width:300px;
+  }
+    </style><script src="include-html.min.js"></script><script>function valgtArstallKull(evt, arstallKull) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(arstallKull).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+  </script></head><body><h1>BASV-AORG 2019 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div data-sort="0" id="BASV-AORG_H19"><div data-sort="0" id="BASV-AORG_H07-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div data-sort="1" id="BASV-1SEM_AORG_H16"><h3 class="emnekombnavn">Førstesemesteremner </h3><div data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div data-sort="2" id="BASV-INNF_AORG_H16"><h3 class="emnekombnavn">Innføringsemner  (10 sp)</h3><div id="BASV-INNF_AORG_H16-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/GOV100" target="_blank">GOV100 - Innføring i politikk og forvaltning</a></div></div></div><div data-sort="2" id="BASV-AORGSPES_H19"><h3 class="emnekombnavn">Spesialisering i administrasjon og organisasjonsvitenskap  (90 sp)</h3><div id="BASV-AORGSPES_H19-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GOV101" target="_blank">GOV101 - Organisasjonsteori</a><a class="emne obl" href="https://www4.uib.no/emner/GOV104" target="_blank">GOV104 - Politisk teori og styreformer</a><a class="emne obl" href="https://www4.uib.no/emner/GOV215" target="_blank">GOV215 - Organisasjons- og institusjonsanalyse for offentlig sektor</a><a class="emne obl" href="https://www4.uib.no/emner/GOV251" target="_blank">GOV251 - Bacheloroppgave i administrasjon og organisasjonsvitenskap</a><a class="emne obl" href="https://www4.uib.no/emner/MET102" target="_blank">MET102 - Samfunnsvitenskapelig metode</a></div><div id="BASV-AORGSPES_H19-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/GOV103" target="_blank">GOV103 - Norsk politikk</a><a class="emne valg" href="https://www4.uib.no/emner/GOV107" target="_blank">GOV107 - EU og internasjonale organisasjoner</a><a class="emne valg" href="https://www4.uib.no/emner/GOV109" target="_blank">GOV109 - Climate Policy</a></div><div id="BASV-AORGSPES_H19-M1EMNE2"><h4 class="valgstatus M1EMNE2">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/GOV212" target="_blank">GOV212 - Klima, kriser og samfunnssikkerhet. Håndtering av uregjerlige samfunnsutfordringer</a><a class="emne valg" href="https://www4.uib.no/emner/GOV213" target="_blank">GOV213 - Helse- og velferdspolitikk - Makt og innflytelse </a><a class="emne valg" href="https://www4.uib.no/emner/GOV214" target="_blank">GOV214 - Kunnskapens institusjoner, ekspertise og politikk</a><a class="emne valg" href="https://www4.uib.no/emner/GOV216" target="_blank">GOV216 - Constitutions, Courts and Politics</a><a class="emne valg" href="https://www4.uib.no/emner/GOV217" target="_blank">GOV217 - Gender and Power in Contemporary Politics</a></div></div><div data-sort="3" id="BASV-60FRIE"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div><h3 class="emnekombnavn">Bachelorprogram i administrasjon og organisasjonsvitenskap  (180 sp)</h3><div data-sort="7" id="BASV-PERMISJON"><h3 class="emnekombnavn">Permisjon for bachelorstudenter </h3></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>
