@@ -140,12 +140,13 @@ tab_tag.attrs['class']='tab'
 soup_nav.append(tab_tag)
 
 ar=[2024,2023,2022,2021,2020,2019,2018]
+maxar = max(ar)
 
 for arstall in ar:
   ar_tab_tag = soup_nav.new_tag("button")
-  if arstall == max(ar):
+  if arstall == maxar:
     ar_tab_tag.attrs['class']='tablinks active'
-  if arstall != max(ar):
+  if arstall != maxar:
     ar_tab_tag.attrs['class']='tablinks'
   ar_tab_tag.string=f'''{arstall}'''
   ar_tab_tag.attrs['onclick']=f'''valgtArstallKull(event, '{arstall}')'''
@@ -547,6 +548,13 @@ button {
   background: none;
   border: none;
 }
+ul {
+  list-style: none;
+  padding-left: 1em;
+}
+.tab{
+      padding-left: 0.7em;
+}
     """
 
     head_tag.append(style_tag)
@@ -815,9 +823,9 @@ button {
   div_tab = soup1.new_tag("div")
   div_tab.attrs['id']=arstall
   div_tab.attrs['class']='tabcontent'
-  if arstall == max(ar):
+  if arstall == maxar:
     div_tab.attrs['style']='display: block;'
-  if arstall != max(ar):
+  if arstall != maxar:
     div_tab.attrs['style']='display: none;'
   ul_tag = soup1.new_tag("ul")
   
