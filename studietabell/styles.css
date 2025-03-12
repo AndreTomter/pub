@@ -103,3 +103,7 @@ aside * {
       text-indent: 0;
       text-decoration:none
     }
+button {
+  background: none;
+  border: none;
+}
