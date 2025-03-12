@@ -152,7 +152,7 @@ for arstall in ar:
   ar_tab_tag.attrs['onclick']=f'''valgtArstallKull(event, '{arstall}')'''
   find_tag_tag = soup_nav.find(class_='tab')
   find_tag_tag.append(ar_tab_tag)
-
+  
   studieprogramkoder = ["BASV-GEOG",
   "BASV-SANT",
   "BASV-AORG",
@@ -419,6 +419,8 @@ for arstall in ar:
 
         if eier == 'TOPP':
             strukturert_data[kode] = hierarki[kode]
+            strukturert_data[kode]['rekkefolgenummer'] = -1
+           
         else:
             hierarki[eier]['underordnede'].append(hierarki[kode])
 
@@ -650,7 +652,7 @@ ul {
           id = id.replace(" ", "-")
           tag = soup.new_tag('div')
           tag.attrs['id']=id
-          tag.attrs['data-sort']='0'
+          tag.attrs['data-sort']= -1
           if t['rekkefolgenummer']:
             tag.attrs['data-sort']=t['rekkefolgenummer']
           
@@ -662,7 +664,10 @@ ul {
           
           if (studieprogramkode != 'BASV-EUR') and (t['navnAlleSprak']['nb'] =='Utveksling'):
             tag.attrs['style']='display: none;'
-          
+            
+          if (t['navnAlleSprak']['nb'] =='Permisjon for bachelorstudenter '):
+            tag.attrs['style']='display: none;'
+
           find_table = soup.find(id='tabell')
           find_table.append(tag)  
           
@@ -780,7 +785,7 @@ ul {
               if tag_to_move['data-sort']:
                   sort_value = int(tag_to_move['data-sort'])
               else:
-                  sort_value=int(-1)
+                  sort_value=int(0)
               # Finn destinasjonen
               destination = soup.find(id=emnekomeier)
 
