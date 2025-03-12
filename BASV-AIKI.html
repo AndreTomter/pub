@@ -17,7 +17,21 @@ function valgtArstallKull(evt, arstallKull) {
 }
 
 </script>
+  <script>
+  
+     // Finn alle <div>-elementer
+    const divs = document.querySelectorAll('div');
 
+    // Filtrer ut div-er som:
+    // 1. Har ingen barn (children.length === 0)
+    // 2. Ikke har klassen "valgstatus"
+    divs.forEach(div => {
+        if (div.children.length >= 0  && !div.classList.contains('valgstatus')) {
+            div.style.color = "red";
+        }
+    });
+ 
+</script>
 <style>
     *{
     text-indent:.6em;
