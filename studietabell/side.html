@@ -14,13 +14,23 @@
     document.getElementById(arstallKull).style.display = "block";
     evt.currentTarget.className += " active";
   }
+        async function loadContent(url) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Kunne ikke laste innholdet");
+                const content = await response.text();
+                document.getElementById("main-content").innerHTML = content;
+            } catch (error) {
+                document.getElementById("main-content").innerHTML = `<p>Feil: ${error.message}</p>`;
+            }
+        }
   </script>
 </head>
 <body>
 <h1>BASV-IKT 2023 HØST</h1>
 <div class="flex-container" id="flex-container">
 <section id="section">
-	<div data-include="content.html">
+	<div id="main-content">
 </section>
 <aside id="aside">
 	<div data-include="nav.html">
