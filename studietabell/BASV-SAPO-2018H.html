@@ -1,4 +1,4 @@
-<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>var arstall = "2018";
+<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>
     function valgtArstallKull(evt, arstallKull) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -14,13 +14,13 @@
       }
 
       function visArstall(arstallvar) {
-        var tabarstall = 'tab_'+arstallvar
+        var tabarstall = "tab_2018"
         var tabelement = document.getElementById(tabarstall);
-        if (element) {
+        if (tabelement) {
           tabelement.className += " active";
         } else {
           console.warn("Element med ID " + tabarstall + " finnes ikke.");
-        }
+        };
         var element = document.getElementById(arstallvar);
         if (element) {
           element.style.display = "block";
@@ -61,9 +61,8 @@
           includeHTML(el, el.getAttribute("data-include"), () => {
             console.log("nav.html er lastet!");
 
-            // Kjør scriptet her, siden vi nå vet at nav.html er lastet
-            // Eksempel på å bruke visArstall etter at innholdet er lastet
             
+            var arstall = "2018"
             visArstall(arstall);
           });
         });
