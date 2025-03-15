@@ -117,8 +117,11 @@ ul {
 }
 .tab{
       padding-left: 0.7em;
-      border-bottom:solid 1px #aaaaaa;
+      border:solid 1px #aaaaaa;
 }
+.tabcontent{
+      border:solid 1px #aaaaaa;
+      border-top:unset;
 }
 .active{
   text-decoration: underline;
