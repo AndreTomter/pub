@@ -1,16 +1,72 @@
-<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>function valgtArstallKull(evt, arstallKull) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(arstallKull).style.display = "block";
-    evt.currentTarget.className += " active";
-    };
+<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>var arstall = "2023";
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
 
-    var arstall = '2023'
-</script></head><body><h1>BASV-GEOG 2023 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-GEOG_H20"><h3 class="emnekombnavn">Bachelorprogram i geografi  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-INNF_GEOG_H19"><h3 class="emnekombnavn">Innføringsemner </h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-INNF_GEOG"><h3 class="emnekombnavn">Innføringsemne i bachelorprogram i geografi  (10 sp)</h3><div id="BASV-INNF_GEOG-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg utgatt">GEO100 - Introduksjon til geografi: Globale utfordringer og lokale svar (utgått)</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-GEOGSPES_H19"><h3 class="emnekombnavn">Spesialisering i geografi  (70 sp)</h3><div id="BASV-GEOGSPES_H19-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO110" target="_blank">GEO110 - Kartografi og tematiske kart</a><a class="emne obl" href="https://www4.uib.no/emner/GEO111" target="_blank">GEO111 - Landformdannende prosesser</a><a class="emne obl" href="https://www4.uib.no/emner/GEO113" target="_blank">GEO113 - Klima, oseanografi og biogeografi</a><a class="emne obl" href="https://www4.uib.no/emner/GEO124" target="_blank">GEO124 - Regional utvikling</a><a class="emne obl" href="https://www4.uib.no/emner/GEO125" target="_blank">GEO125 - Økonomisk globalisering, produksjonssystemer og miljø</a><a class="emne obl" href="https://www4.uib.no/emner/GEO131" target="_blank">GEO131 - Mat, miljø og bærekraftig utvikling</a></div></div><div class="emnekomb veivalg" data-sort="3" id="BASV-GEOG_VEIVALGH20"><h3 class="emnekombnavn">Valg av studieretning  (30 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-GEOG_NATUR_H15"><h3 class="emnekombnavn">Naturgeografi  (30 sp)</h3><div id="BASV-GEOG_NATUR_H15-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO204" target="_blank">GEO204 - Kvantitativ metode</a><a class="emne obl" href="https://www4.uib.no/emner/GEO212" target="_blank">GEO212 - Terrestriske klima- og miljøendringer</a><a class="emne obl" href="https://www4.uib.no/emner/GEO291" target="_blank">GEO291 - Naturgeografisk feltkurs</a></div></div><div class="emnekomb" data-sort="2" id="BASV-GEOG_MILJØ_H15"><h3 class="emnekombnavn">Miljø- og landskapsgeografi  (30 sp)</h3><div id="BASV-GEOG_MILJØ_H15-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO204" target="_blank">GEO204 - Kvantitativ metode</a><a class="emne obl" href="https://www4.uib.no/emner/GEO206" target="_blank">GEO206 - Kvalitativ analyse</a><a class="emne obl" href="https://www4.uib.no/emner/GEO293" target="_blank">GEO293 - Miljøgeografisk feltkurs</a></div><div id="BASV-GEOG_MILJØ_H15-M1EMNE2"><h4 class="valgstatus M1EMNE2">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/GEO281" target="_blank">GEO281 - Miljøforvaltning og planlegging</a><a class="emne valg utgatt">GEO282 - Det rurale i endring (utgått)</a><a class="emne valg" href="https://www4.uib.no/emner/GEO283" target="_blank">GEO283 - Geographies of transformation: mitigating and adapting to rapid climate change</a></div></div><div class="emnekomb" data-sort="3" id="BASV-GEOG_SAMF_H18"><h3 class="emnekombnavn">Samfunnsgeografi  (30 sp)</h3><div id="BASV-GEOG_SAMF_H18-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO204" target="_blank">GEO204 - Kvantitativ metode</a><a class="emne obl" href="https://www4.uib.no/emner/GEO206" target="_blank">GEO206 - Kvalitativ analyse</a><a class="emne obl" href="https://www4.uib.no/emner/GEO222" target="_blank">GEO222 - Sustainability in an Urbanising World</a><a class="emne obl" href="https://www4.uib.no/emner/GEO292" target="_blank">GEO292 - Regionalgeografisk feltkurs</a></div></div></div><div class="emnekomb" data-sort="4" id="BASV-60FRIE"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div><div class="emnekomb" data-sort="5" id="BASV-GEOG_H15-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>
+      function visArstall(arstallvar) {
+        var tabarstall = 'tab_'+arstallvar
+        var tabelement = document.getElementById(tabarstall);
+        if (element) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+
+      }
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+
+            // Kjør scriptet her, siden vi nå vet at nav.html er lastet
+            // Eksempel på å bruke visArstall etter at innholdet er lastet
+            
+            visArstall(arstall);
+          });
+        });
+      });
+  
+    </script></head><body><h1>BASV-GEOG 2023 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-GEOG_H20"><h3 class="emnekombnavn">Bachelorprogram i geografi  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-INNF_GEOG_H19"><h3 class="emnekombnavn">Innføringsemner </h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-INNF_GEOG"><h3 class="emnekombnavn">Innføringsemne i bachelorprogram i geografi  (10 sp)</h3><div id="BASV-INNF_GEOG-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg utgatt">GEO100 - Introduksjon til geografi: Globale utfordringer og lokale svar (utgått)</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-GEOGSPES_H19"><h3 class="emnekombnavn">Spesialisering i geografi  (70 sp)</h3><div id="BASV-GEOGSPES_H19-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO110" target="_blank">GEO110 - Kartografi og tematiske kart</a><a class="emne obl" href="https://www4.uib.no/emner/GEO111" target="_blank">GEO111 - Landformdannende prosesser</a><a class="emne obl" href="https://www4.uib.no/emner/GEO113" target="_blank">GEO113 - Klima, oseanografi og biogeografi</a><a class="emne obl" href="https://www4.uib.no/emner/GEO124" target="_blank">GEO124 - Regional utvikling</a><a class="emne obl" href="https://www4.uib.no/emner/GEO125" target="_blank">GEO125 - Økonomisk globalisering, produksjonssystemer og miljø</a><a class="emne obl" href="https://www4.uib.no/emner/GEO131" target="_blank">GEO131 - Mat, miljø og bærekraftig utvikling</a></div></div><div class="emnekomb veivalg" data-sort="3" id="BASV-GEOG_VEIVALGH20"><h3 class="emnekombnavn">Valg av studieretning  (30 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-GEOG_NATUR_H15"><h3 class="emnekombnavn">Naturgeografi  (30 sp)</h3><div id="BASV-GEOG_NATUR_H15-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO204" target="_blank">GEO204 - Kvantitativ metode</a><a class="emne obl" href="https://www4.uib.no/emner/GEO212" target="_blank">GEO212 - Terrestriske klima- og miljøendringer</a><a class="emne obl" href="https://www4.uib.no/emner/GEO291" target="_blank">GEO291 - Naturgeografisk feltkurs</a></div></div><div class="emnekomb" data-sort="2" id="BASV-GEOG_MILJØ_H15"><h3 class="emnekombnavn">Miljø- og landskapsgeografi  (30 sp)</h3><div id="BASV-GEOG_MILJØ_H15-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO204" target="_blank">GEO204 - Kvantitativ metode</a><a class="emne obl" href="https://www4.uib.no/emner/GEO206" target="_blank">GEO206 - Kvalitativ analyse</a><a class="emne obl" href="https://www4.uib.no/emner/GEO293" target="_blank">GEO293 - Miljøgeografisk feltkurs</a></div><div id="BASV-GEOG_MILJØ_H15-M1EMNE2"><h4 class="valgstatus M1EMNE2">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/GEO281" target="_blank">GEO281 - Miljøforvaltning og planlegging</a><a class="emne valg utgatt">GEO282 - Det rurale i endring (utgått)</a><a class="emne valg" href="https://www4.uib.no/emner/GEO283" target="_blank">GEO283 - Geographies of transformation: mitigating and adapting to rapid climate change</a></div></div><div class="emnekomb" data-sort="3" id="BASV-GEOG_SAMF_H18"><h3 class="emnekombnavn">Samfunnsgeografi  (30 sp)</h3><div id="BASV-GEOG_SAMF_H18-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/GEO204" target="_blank">GEO204 - Kvantitativ metode</a><a class="emne obl" href="https://www4.uib.no/emner/GEO206" target="_blank">GEO206 - Kvalitativ analyse</a><a class="emne obl" href="https://www4.uib.no/emner/GEO222" target="_blank">GEO222 - Sustainability in an Urbanising World</a><a class="emne obl" href="https://www4.uib.no/emner/GEO292" target="_blank">GEO292 - Regionalgeografisk feltkurs</a></div></div></div><div class="emnekomb" data-sort="4" id="BASV-60FRIE"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div><div class="emnekomb" data-sort="5" id="BASV-GEOG_H15-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>

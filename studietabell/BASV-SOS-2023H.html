@@ -1,14 +1,72 @@
-<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>function valgtArstallKull(evt, arstallKull) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(arstallKull).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  </script></head><body><h1>BASV-SOS 2023 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-SOS_H20"><h3 class="emnekombnavn">Bachelorprogram i sosiologi  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-1SEM_SOS_H16"><h3 class="emnekombnavn">Førstesemesteremner </h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-INNF-SOS_H16"><h3 class="emnekombnavn">Innføringsemner  (10 sp)</h3><div id="BASV-INNF-SOS_H16-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/SOS100A" target="_blank">SOS100A - Innføring i sosiologi med fordypningstema</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-SOSSPES_H04"><h3 class="emnekombnavn">Spesialisering i sosiologi  (90 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-SOSOBLIG"><h3 class="emnekombnavn">Obligatoriske emner  </h3><div id="BASV-SOSOBLIG-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/MET102" target="_blank">MET102 - Samfunnsvitenskapelig metode</a><a class="emne obl" href="https://www4.uib.no/emner/SOS101" target="_blank">SOS101 - Klassisk og moderne sosiologisk teori</a><a class="emne obl" href="https://www4.uib.no/emner/SOS103" target="_blank">SOS103 - Samfunnsstrukturer i endring</a><a class="emne obl" href="https://www4.uib.no/emner/SOS201" target="_blank">SOS201 - Sosiologisk forskning: Teori og metode</a><a class="emne obl" href="https://www4.uib.no/emner/SOS202" target="_blank">SOS202 - Bacheloroppgave i sosiologi</a></div></div><div class="emnekomb" data-sort="2" id="BASV-SOS_VALG"><h3 class="emnekombnavn">Valgemner i sosiologi </h3><div id="BASV-SOS_VALG-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/SOS111" target="_blank">SOS111 - Familien i endring</a><a class="emne valg" href="https://www4.uib.no/emner/SOS113" target="_blank">SOS113 - Velferd og ulikhet</a><a class="emne valg" href="https://www4.uib.no/emner/SOS116" target="_blank">SOS116 - Klasse, stratifikasjon og sosial mobilitet</a><a class="emne valg" href="https://www4.uib.no/emner/SOS119" target="_blank">SOS119 - Global Cities: An Introduction to Urban Sociology for the 21st Century</a><a class="emne valg" href="https://www4.uib.no/emner/SOS120" target="_blank">SOS120 - Digital Sociology</a><a class="emne valg" href="https://www4.uib.no/emner/SOS135" target="_blank">SOS135 - Global Cities</a></div></div></div><div class="emnekomb" data-sort="3" id="BASV-SOS_H04-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div class="emnekomb" data-sort="4" id="BASV-60FRIE-SOS"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-SOS-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>
+<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>var arstall = "2023";
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var tabarstall = 'tab_'+arstallvar
+        var tabelement = document.getElementById(tabarstall);
+        if (element) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+
+      }
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+
+            // Kjør scriptet her, siden vi nå vet at nav.html er lastet
+            // Eksempel på å bruke visArstall etter at innholdet er lastet
+            
+            visArstall(arstall);
+          });
+        });
+      });
+  
+    </script></head><body><h1>BASV-SOS 2023 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-SOS_H20"><h3 class="emnekombnavn">Bachelorprogram i sosiologi  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-1SEM_SOS_H16"><h3 class="emnekombnavn">Førstesemesteremner </h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-INNF-SOS_H16"><h3 class="emnekombnavn">Innføringsemner  (10 sp)</h3><div id="BASV-INNF-SOS_H16-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/SOS100A" target="_blank">SOS100A - Innføring i sosiologi med fordypningstema</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-SOSSPES_H04"><h3 class="emnekombnavn">Spesialisering i sosiologi  (90 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-SOSOBLIG"><h3 class="emnekombnavn">Obligatoriske emner  </h3><div id="BASV-SOSOBLIG-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/MET102" target="_blank">MET102 - Samfunnsvitenskapelig metode</a><a class="emne obl" href="https://www4.uib.no/emner/SOS101" target="_blank">SOS101 - Klassisk og moderne sosiologisk teori</a><a class="emne obl" href="https://www4.uib.no/emner/SOS103" target="_blank">SOS103 - Samfunnsstrukturer i endring</a><a class="emne obl" href="https://www4.uib.no/emner/SOS201" target="_blank">SOS201 - Sosiologisk forskning: Teori og metode</a><a class="emne obl" href="https://www4.uib.no/emner/SOS202" target="_blank">SOS202 - Bacheloroppgave i sosiologi</a></div></div><div class="emnekomb" data-sort="2" id="BASV-SOS_VALG"><h3 class="emnekombnavn">Valgemner i sosiologi </h3><div id="BASV-SOS_VALG-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg utgatt">SOS105 - Arbeid under kapitalismen (utgått)</a><a class="emne valg utgatt">SOS106 - Økonomisk sosiologi (utgått)</a><a class="emne valg utgatt">SOS108 - Utdanning og samfunn (utgått)</a><a class="emne valg utgatt">SOS109 - Life courses in a Scandinavian welfare state (utgått)</a><a class="emne valg" href="https://www4.uib.no/emner/SOS111" target="_blank">SOS111 - Familien i endring</a><a class="emne valg utgatt">SOS112 - Internasjonal migrasjon og etniske relasjoner (utgått)</a><a class="emne valg" href="https://www4.uib.no/emner/SOS113" target="_blank">SOS113 - Velferd og ulikhet</a><a class="emne valg utgatt">SOS115 - Miljøsosiologi (utgått)</a><a class="emne valg" href="https://www4.uib.no/emner/SOS116" target="_blank">SOS116 - Klasse, stratifikasjon og sosial mobilitet</a><a class="emne valg utgatt">SOS117 - Diverse Societies and International Migration (utgått)</a><a class="emne valg utgatt">SOS118 - Should I stay or should I go? Re-thinking mobilities in sociological perspective (utgått)</a><a class="emne valg" href="https://www4.uib.no/emner/SOS119" target="_blank">SOS119 - Global Cities: An Introduction to Urban Sociology for the 21st Century</a><a class="emne valg" href="https://www4.uib.no/emner/SOS120" target="_blank">SOS120 - Digital Sociology</a><a class="emne valg" href="https://www4.uib.no/emner/SOS135" target="_blank">SOS135 - Global Cities</a><a class="emne valg utgatt">SOS149 - Å forklare sosial handling (utgått)</a></div></div></div><div class="emnekomb" data-sort="3" id="BASV-SOS_H04-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div class="emnekomb" data-sort="4" id="BASV-60FRIE-SOS"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-SOS-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>

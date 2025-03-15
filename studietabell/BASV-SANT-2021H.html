@@ -1,14 +1,72 @@
-<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>function valgtArstallKull(evt, arstallKull) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(arstallKull).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  </script></head><body><h1>BASV-SANT 2021 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-SANT_H20"><h3 class="emnekombnavn">Bachelorprogram i sosialantropologi  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-SANT_FSEM_H16"><h3 class="emnekombnavn">Førstesemesteremner  </h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-INNF_SANT"><h3 class="emnekombnavn">Innføringsemne   (10 sp)</h3><div id="BASV-INNF_SANT-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/SANT100" target="_blank">SANT100 - Invitasjon til sosialantropologi</a></div></div><div class="emnekomb" data-sort="3" id="BASV-FORSTESEM_SANT"><h3 class="emnekombnavn">Anbefalt førstesemesteremne  </h3><div id="BASV-FORSTESEM_SANT-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/SANT150" target="_blank">SANT150 - Akademisk skriving, metode og teori: antropologiske tilnærminger</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-SANTSPES_H09"><h3 class="emnekombnavn">Spesialisering i sosialantropologi  (90 sp)</h3><div id="BASV-SANTSPES_H09-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/SANT102" target="_blank">SANT102 - Sosialt liv i globalt perspektiv</a><a class="emne obl" href="https://www4.uib.no/emner/SANT103" target="_blank">SANT103 - Materialitet: miljø, sted og økonomi</a><a class="emne obl" href="https://www4.uib.no/emner/SANT104" target="_blank">SANT104 - Kultur, mening og kommunikasjon</a><a class="emne obl" href="https://www4.uib.no/emner/SANT105" target="_blank">SANT105 - Politikk, makt og motstand</a><a class="emne obl" href="https://www4.uib.no/emner/SANT215" target="_blank">SANT215 - Komparativ regional etnografi</a><a class="emne obl" href="https://www4.uib.no/emner/SANT260" target="_blank">SANT260 - Bacheloroppgave</a></div></div><div class="emnekomb" data-sort="3" id="BASV-SANT_H09-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div class="emnekomb" data-sort="4" id="BASV-60FRIE"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>
+<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>var arstall = "2021";
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var tabarstall = 'tab_'+arstallvar
+        var tabelement = document.getElementById(tabarstall);
+        if (element) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+
+      }
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+
+            // Kjør scriptet her, siden vi nå vet at nav.html er lastet
+            // Eksempel på å bruke visArstall etter at innholdet er lastet
+            
+            visArstall(arstall);
+          });
+        });
+      });
+  
+    </script></head><body><h1>BASV-SANT 2021 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-SANT_H20"><h3 class="emnekombnavn">Bachelorprogram i sosialantropologi  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-SANT_FSEM_H16"><h3 class="emnekombnavn">Førstesemesteremner  </h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-INNF_SANT"><h3 class="emnekombnavn">Innføringsemne   (10 sp)</h3><div id="BASV-INNF_SANT-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/SANT100" target="_blank">SANT100 - Invitasjon til sosialantropologi</a></div></div><div class="emnekomb" data-sort="3" id="BASV-FORSTESEM_SANT"><h3 class="emnekombnavn">Anbefalt førstesemesteremne  </h3><div id="BASV-FORSTESEM_SANT-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/SANT150" target="_blank">SANT150 - Akademisk skriving, metode og teori: antropologiske tilnærminger</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-SANTSPES_H09"><h3 class="emnekombnavn">Spesialisering i sosialantropologi  (90 sp)</h3><div id="BASV-SANTSPES_H09-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/SANT102" target="_blank">SANT102 - Sosialt liv i globalt perspektiv</a><a class="emne obl" href="https://www4.uib.no/emner/SANT103" target="_blank">SANT103 - Materialitet: miljø, sted og økonomi</a><a class="emne obl" href="https://www4.uib.no/emner/SANT104" target="_blank">SANT104 - Kultur, mening og kommunikasjon</a><a class="emne obl" href="https://www4.uib.no/emner/SANT105" target="_blank">SANT105 - Politikk, makt og motstand</a><a class="emne obl" href="https://www4.uib.no/emner/SANT215" target="_blank">SANT215 - Komparativ regional etnografi</a><a class="emne obl" href="https://www4.uib.no/emner/SANT260" target="_blank">SANT260 - Bacheloroppgave</a></div></div><div class="emnekomb" data-sort="3" id="BASV-SANT_H09-UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div class="emnekomb" data-sort="4" id="BASV-60FRIE"><h3 class="emnekombnavn">Valgfrie emner  (60 sp)</h3><div id="BASV-60FRIE-V"><h4 class="valgstatus V">Valgfritt</h4><a class="emne valg" href="https://www4.uib.no/emner/DIGI100" target="_blank">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a><a class="emne valg" href="https://www4.uib.no/emner/DIGI101" target="_blank">DIGI101 - Digital kildekritikk</a></div></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>

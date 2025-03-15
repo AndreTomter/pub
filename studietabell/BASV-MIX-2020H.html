@@ -1,14 +1,72 @@
-<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>function valgtArstallKull(evt, arstallKull) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(arstallKull).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  </script></head><body><h1>BASV-MIX 2020 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-MIX_H20"><h3 class="emnekombnavn">Bachelorprogram i medie- og interaksjonsdesign  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-MIX_INNF_H18"><h3 class="emnekombnavn">Innføringsemner  (20 sp)</h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-MIX_INNFH18"><h3 class="emnekombnavn">Innføringsemne  (10 sp)</h3><div id="BASV-MIX_INNFH18-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/MIX100" target="_blank">MIX100 - Grunnkurs i medie- og interaksjonsdesign</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-MIX_OBLIG_H20"><h3 class="emnekombnavn">Spesialisering medie- og interaksjonsdesign  (130 sp)</h3><div id="BASV-MIX_OBLIG_H20-M1MAKS"><h4 class="valgstatus M1MAKS">Minst 1 - maks 1</h4><a class="emne valg" href="https://www4.uib.no/emner/AIKI110" target="_blank">AIKI110 - Kunstige agentar</a><a class="emne valg" href="https://www4.uib.no/emner/INFO110" target="_blank">INFO110 - Informasjonssystemer</a><a class="emne valg" href="https://www4.uib.no/emner/INFO135" target="_blank">INFO135 - Viderekommende programmering</a></div><div id="BASV-MIX_OBLIG_H20-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/INFO125" target="_blank">INFO125 - Datahåndtering</a><a class="emne obl" href="https://www4.uib.no/emner/INFO132" target="_blank">INFO132 - Innføring i programmering</a><a class="emne obl" href="https://www4.uib.no/emner/INFO263" target="_blank">INFO263 - Brukerinvolvering og prototyping</a><a class="emne obl" href="https://www4.uib.no/emner/MIX114" target="_blank">MIX114 - Frontend-utvikling</a><a class="emne obl" href="https://www4.uib.no/emner/MIX203" target="_blank">MIX203 - Design for medieproduksjon</a><a class="emne obl" href="https://www4.uib.no/emner/MIX204" target="_blank">MIX204 - Design for mediebruk</a><a class="emne obl" href="https://www4.uib.no/emner/MIX250" target="_blank">MIX250 - Bacheloroppgave i medie- og interaksjonsdesign</a></div></div><div class="emnekomb" data-sort="3" id="BASV-MIX_UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div class="emnekomb" data-sort="4" id="BASV-30FRIE"><h3 class="emnekombnavn">Valgfrie emner  (30 sp)</h3></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>
+<html><head><link href="styles.css" rel="stylesheet"/><script src="include-html.min.js"></script><script>var arstall = "2020";
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var tabarstall = 'tab_'+arstallvar
+        var tabelement = document.getElementById(tabarstall);
+        if (element) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+
+      }
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+
+            // Kjør scriptet her, siden vi nå vet at nav.html er lastet
+            // Eksempel på å bruke visArstall etter at innholdet er lastet
+            
+            visArstall(arstall);
+          });
+        });
+      });
+  
+    </script></head><body><h1>BASV-MIX 2020 HØST</h1><div class="flex-container" id="flex-container"><section id="section"><div id="tabell"><div class="emnekomb" data-sort="-1" id="BASV-MIX_H20"><h3 class="emnekombnavn">Bachelorprogram i medie- og interaksjonsdesign  (180 sp)</h3><div class="emnekomb" data-sort="1" id="BASV-MIX_INNF_H18"><h3 class="emnekombnavn">Innføringsemner  (20 sp)</h3><div class="emnekomb" data-sort="1" id="EXPHIL-SV"><h3 class="emnekombnavn">Examen philosophicum  (10 sp)</h3><div id="EXPHIL-SV-M1EMNE"><h4 class="valgstatus M1EMNE">Minst 1 emne av</h4><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVEKS" target="_blank">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a><a class="emne valg" href="https://www4.uib.no/emner/EXPHIL-SVSEM" target="_blank">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div></div><div class="emnekomb" data-sort="2" id="BASV-MIX_INNFH18"><h3 class="emnekombnavn">Innføringsemne  (10 sp)</h3><div id="BASV-MIX_INNFH18-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/MIX100" target="_blank">MIX100 - Grunnkurs i medie- og interaksjonsdesign</a></div></div></div><div class="emnekomb" data-sort="2" id="BASV-MIX_OBLIG_H20"><h3 class="emnekombnavn">Spesialisering medie- og interaksjonsdesign  (130 sp)</h3><div id="BASV-MIX_OBLIG_H20-O"><h4 class="valgstatus O">Obligatorisk emne</h4><a class="emne obl" href="https://www4.uib.no/emner/INFO125" target="_blank">INFO125 - Datahåndtering</a><a class="emne obl" href="https://www4.uib.no/emner/INFO132" target="_blank">INFO132 - Innføring i programmering</a><a class="emne obl" href="https://www4.uib.no/emner/INFO263" target="_blank">INFO263 - Brukerinvolvering og prototyping</a><a class="emne obl" href="https://www4.uib.no/emner/MIX114" target="_blank">MIX114 - Frontend-utvikling</a><a class="emne obl utgatt">MIX202 - Design for mediebruk (utgått)</a><a class="emne obl" href="https://www4.uib.no/emner/MIX203" target="_blank">MIX203 - Design for medieproduksjon</a><a class="emne obl" href="https://www4.uib.no/emner/MIX250" target="_blank">MIX250 - Bacheloroppgave i medie- og interaksjonsdesign</a></div></div><div class="emnekomb" data-sort="3" id="BASV-MIX_UTV" style="display: none;"><h3 class="emnekombnavn">Utveksling </h3></div><div class="emnekomb" data-sort="4" id="BASV-30FRIE"><h3 class="emnekombnavn">Valgfrie emner  (30 sp)</h3></div></div></div></section><aside id="aside"><div data-include="nav.html"></div></aside></div></body></html>

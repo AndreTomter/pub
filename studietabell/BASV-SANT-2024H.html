@@ -14,12 +14,20 @@
       }
 
       function visArstall(arstallvar) {
+        var tabarstall = 'tab_'+arstallvar
+        var tabelement = document.getElementById(tabarstall);
+        if (element) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
         var element = document.getElementById(arstallvar);
         if (element) {
           element.style.display = "block";
         } else {
           console.warn("Element med ID " + arstallvar + " finnes ikke.");
         }
+
       }
 
       document.addEventListener("DOMContentLoaded", (e) => {
