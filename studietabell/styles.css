@@ -90,19 +90,23 @@
       
   .flex-container {
     display: flex;
+      
   }
 
   .flex-container section {
     flex: 1; // By your image example it looks like you want this element to stretch
   }
   .flex-container aside {
-    border:solid 1px #aaaaaa;
+    
     max-width:400px;
   }
 aside * {
       text-indent: 0;
       text-decoration:none
     }
+aside{
+      border:solid 1px #aaaaaa;
+}
 button {
   background: none;
   border: none;
@@ -113,6 +117,8 @@ ul {
 }
 .tab{
       padding-left: 0.7em;
+      border-bottom:solid 1px #aaaaaa;
+}
 }
 .active{
   text-decoration: underline;
