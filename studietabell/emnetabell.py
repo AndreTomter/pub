@@ -5,6 +5,7 @@ import json
 import pandas as pd
 import re
 from datetime import datetime
+from bs4 import BeautifulSoup
 #må kanskje hente inn eier nivå#
 
 # Brukernavn og passord
@@ -83,6 +84,14 @@ enum_types = [t for t in data["data"]["__schema"]["types"] if t["kind"] == "ENUM
 print(enum_types)  # Viser tilgjengelige ENUM-typer
 '''
 
+def getartermin(arstall, terminbetegnelse):
+      termin = 0
+      if terminbetegnelse[0] == 'H':
+          termin = 2
+      if terminbetegnelse[0] == 'V':
+          termin = 1
+      arterminkode = f'''{arstall}{termin}'''
+      return int(arterminkode)
 
 def hent_id_for_terminbetegnelse(terminbetegnelse = None):
     # Gå gjennom listen 'edges' for å finne "HØST"
@@ -133,7 +142,7 @@ result = run_query(terminquery, username, password, variables)
 print(result)
 quit()
 """
-from bs4 import BeautifulSoup
+
 soup_nav = BeautifulSoup('''''', '''html.parser''')
 tab_tag = soup_nav.new_tag("div")
 tab_tag.attrs['class']='tab'
@@ -142,17 +151,23 @@ soup_nav.append(tab_tag)
 ar=[2024,2023,2022,2021,2020,2019,2018]
 maxar = max(ar)
 
+#Inneværende år
+innevar = datetime.now().year
+innevdato = datetime.now()
+
+# Sjekk om vi er før 1. juli
+termin = 1 if innevdato.month < 7 else 2
+innevartermin = f'''{innevar}{termin}'''
+
 for arstall in ar:
   ar_tab_tag = soup_nav.new_tag("button")
-  if arstall == maxar:
-    ar_tab_tag.attrs['class']='tablinks active'
-  if arstall != maxar:
-    ar_tab_tag.attrs['class']='tablinks'
+  ar_tab_tag.attrs['id'] = f'tab_{arstall}'
+  ar_tab_tag.attrs['class']='tablinks'
   ar_tab_tag.string=f'''{arstall}'''
   ar_tab_tag.attrs['onclick']=f'''valgtArstallKull(event, '{arstall}')'''
   find_tag_tag = soup_nav.find(class_='tab')
   find_tag_tag.append(ar_tab_tag)
-  
+
   studieprogramkoder = ["BASV-GEOG",
   "BASV-SANT",
   "BASV-AORG",
@@ -173,28 +188,15 @@ for arstall in ar:
   "BASV-SOS",
   "MASV-LÆSF"
   ]
- 
-  def artermin(arstall, terminbetegnelse):
-      termin = 0
-      if terminbetegnelse[0] == 'H':
-          termin = 2
-      if terminbetegnelse[0] == 'V':
-          termin = 1
-      arterminkode = f'''{arstall}{termin}'''
-      return arterminkode
+
+  
 
   terminbetegnelse = 'HOST'
 
-  programkullartermin = artermin(arstall, terminbetegnelse)
+  programkullartermin = getartermin(arstall, terminbetegnelse)
 
 
-  #Inneværende år
-  innevar = datetime.now().year
-  innevdato = datetime.now()
 
-  # Sjekk om vi er før 1. juli
-  termin = 1 if innevdato.month < 7 else 2
-  innevartermin = f'''{innevar}{termin}'''
 
 
   filer = []
@@ -234,6 +236,39 @@ for arstall in ar:
                   terminnummerTil
                 }
               }
+              frieEmnevalg {
+                begrensninger {
+                    organisasjonsenhet {
+                        instituttnummer
+                        fakultet {
+                            fakultetsnummer
+                        }
+                        gruppenummer
+                        navnAlleSprak {
+                            nb
+                        }
+                    }
+                    studieniva {
+                        fraStudieniva {
+                            kode
+                        }
+                        tilStudieniva {
+                            kode
+                        }
+                    }
+                    fag {
+                        navnAlleSprak {
+                            nb
+                        }
+                    }
+                    emnekategori {
+                        kode
+                        navnAlleSprak {
+                            nb
+                        }
+                    }
+                    }
+                }
               emner {
                 emne {
                   kode
@@ -334,7 +369,7 @@ for arstall in ar:
     print(studieprogramkode,arstall)
 
     filnavn = f'''{studieprogramkode}-{arstall}{terminbetegnelse[0]}.html'''
-    filbane = f'''C:/Users/tto036/OneDrive - University of Bergen/Documents/Visual Studio Code/studieløptabell/{filnavn}'''
+    filbane = f'''c:/Users/tandr/Visual Studio Code/FS Grapql/studieløptabell/{filnavn}'''
     fil = {}
     # Variabel for å holde cursor
     cursor = None
@@ -359,20 +394,64 @@ for arstall in ar:
             if bygningsdel['parent']:
                 parent = bygningsdel['parent']['studieoppbygningsdel']['kode']
             #bygningsdel['parent']['rekkefolgenummer'] 
-                
-            emnekombinasjon = bygningsdel['studieoppbygningsdel']
-            emnekombinasjon['eier'] = parent
-            emnekombinasjon['rekkefolgenummer']=bygningsdel['rekkefolgenummer']
-            emnekombinasjon['kullStartFraTermin'] = ''
-            emnekombinasjon['kullStartTilTermin'] = ''
-            emnekombinasjon['sisteTerminForValg'] = ''
-            emnekombinasjon['kullterminer']=bygningsdel['kullterminer']
+            emneKombTilKullTermin = 999999
+            emneKombFraKullTermin = 1
+            if bygningsdel['kullterminer']:
+                if bygningsdel['kullterminer']['kullStartTilTermin']:
+                    emneKombTilKullTermin = getartermin(bygningsdel['kullterminer']['kullStartTilTermin']['arstall'], bygningsdel['kullterminer']['kullStartTilTermin']['betegnelse']['kode'])
+                if bygningsdel['kullterminer']['kullStartFraTermin']:
+                    emneKombFraKullTermin = getartermin(bygningsdel['kullterminer']['kullStartFraTermin']['arstall'], bygningsdel['kullterminer']['kullStartFraTermin']['betegnelse']['kode'])
             
-            
-                
+            if (int(programkullartermin) >= int(emneKombFraKullTermin)) and (int(programkullartermin) <= int(emneKombTilKullTermin)):
+                  
+                  emneliste =  []
+                  for emner in bygningsdel['studieoppbygningsdel']['emner']:
+                      emneTilKullTermin = 999999
+                      emneFraKullTermin = 1
+                      emner['sisteTerminForValgStatus']=''
+                      if emner['kullterminer']:
+                          print(emner['kullterminer'])
+                          if emner['kullterminer']['tilKullTermin']:
+                              tilKullTerminArstall = ''
+                              tilKullTerminTermin = ''
+                              tilKullTerminArstall = emner['kullterminer']['tilKullTermin']['arstall']
+                              tilKullTerminTermin = emner['kullterminer']['tilKullTermin']['betegnelse']['kode']
+                              
+                              nyTilKullTermin = getartermin(int(tilKullTerminArstall), tilKullTerminTermin)
+                              emneTilKullTermin = nyTilKullTermin
+                          if emner['kullterminer']['fraKullTermin']:
+                              fraKullTerminArstall = ''
+                              fraKullTerminTermin = ''
+                              fraKullTerminArstall = emner['kullterminer']['fraKullTermin']['arstall']
+                              fraKullTerminTermin = emner['kullterminer']['fraKullTermin']['betegnelse']['kode']
+                              emneFraKullTermin = getartermin(int(fraKullTerminArstall), fraKullTerminTermin)
 
-            
-            tabelldata.append(emnekombinasjon)
+                      if emner['sisteTerminForValg']:
+                          sisteTerminForValg = getartermin(emner['sisteTerminForValg']['arstall'],emner['sisteTerminForValg']['betegnelse']['kode'])
+                          
+                          if (int(innevartermin) >= int(sisteTerminForValg)):
+                              emner['sisteTerminForValgStatus'] = 'Utgått'
+                              
+                      if (int(programkullartermin) >= int(emneFraKullTermin)) and (int(programkullartermin) <= int(emneTilKullTermin)):
+                          emneliste.append(emner)
+
+                  
+                  emnekombinasjon = bygningsdel['studieoppbygningsdel']
+                  emnekombinasjon['eier'] = parent
+                  emnekombinasjon['frieEmnevalg']
+                  emnekombinasjon['kullStartFraTermin'] = ''
+                  emnekombinasjon['kullStartTilTermin'] = ''
+                  emnekombinasjon['sisteTerminForValg'] = ''
+                  emnekombinasjon['kullterminer']=bygningsdel['kullterminer']
+                  #emnekombinasjon['emner'] = []
+                  if bygningsdel['rekkefolgenummer'] is None:
+                      emnekombinasjon['rekkefolgenummer']=0
+                  else:
+                      emnekombinasjon['rekkefolgenummer']=bygningsdel['rekkefolgenummer']          
+                  
+                  emnekombinasjon['emner'] = emneliste
+                  
+                  tabelldata.append(emnekombinasjon)
             
             
 
@@ -566,20 +645,87 @@ ul {
     head_tag.append(script_tag1)
 
     script_tag2 = soup.new_tag("script")
-    script_tag2.string = '''function valgtArstallKull(evt, arstallKull) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(arstallKull).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
-  '''
+   
+    script_tag2_string = '''
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+      function velgArstall(arstallvar) {
+        var tabarstall = placeholderfortabarstall
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+
+            
+            placeholderforarstall
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+  
+    '''
+    
+    insert = f'''var arstall = "{arstall}"'''
+    insert2 = f'''"tab_{arstall}"'''
+    new_script_tag2_string = script_tag2_string.replace("placeholderforarstall", insert).replace("placeholderfortabarstall",insert2)
+   
+    script_tag2.string = new_script_tag2_string
     head_tag.append(script_tag2)
 
     body_tag = soup.new_tag("body")
@@ -640,7 +786,8 @@ ul {
                 betegnelse = kullterminer.get('sisteTerminForValg').get('betegnelse').get('kode')
                 betegnelse = betegnelse.replace('VÅR','1').replace('HØST','2')
                 artermin = f'{ar}{betegnelse}'
-                sisteTerminForValg = artermin
+                sisteTerminForValg = artermin 
+
         if (int(programkullartermin) > int(kullStartFraTermin)) and (int(programkullartermin) < int(kullStartTilTermin)) and (int(innevartermin) < int(sisteTerminForValg)):
           
           id= t['kode']
@@ -656,11 +803,11 @@ ul {
           if t['rekkefolgenummer']:
             tag.attrs['data-sort']=t['rekkefolgenummer']
           
-
+          tag.attrs['class']='emnekomb'
           valg = hierarki[t['kode']]['veivalg']
           if valg:
               if valg['harVeivalg']:
-                  tag.attrs['class']='veivalg'
+                  tag.attrs['class']='emnekomb veivalg'
           
           if (studieprogramkode != 'BASV-EUR') and (t['navnAlleSprak']['nb'] =='Utveksling'):
             tag.attrs['style']='display: none;'
@@ -728,8 +875,11 @@ ul {
             if e['sisteTerminForValg']:
               emnesisteTerminForValg = f'''{e['sisteTerminForValg']['arstall']}{e['sisteTerminForValg']['betegnelse']['kode']}'''.replace('HØST','2').replace('VÅR','1')
               
+              #denne bør endres til å legge til klasse for utgåtte emner, se etter sisteTerminForValgStatus
+              #if (int(emnesisteTerminForValg) >= int(innevartermin)) and (int(fraKullTermin) <= int(programkullartermin)) and (int(tilKullTermin) >= int(programkullartermin)):
+             
 
-              if (int(emnesisteTerminForValg) >= int(innevartermin)) and (int(fraKullTermin) <= int(programkullartermin)) and (int(tilKullTermin) >= int(programkullartermin)):
+              if (int(fraKullTermin) <= int(programkullartermin)) and (int(tilKullTermin) >= int(programkullartermin)):
                   
                   evalgkode = e['valgregel']['kode']
                   evalgkode = evalgkode.replace(" ", "-")
@@ -737,13 +887,21 @@ ul {
                   id = id.replace(" ", "-")
                   evalgid = f'{id}-{evalgkode}'
                   etag = soup.new_tag('a')  #div
-                  if e['valgregel']['erObligatorisk']:
-                      etag.attrs['class']='emne obl'
+                  if int(emnesisteTerminForValg) <= int(innevartermin):
+                    if e['valgregel']['erObligatorisk']:
+                      etag.attrs['class']='emne obl utgatt'
+                    else:
+                      etag.attrs['class']='emne valg utgatt'
+
+                    etag.string = f'''{e['emne']['kode']} - {e['emne']['navnAlleSprak']['nb']} (utgått)'''
                   else:
-                      etag.attrs['class']='emne valg'
-                  etag.attrs['href']=f'''https://www4.uib.no/emner/{e['emne']['kode']}'''
-                  etag.attrs['target'] = "_blank"
-                  etag.string = f'''{e['emne']['kode']} - {e['emne']['navnAlleSprak']['nb']}'''
+                    if e['valgregel']['erObligatorisk']:
+                        etag.attrs['class']='emne obl'
+                    else:
+                        etag.attrs['class']='emne valg'
+                    etag.attrs['href']=f'''https://www4.uib.no/emner/{e['emne']['kode']}'''
+                    etag.attrs['target'] = "_blank"
+                    etag.string = f'''{e['emne']['kode']} - {e['emne']['navnAlleSprak']['nb']}'''
                   eparent_tag = soup.find(id=evalgid)
                   
                   eparent_tag.append(etag)
@@ -800,7 +958,7 @@ ul {
         tk.remove(t)  
 
     # Skriv ut det oppdaterte HTML-dokumentet
-    #print(soup.prettify())
+    print(soup.prettify())
     print('')
 
 
@@ -819,6 +977,7 @@ ul {
     fil['filnavn'] = filnavn
     fil['arstall'] = arstall
     filer.append(fil)
+    
     with open(filbane, "w", encoding='utf-8') as file:
       file.write(str(soup))
 
@@ -828,10 +987,7 @@ ul {
   div_tab = soup1.new_tag("div")
   div_tab.attrs['id']=arstall
   div_tab.attrs['class']='tabcontent'
-  if arstall == maxar:
-    div_tab.attrs['style']='display: block;'
-  if arstall != maxar:
-    div_tab.attrs['style']='display: none;'
+  div_tab.attrs['style']='display: none;'
   ul_tag = soup1.new_tag("ul")
   
   for f in filer:
@@ -848,6 +1004,6 @@ ul {
 
 print(soup_nav.prettify())
 filnavn = f'''nav.html'''
-filbane = f'''C:/Users/tto036/OneDrive - University of Bergen/Documents/Visual Studio Code/studieløptabell/{filnavn}'''
+filbane = f'''c:/Users/tandr/Visual Studio Code/FS Grapql/studieløptabell/{filnavn}'''
 with open(filbane, "w", encoding='utf-8') as file:
   file.write(str(soup_nav))
