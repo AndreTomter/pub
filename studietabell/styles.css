@@ -127,6 +127,10 @@ ul {
   text-underline-offset: 0.3em;
   font-weight: 600;
 }
+tablinks:hover:not(.active) {
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
 li > * {
   padding-left: 1em;
 }
