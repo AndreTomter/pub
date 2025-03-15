@@ -14,21 +14,23 @@
       }
 
       function visArstall(arstallvar) {
-        var tabarstall = "tab_2018"
-        var tabelement = document.getElementById(tabarstall);
-        if (tabelement) {
-          tabelement.className += " active";
-        } else {
-          console.warn("Element med ID " + tabarstall + " finnes ikke.");
-        };
         var element = document.getElementById(arstallvar);
         if (element) {
           element.style.display = "block";
         } else {
           console.warn("Element med ID " + arstallvar + " finnes ikke.");
         }
+      };
 
-      }
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2018"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
 
       document.addEventListener("DOMContentLoaded", (e) => {
         const includeHTML = (el, url, callback) => {
@@ -64,6 +66,7 @@
             
             var arstall = "2018"
             visArstall(arstall);
+            velgArstall()
           });
         });
       });
