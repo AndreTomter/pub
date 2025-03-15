@@ -111,7 +111,7 @@ button {
 }
 ul {
   list-style: none;
-  padding-left: 1em;
+  padding-left: 0px;
 }
 .tab{
       padding-left: 0.7em;
@@ -127,3 +127,7 @@ ul {
   text-underline-offset: 0.3em;
   font-weight: 600;
 }
+li > * {
+  padding-left: 1em;
+}
+
