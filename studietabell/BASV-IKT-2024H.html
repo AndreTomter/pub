@@ -61,9 +61,8 @@
           includeHTML(el, el.getAttribute("data-include"), () => {
             console.log("nav.html er lastet!");
 
-            // Kjør scriptet her, siden vi nå vet at nav.html er lastet
-            // Eksempel på å bruke visArstall etter at innholdet er lastet
-            placeholderforarstall
+            
+            var arstall = "2024"
             visArstall(arstall);
           });
         });
