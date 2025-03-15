@@ -96,9 +96,8 @@
     flex: 1; // By your image example it looks like you want this element to stretch
   }
   .flex-container aside {
-    border-left:solid 1px solid #aaaaaa;
+    border:solid 1px #aaaaaa;
     max-width:400px;
-      width:300px;
   }
 aside * {
       text-indent: 0;
