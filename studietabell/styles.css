@@ -46,7 +46,7 @@
     a{
       display: block;
     }
-    a:not(:last-child), div:not(:last-child) {
+    a:not(:last-child), section > div:not(:last-child) {
       border-bottom: 1px solid #aaaaaa;
     }
     a:hover {
