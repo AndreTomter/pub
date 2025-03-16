@@ -127,7 +127,7 @@ ul {
   text-underline-offset: 0.3em;
   font-weight: 600;
 }
-tablinks:hover {
+button:hover {
   text-decoration: underline;
   text-underline-offset: 0.3em;
 }
