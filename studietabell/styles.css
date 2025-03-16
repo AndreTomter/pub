@@ -10,10 +10,7 @@
       margin:.5em
     }
 
-    .valgstatus.O,
-    .valgstatus.OBL {
-      display: none;
-    }
+   
 
     .emnekombnavn {
       font-weight: bold;
