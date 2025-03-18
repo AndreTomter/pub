@@ -743,7 +743,8 @@ a:hover{
                             utgatt=f''' ({emne['sisteTerminForValgStatus']})'''
                             print(f'''    {emne['emne']['kode']} {emne['emne']['vekting']['emnevekting']['verdi']}sp {utgatt}''')
                             div += f'''<div class="tablerow"><a class="tablcell niva{el['nivå']} {emne['sisteTerminForValgStatus']}">{emne['emne']['kode']} - {emne['emne']['navnAlleSprak']['nb']}{utgatt}</a></div>\n'''
-                        div += f'''<div class="tablerow"><a class="tablcell niva{el['nivå']}" href="https://www4.uib.no/emner/{emne['emne']['kode']}">{emne['emne']['kode']} - {emne['emne']['navnAlleSprak']['nb']}</a></div>\n'''
+                        else:
+                            div += f'''<div class="tablerow"><a class="tablcell niva{el['nivå']}" href="https://www4.uib.no/emner/{emne['emne']['kode']}">{emne['emne']['kode']} - {emne['emne']['navnAlleSprak']['nb']}</a></div>\n'''
             '''
             for emne in el['emner']:
                 print(f"{idx}.", emne['emne']['kode'], f"{emne['emne']['vekting']['emnevekting']['verdi']} sp", emne['valgregel']['kode'], emne['rekkefolgenummer'], emne['terminForPlasseringIUtdanningsplan']['terminnummerForhandsvalgt'], emne['sisteTerminForValgStatus'])
