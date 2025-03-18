@@ -547,8 +547,8 @@ for arstall in ar:
     er_veivalg = list(set(er_veivalg[:]))
 
     for eier in eier_til_veivalg: er_veivalg.remove(eier)
-    print(er_veivalg)
-    print('eier_til_veivalg',eier_til_veivalg)
+    #print(er_veivalg)
+    #print('eier_til_veivalg',eier_til_veivalg)
 
     css = '''body {
 	padding: 2em;
@@ -640,7 +640,8 @@ a:hover{
         }
         document.getElementById(arstallKull).style.display = "block";
         evt.currentTarget.className += " active";
-      }\n
+      }
+
       function visArstall(arstallvar) {
         var element = document.getElementById(arstallvar);
         if (element) {
@@ -648,11 +649,11 @@ a:hover{
         } else {
           console.warn("Element med ID " + arstallvar + " finnes ikke.");
         }
-      };\n
+      };
 
       function velgArstall(arstallvar) {'''
-    div+=f'''var tabarstall = "tab_{arstall}"'''
-    div+='''var tabelement = document.getElementById(tabarstall);
+    div+=f'''  var tabarstall = "tab_{arstall}"'''
+    div+='''  var tabelement = document.getElementById(tabarstall);
         if (tabelement) {
           tabelement.className += " active";
         } else {
@@ -663,10 +664,8 @@ a:hover{
       document.addEventListener("DOMContentLoaded", (e) => {
         const includeHTML = (el, url, callback) => {
           const xhr = new XMLHttpRequest();
-
           xhr.addEventListener("readystatechange", (e) => {
             if (xhr.readyState !== 4) return;
-
             if (xhr.status >= 200 && xhr.status < 300) {
               el.outerHTML = xhr.responseText;
 
@@ -691,10 +690,13 @@ a:hover{
           includeHTML(el, el.getAttribute("data-include"), () => {
             console.log("nav.html er lastet!");'''
     div+=f'''      var arstall = "{arstall}"'''
-    div+='''      visArstall(arstall);
+    div+='''visArstall(arstall);
             velgArstall()
+
           });
+
         });
+
       });
     </script>
     </head>
@@ -711,7 +713,7 @@ a:hover{
         if el['vektingskrav']:
             if el['vektingskrav']['minimumsvekting']:
                 vektkrav = f''' ({el['vektingskrav']['minimumsvekting']['verdi']} sp)'''
-        print(f"{idx}. {el['kode']}",f"{el['navnAlleSprak']['nb']}", f"(Nivå {el['nivå']})", f"(Rekkefolgenummer {el['rekkefolgenummer']}){vektkrav}")
+        #print(f"{idx}. {el['kode']}",f"{el['navnAlleSprak']['nb']}", f"(Nivå {el['nivå']})", f"(Rekkefolgenummer {el['rekkefolgenummer']}){vektkrav}")
         veivalg = ''
         if el['kode'] in eier_til_veivalg:
             veivalg ='harVeivalg'
@@ -722,7 +724,7 @@ a:hover{
         
         
         if el['beskrivelseAlleSprak']:
-            print('beskrivelse: ', el['beskrivelseAlleSprak']['nb'])
+            #print('beskrivelse: ', el['beskrivelseAlleSprak']['nb'])
             div += f'''<div class="tablerow"><div class="tablcell niva{el['nivå']} beskrivelse">{el['beskrivelseAlleSprak']['nb']}</div></div>'''
         
         
@@ -734,14 +736,14 @@ a:hover{
             unike_valgregler_set = list({(v['kode'], v['navnAlleSprak']): v for v in valgregler}.values())
             unike_valgregler_set.sort(key=lambda v: (v['kode'] != 'O'))
             for v in unike_valgregler_set:
-                print('   ',v['navnAlleSprak'])
+                #print('   ',v['navnAlleSprak'])
                 div += f'''<div class="tablerow"><div class="tablcell niva{el['nivå']} valgregl">{v['navnAlleSprak']}</div></div>\n'''
                 for emne in el['emner']:
                     if emne['valgregel']['kode'] == v['kode']:
                         utgatt = ''
                         if emne['sisteTerminForValgStatus']:
                             utgatt=f''' ({emne['sisteTerminForValgStatus']})'''
-                            print(f'''    {emne['emne']['kode']} {emne['emne']['vekting']['emnevekting']['verdi']}sp {utgatt}''')
+                            #print(f'''    {emne['emne']['kode']} {emne['emne']['vekting']['emnevekting']['verdi']}sp {utgatt}''')
                             div += f'''<div class="tablerow"><a class="tablcell niva{el['nivå']} {emne['sisteTerminForValgStatus']}">{emne['emne']['kode']} - {emne['emne']['navnAlleSprak']['nb']}<span class="prevent-select">{utgatt}</span></a></div>\n'''
                         else:
                             div += f'''<div class="tablerow"><a class="tablcell niva{el['nivå']}" href="https://www4.uib.no/emner/{emne['emne']['kode']}">{emne['emne']['kode']} - {emne['emne']['navnAlleSprak']['nb']}</a></div>\n'''
@@ -752,8 +754,8 @@ a:hover{
         if el['frieEmnevalg']['begrensninger']:
             ''
     div += f'''</div>\n</section>\n<aside id="aside">\n<div data-include="nav.html">\n</div></aside></div>\n</body>\n</html>'''
-    print('')
-    print(div)
+    #print('')
+    #print(div)
     with open(filbane, "w", encoding='utf-8') as file:
       file.write(str(div))
 
@@ -785,7 +787,7 @@ a:hover{
   soup1.insert(1,div_tab)
   soup_nav.append(soup1)
 
-print(soup_nav.prettify())
+#print(soup_nav.prettify())
 filnavn = f'''nav.html'''
 filbane = f'''c:/Users/tandr/Visual Studio Code/FS Grapql/semnetabell/{filnavn}'''
 with open(filbane, "w", encoding='utf-8') as file:
