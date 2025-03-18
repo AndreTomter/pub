@@ -650,9 +650,9 @@ a:hover{
         }
       };\n
 
-      function velgArstall(arstallvar) {
-        var tabarstall = "tab_2024"
-        var tabelement = document.getElementById(tabarstall);
+      function velgArstall(arstallvar) {'''
+    div+=f'''var tabarstall = "tab_{ar}"'''
+    div+='''var tabelement = document.getElementById(tabarstall);
         if (tabelement) {
           tabelement.className += " active";
         } else {
@@ -689,9 +689,9 @@ a:hover{
 
         document.querySelectorAll("[data-include]").forEach((el) => {
           includeHTML(el, el.getAttribute("data-include"), () => {
-            console.log("nav.html er lastet!");
-            var arstall = "2024"
-            visArstall(arstall);
+            console.log("nav.html er lastet!");'''
+    div+=f'''      var arstall = "{ar}"'''
+    div+='''      visArstall(arstall);
             velgArstall()
           });
         });
