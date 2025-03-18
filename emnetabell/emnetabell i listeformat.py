@@ -623,6 +623,8 @@ a:hover{
 	text-decoration: underline;
 	text-decoration-thickness: from-font;
 }'''
+
+
     div='''<html>
     <head>
     <link href="tabellstyles.css" rel="stylesheet">
@@ -651,9 +653,9 @@ a:hover{
         }
       };
 
-      function velgArstall(arstallvar) {'''
-    div+=f'''  var tabarstall = "tab_{arstall}"'''
-    div+='''  var tabelement = document.getElementById(tabarstall);
+      function velgArstall(arstallvar) {\n'''
+    div+=f'''    var tabarstall = "tab_{arstall}"\n'''
+    div+='''var tabelement = document.getElementById(tabarstall);
         if (tabelement) {
           tabelement.className += " active";
         } else {
@@ -664,8 +666,10 @@ a:hover{
       document.addEventListener("DOMContentLoaded", (e) => {
         const includeHTML = (el, url, callback) => {
           const xhr = new XMLHttpRequest();
+
           xhr.addEventListener("readystatechange", (e) => {
             if (xhr.readyState !== 4) return;
+
             if (xhr.status >= 200 && xhr.status < 300) {
               el.outerHTML = xhr.responseText;
 
@@ -688,15 +692,14 @@ a:hover{
 
         document.querySelectorAll("[data-include]").forEach((el) => {
           includeHTML(el, el.getAttribute("data-include"), () => {
-            console.log("nav.html er lastet!");'''
-    div+=f'''      var arstall = "{arstall}"'''
-    div+='''visArstall(arstall);
+            console.log("nav.html er lastet!");
+        '''
+            
+    div+=f'''        var arstall = "{arstall}"\n'''
+    div+='''    visArstall(arstall);
             velgArstall()
-
           });
-
         });
-
       });
     </script>
     </head>
