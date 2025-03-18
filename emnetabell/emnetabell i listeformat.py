@@ -699,7 +699,9 @@ a:hover{
     </script>
     </head>
     <body>\n
-    <div class="flex-container" id="flex-container">
+    '''
+    div+=f'''<h2>{tabelldata_sortert[0]['navnAlleSprak']['nb']}</h2>\n<div class="flex-container" id="flex-container">'''
+    div+='''
     <section id="section">
     <div class="table"> '''
     
@@ -762,25 +764,25 @@ a:hover{
 
 
 
-from bs4 import BeautifulSoup
-soup1 = BeautifulSoup('''''', '''html.parser''')
-div_tab = soup1.new_tag("div")
-div_tab.attrs['id']=arstall
-div_tab.attrs['class']='tabcontent'
-div_tab.attrs['style']='display: none;'
-ul_tag = soup1.new_tag("ul")
+  from bs4 import BeautifulSoup
+  soup1 = BeautifulSoup('''''', '''html.parser''')
+  div_tab = soup1.new_tag("div")
+  div_tab.attrs['id']=arstall
+  div_tab.attrs['class']='tabcontent'
+  div_tab.attrs['style']='display: none;'
+  ul_tag = soup1.new_tag("ul")
 
-for f in filer:
-    li_tag = soup1.new_tag("li")
-    a_tag = soup1.new_tag("a")
-    a_tag.string=f['navn']
-    a_tag.attrs['href']=f['filnavn']
-    li_tag.append(a_tag)
-    ul_tag.append(li_tag)
-    
-div_tab.append(ul_tag)
-soup1.insert(1,div_tab)
-soup_nav.append(soup1)
+  for f in filer:
+      li_tag = soup1.new_tag("li")
+      a_tag = soup1.new_tag("a")
+      a_tag.string=f['navn']
+      a_tag.attrs['href']=f['filnavn']
+      li_tag.append(a_tag)
+      ul_tag.append(li_tag)
+      
+  div_tab.append(ul_tag)
+  soup1.insert(1,div_tab)
+  soup_nav.append(soup1)
 
 print(soup_nav.prettify())
 filnavn = f'''nav.html'''
