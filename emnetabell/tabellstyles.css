@@ -145,7 +145,7 @@ li>* {
 }
 
 .Utgatt:hover {
-	text-decoration: none;
+	text-decoration: none !important;
 }
 .prevent-select {
   -webkit-user-select: none; /* Safari */
