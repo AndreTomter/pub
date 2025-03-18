@@ -1,0 +1,148 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container"><h2>Bachelorprogram i kognitiv vitenskap</h2>
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-KOGNI" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i kognitiv vitenskap<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-KOGNIINNF" class="tablcell emnekombinasjon niva1 ">Innføring i kognitiv vitenskap<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXFAC00SK">EXFAC00SK - Språkkunnskap</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF100">INF100 - Innføring i programmering</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-KOGNIFAG" class="tablcell emnekombinasjon niva1 ">Fagemner i kognitiv vitenskap<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DASPSTAT">DASPSTAT - Statistikk for kognisjonsforskning</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/FIL105">FIL105 - Innføring i sinnsfilosofi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF227">INF227 - Innføring i logikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO102">INFO102 - Formelle metoder for informasjonsvitenskap</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO282">INFO282 - Knowledge Representation and Reasoning </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO283">INFO283 - Grunnleggende algoritmer i kunstig intelligens</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/KOGVIT101">KOGVIT101 - Introduction to the Cognitive Sciences</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/LING122">LING122 - Språk og kognisjon</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/LOG110">LOG110 - Introduksjon til formallogikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/LOG111">LOG111 - Deduksjon og metalogikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/PSYK120">PSYK120 - Biologisk og kognitiv psykologi</a></div>
+<div class="tablerow"><div id="BASV-KOGNIVALG" class="tablcell emnekombinasjon niva1 harVeivalg">Valg av spesialisering eller frie emnevalg, BA i kognitiv vitenskap<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-INFOSPES_KOGNI" class="tablcell emnekombinasjon niva2 erVeivalg">Spesialisering i informasjonsvitenskap<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Val dersom ein skal søkje opptak til master i informasjonsvitskap: I tillegg til dei obligatoriske emne skal studentane velje minst 50 studiepoeng på 100- eller 200-nivå unntatt INFO100 og INFO132.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF207">INF207 - Sosial nettverksteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO103">INFO103 - Informasjon og kunnskap</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO110">INFO110 - Informasjonssystemer</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO115">INFO115 - The Social Web</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO116">INFO116 - Semantic Technologies</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO125">INFO125 - Datahåndtering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO180">INFO180 - Metoder i kunstig intelligens</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO207">INFO207 - Sosial nettverksteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO212">INFO212 - Systemutvikling</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO216">INFO216 - Knowledge Graphs</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO233">INFO233 - Avansert programmering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO262">INFO262 - Interaction Design</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO284">INFO284 - Machine Learning</a></div>
+<div class="tablerow"><div id="BASV-INFSPES_KOGNI" class="tablcell emnekombinasjon niva2 erVeivalg">Spesialisering i informatikk<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Val dersom ein skal spesialisere seg i informatikk</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF102">INF102 - Algoritmer, datastrukturer og programmering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF112">INF112 - Innføring i systemutvikling</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF122">INF122 - Funksjonell programmering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF223">INF223 - Kategoriteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/MAT111">MAT111 - Grunnkurs i matematikk I</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/MAT121">MAT121 - Lineær algebra</a></div>
+<div class="tablerow"><div id="BASV-FILSPES_KOGNI" class="tablcell emnekombinasjon niva2 erVeivalg">Spesialisering i filosofi<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Val dersom ein skal søkje opptak til master i filosofi</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL120">FIL120 - Filosofihistorien fra antikken til opplysningstiden</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL121">FIL121 - Filosofihistorien fra opplysningstiden til 1900-tallet</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL125">FIL125 - Introduksjon til teoretisk filosofi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL251">FIL251 - Bacheloroppgave i filosofi</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 10 studiepoeng</div></div>
+<div class="tablerow"><a class="tablcell niva2 Utgått">FIL123 - Et filosofisk originalverk fra opplysningstiden til 1900-tallet (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL123">FIL123 - Et filosofisk originalverk fra opplysningstiden til 1900-tallet</a></div>
+<div class="tablerow"><a class="tablcell niva2 Utgått">FIL126 - Introduksjon til språkfilosofi (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL126">FIL126 - Introduksjon til språkfilosofi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FIL129">FIL129 - Filosofiske klassikere</a></div>
+<div class="tablerow"><div id="BASV-60FRIE-KOGNI" class="tablcell emnekombinasjon niva2 erVeivalg">Valgfrie emner<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg fritt blant emner som til sammen utgjør 60 studiepoeng</div></div><div class="tablerow"><div id="BASV-PERMISJON" class="tablcell emnekombinasjon niva1 ">Permisjon for bachelorstudenter<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-KOGNI-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>
