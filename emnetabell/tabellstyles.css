@@ -91,6 +91,7 @@ aside * {
 button {
   background: none;
   border: none;
+  line-height: 2em;
 }
 ul {
   list-style: none;
@@ -104,6 +105,7 @@ ul {
 .tabcontent{
       border:solid 1px #aaaaaa;
       border-top:unset;
+     line-height: 1.5em;
 }
 .active{
   text-decoration: underline;
