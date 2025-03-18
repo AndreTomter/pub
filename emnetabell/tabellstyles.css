@@ -1,124 +1,148 @@
 body {
 	padding: 2em;
-	
+
 }
-.table{
+
+.table {
 	display: table;
 	width: 800px;
 	border: solid 1px black;
-	
-}
-.emnekombinasjon{
-	background-color:red;
-}
-.niva0{
-	background-color:#1b2631;
-	color:white
-}
-div.niva1{
-	background-color:#34495e;
-	color:white
-}
-.niva1{
-	text-indent: 1em;
-}
-.niva2{
-	text-indent: 2em;
-}
-.niva3{
-	text-indent: 3em;
-}
-div.niva2{
-	background-color:#5d6d7e;
-	color:white;
+
 }
 
-div.niva3{
-	background-color:#aeb6bf;
-	color:white
-	
+.emnekombinasjon {
+	background-color: red;
 }
-.valgregl{
+
+.niva0 {
+	background-color: #1b2631;
+	color: white
+}
+
+div.niva1 {
+	background-color: #34495e;
+	color: white
+}
+
+.niva1 {
+	text-indent: 1em;
+}
+
+.niva2 {
+	text-indent: 2em;
+}
+
+.niva3 {
+	text-indent: 3em;
+}
+
+div.niva2 {
+	background-color: #5d6d7e;
+	color: white;
+}
+
+div.niva3 {
+	background-color: #aeb6bf;
+	color: white
+}
+
+.valgregl {
 	background-color: #ebedef !important;
 	color: unset !important;
 	font-style: italic;
 }
-.beskrivelse{
+
+.beskrivelse {
 	background-color: unset !important;
 	color: unset !important;
 }
-.tablerow{
+
+.tablerow {
 	display: table-row;
 	border-bottom: solid 1px black;
 }
-.tablcell{
+
+.tablcell {
 	display: table-cell;
 	border-top: solid 1px black;
-	height:100%;
+	height: 100%;
 	padding: 0.2em;
-	
+
 }
-.krav{
-	 float: right;
+
+.krav {
+	float: right;
 	margin-right: 0.9em;
 }
-a{
-	color:unset;
+
+a {
+	color: unset;
 	text-decoration: none;
 }
-a:hover{
-	color:unset;
+
+a:hover {
+	color: unset;
 	text-decoration: underline;
 	text-decoration-thickness: from-font;
 }
- .flex-container {
-    display: flex;
-      
-  }
 
-  .flex-container section {
-    flex: 1; // By your image example it looks like you want this element to stretch
-  }
-  .flex-container aside {
-    
-    max-width:400px;
-  }
+.flex-container {
+	display: flex;
+
+}
+
+.flex-container section {
+	flex: 1; // By your image example it looks like you want this element to stretch
+}
+
+.flex-container aside {
+
+	max-width: 500px;
+}
+
 aside * {
-      text-indent: 0;
-      text-decoration:none
-    }
+	text-indent: 0;
+	text-decoration: none
+}
 
 button {
-  background: none;
-  border: none;
-  line-height: 2em;
+	background: none;
+	border: none;
+	line-height: 2em;
 }
+
 ul {
-  list-style: none;
-  padding-left: 0px;
+	list-style: none;
+	padding-left: 0px;
 }
-.tab{
-      padding-left: 0.7em;
-      border:solid 1px #aaaaaa;
-      margin-bottom: -1rem;
+
+.tab {
+	padding-left: 0.7em;
+	border: solid 1px #aaaaaa;
+	margin-bottom: -1rem;
 }
-.tabcontent{
-      border:solid 1px #aaaaaa;
-      border-top:unset;
-     line-height: 1.5em;
+
+.tabcontent {
+	border: solid 1px #aaaaaa;
+	border-top: unset;
+	line-height: 1.5em;
 }
-.active{
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
-  font-weight: 600;
+
+.active {
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+	font-weight: 600;
 }
+
 button:hover {
-  text-decoration: underline;
-  text-underline-offset: 0.3em;
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
 }
-li > * {
-  padding-left: 1em;
+
+li>* {
+	padding-left: 1em;
 }
-.utgatt:hover{
-      text-decoration: none;
+
+.utgatt:hover {
+	text-decoration: none;
 }
