@@ -26,8 +26,8 @@
         }
       };
 
-
-      function velgArstall(arstallvar) {var tabarstall = "tab_2021"var tabelement = document.getElementById(tabarstall);
+      function velgArstall(arstallvar) {  var tabarstall = "tab_2021";
+  var tabelement = document.getElementById(tabarstall);
         if (tabelement) {
           tabelement.className += " active";
         } else {
@@ -38,10 +38,8 @@
       document.addEventListener("DOMContentLoaded", (e) => {
         const includeHTML = (el, url, callback) => {
           const xhr = new XMLHttpRequest();
-
           xhr.addEventListener("readystatechange", (e) => {
             if (xhr.readyState !== 4) return;
-
             if (xhr.status >= 200 && xhr.status < 300) {
               el.outerHTML = xhr.responseText;
 
@@ -64,10 +62,14 @@
 
         document.querySelectorAll("[data-include]").forEach((el) => {
           includeHTML(el, el.getAttribute("data-include"), () => {
-            console.log("nav.html er lastet!");      var arstall = "2021"      visArstall(arstall);
+            console.log("nav.html er lastet!");      var arstall = "2021";
+visArstall(arstall);
             velgArstall()
+
           });
+
         });
+
       });
     </script>
     </head>
