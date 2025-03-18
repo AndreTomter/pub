@@ -84,6 +84,7 @@ a:hover {
 	color: unset;
 	text-decoration: underline;
 	text-decoration-thickness: from-font;
+	background-color:#f9f9fa;
 }
 
 .flex-container {
