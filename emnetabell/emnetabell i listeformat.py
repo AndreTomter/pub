@@ -651,7 +651,7 @@ a:hover{
       };\n
 
       function velgArstall(arstallvar) {'''
-    div+=f'''var tabarstall = "tab_{ar}"'''
+    div+=f'''var tabarstall = "tab_{arstall}"'''
     div+='''var tabelement = document.getElementById(tabarstall);
         if (tabelement) {
           tabelement.className += " active";
@@ -690,7 +690,7 @@ a:hover{
         document.querySelectorAll("[data-include]").forEach((el) => {
           includeHTML(el, el.getAttribute("data-include"), () => {
             console.log("nav.html er lastet!");'''
-    div+=f'''      var arstall = "{ar}"'''
+    div+=f'''      var arstall = "{arstall}"'''
     div+='''      visArstall(arstall);
             velgArstall()
           });
