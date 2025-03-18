@@ -1,0 +1,122 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-SOS H24" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i sosiologi<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="SV-DIGI" class="tablcell emnekombinasjon niva1 ">Digital kompetanse for nye studenter<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Vi anbefaller alle nye studenter å gjennomføre kursene Digital student og Digital kildekritikk</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI100">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI101">DIGI101 - Digital kildekritikk</a></div>
+<div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva1 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-SOS INNF" class="tablcell emnekombinasjon niva1 ">Anbefalt emne førstesemester<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS100A">SOS100A - Innføring i sosiologi med fordypningstema</a></div>
+<div class="tablerow"><div id="BASV-SOS H24 SPES" class="tablcell emnekombinasjon niva1 ">Spesialisering i sosiologi<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-SOS H24 SPES O" class="tablcell emnekombinasjon niva2 ">Obligatoriske emner i spesialiseringen<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/MET103">MET103 - Kvalitativ samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/MET104">MET104 - Kvantitativ samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS121">SOS121 - Klassiske sosiologiske teorier</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS122">SOS122 - Nyere sosiologiske teorier</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS123">SOS123 - Det norske samfunn i endring</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS203">SOS203 - Sosiologisk forskning: Teori og metode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS204">SOS204 - Bacheloroppgave i sosiologi</a></div>
+<div class="tablerow"><div id="BASV-SOS H24 SPES V" class="tablcell emnekombinasjon niva2 ">Valgemner i spesialiseringen<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS131">SOS131 - Familien i endring</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS132">SOS132 - Å forklare sosial handling</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS133">SOS133 - Velferd og ulikhet</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS134">SOS134 - Digital Sociology</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS135">SOS135 - Global Cities</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS136">SOS136 - Klasse, stratifikasjon og sosial mobilitet</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS137">SOS137 - Migrasjon og ulikhet i mangfoldige samfunn</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS138">SOS138 - Diversity and organization in universities</a></div>
+<div class="tablerow"><div id="SV-FRIE" class="tablcell emnekombinasjon niva1 ">Frie studiepoeng<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

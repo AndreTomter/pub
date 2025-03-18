@@ -1,0 +1,127 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-IKT_H20" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i informasjons- og kommunikasjonsteknologi (IKT)<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-IKT_FØRSTES_H10" class="tablcell emnekombinasjon niva1 ">Førstesemesterstudiet, IKT<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF100">INF100 - Innføring i programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO100">INFO100 - Innføring i informasjonsvitenskap</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-MNEKS">EXPHIL-MNEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-MNSEM">EXPHIL-MNSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-IKT_OBLIG_H10" class="tablcell emnekombinasjon niva1 ">Obligatoriske emner i spesialiseringen<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">I tillegg til obligatoriske emner velges 10 studiepoeng fordypning i spesialiseringen</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF101">INF101 - Videregående programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF102">INF102 - Algoritmer, datastrukturer og programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF112">INF112 - Innføring i systemutvikling</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF142">INF142 - Datanett</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO110">INFO110 - Informasjonssystemer</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO125">INFO125 - Datahåndtering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO180">INFO180 - Metoder i kunstig intelligens</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MNF130">MNF130 - Diskrete strukturer</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF122">INF122 - Funksjonell programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF143">INF143 - Anvendt kryptografi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF207">INF207 - Sosial nettverksteori</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF251">INF251 - Grafisk databehandling</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF264">INF264 - Innføring i maskinlæring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO207">INFO207 - Sosial nettverksteori</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO215">INFO215 - Web Science</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO216">INFO216 - Knowledge Graphs</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO263">INFO263 - Brukerinvolvering og prototyping</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO282">INFO282 - Knowledge Representation and Reasoning </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO284">INFO284 - Machine Learning</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MAT111">MAT111 - Grunnkurs i matematikk I</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MAT121">MAT121 - Lineær algebra</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/STAT101">STAT101 - Elementær statistikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/STAT110">STAT110 - Grunnkurs i statistikk</a></div>
+<div class="tablerow"><div id="BASV-IKT_UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-IKT_VALG_H10" class="tablcell emnekombinasjon niva1 ">Valgfrie emner innen bachelorprogrammet i IKT<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">60 studiepoeng er valfrie emne. Dette kan vere studium frå utanlandske universitet, emne frå andre fag eller fleire emne frå informatikk eller informasjonsvitskap. Velg blant emner som ikke overlapper med emner du har tatt tidligere, eller med hverandre. Hvis du vil søke masterprogram i informatikk, må du ta minst 20 studiepoeng i matematikk i tillegg til MNF130. Ett statistikkemne kan inngå som et av to matematikkemnene. Fra 2022 kan ikke MAT101 inngå som et av de to matematikkemnene.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MAT111">MAT111 - Grunnkurs i matematikk I</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MAT121">MAT121 - Lineær algebra</a></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

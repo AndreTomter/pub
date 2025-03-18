@@ -1,0 +1,120 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-MEVI_H20" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i medievitenskap<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-FORSTESEM_MEVI" class="tablcell emnekombinasjon niva1 ">Førstesemesteremner <span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Ex.phil. og ett innføringsemne er obligatorisk for å oppnå en bachelorgrad. Ex.fac./innføringsemner fra andre studieprogram gir fritak.</div></div><div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva2 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-INNF_MEVI" class="tablcell emnekombinasjon niva2 ">Innføringsemne<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">MEVIX100 er anbefalt innføringsemne for studieprogrammet</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/MEVIX100">MEVIX100 - Introduksjon til media og kommunikasjon</a></div>
+<div class="tablerow"><div id="BASV-MEVISPES_H11" class="tablcell emnekombinasjon niva1 ">Spesialisering i medievitenskap<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI101">MEVI101 - Medier: Institusjoner og bransjeforståelse</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI102">MEVI102 - Mediebruk: Teori og metode</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI103">MEVI103 - Film, TV og visuell kultur: Fortolkning og analyse</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI104">MEVI104 - Retorikk og strategisk kommunikasjon</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI203">MEVI203 - Medieretorikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI221">MEVI221 - Medieinstitusjoner: Marked og demokrati</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI222">MEVI222 - Mediebruk: Identitet og samfunn</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI223">MEVI223 - Film, TV og visuell kultur: Historie og teori</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI224">MEVI224 - Medieteknologi og samfunn</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI203B">MEVI203B - Medieretorikk - bacheloroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI221B">MEVI221B - Medieinstitusjoner: Marked og demokrati - bacheloroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI222B">MEVI222B - Mediebruk: Identitet og samfunn - bacheloroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI223B">MEVI223B - Film, TV og visuell kultur: Historie og teori - bacheloroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MEVI224B">MEVI224B - Medieteknologi og samfunn - Bacheloroppgave</a></div>
+<div class="tablerow"><div id="BASV-MEVI_H11-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-60FRIE" class="tablcell emnekombinasjon niva1 ">Valgfrie emner<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg fritt blant emner som til sammen utgjør 60 studiepoeng.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI100">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI101">DIGI101 - Digital kildekritikk</a></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

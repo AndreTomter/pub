@@ -1,0 +1,119 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-AORG_H20" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i administrasjon og organisasjonsvitenskap<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-1SEM_AORG_H16" class="tablcell emnekombinasjon niva1 ">Førstesemesteremner<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Ex.phil. og ett innføringsemne er obligatorisk for å oppnå en bachelorgrad. De fleste studieprogrammene anbefaler i tillegg ett ekstra innføringsemne som en integrert del av førstesemesterstudiet sitt. NB! Husk at exfac/innføringsemner fra andre studieprogram gir fritak.</div></div><div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva2 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-INNF_AORG_H16" class="tablcell emnekombinasjon niva2 ">Innføringsemner<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Du kan ha maksimalt 20 studiepoeng innføringsemne/ex.fac i tillegg til ex.phil.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GOV100">GOV100 - Innføring i politikk og forvaltning</a></div>
+<div class="tablerow"><div id="BASV-AORGSPES_H19" class="tablcell emnekombinasjon niva1 ">Spesialisering i administrasjon og organisasjonsvitenskap<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV101">GOV101 - Organisasjonsteori</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV104">GOV104 - Politisk teori og styreformer</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV215">GOV215 - Organisasjons- og institusjonsanalyse for offentlig sektor</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV251">GOV251 - Bacheloroppgave i administrasjon og organisasjonsvitenskap</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MET102">MET102 - Samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV103">GOV103 - Norsk politikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV107">GOV107 - EU og internasjonale organisasjoner</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV109">GOV109 - Climate Policy</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV212">GOV212 - Klima, kriser og samfunnssikkerhet. Håndtering av uregjerlige samfunnsutfordringer</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV213">GOV213 - Helse- og velferdspolitikk - Makt og innflytelse </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV214">GOV214 - Kunnskapens institusjoner, ekspertise og politikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV216">GOV216 - Constitutions, Courts and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GOV217">GOV217 - Gender and Power in Contemporary Politics</a></div>
+<div class="tablerow"><div id="BASV-AORG_H07-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-60FRIE" class="tablcell emnekombinasjon niva1 ">Valgfrie emner<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg fritt blant emner som til sammen utgjør 60 studiepoeng.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI100">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI101">DIGI101 - Digital kildekritikk</a></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

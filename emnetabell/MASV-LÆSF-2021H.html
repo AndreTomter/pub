@@ -1,0 +1,214 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="MASV-LÆSF H21" class="tablcell emnekombinasjon niva0 ">Lektorutdanning med master i sosiologi<span class="krav"> (300 sp)</span></div></div>
+<div class="tablerow"><div id="MASV-LÆSF_21H_1SEM" class="tablcell emnekombinasjon niva1 ">Første semester - Lektorutdanning i sosiologi<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/KOPRA101">KOPRA101 - Skolen og lærerrollen i praksis</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/PEDA120">PEDA120 - Læreren og elevene</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS100B">SOS100B - Innføring i sosiologi</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="MASV-LÆSF_21H_FAG1" class="tablcell emnekombinasjon niva1 ">Fag 1 - Lektorutdanning i sosiologi<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/KOPRA102">KOPRA102 - Læringsprosesser</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/KOPRA103">KOPRA103 - Planlegging og evaluering av undervisning </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MET102">MET102 - Samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/PEDA121">PEDA121 - Læreren i klasserommet</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/PEDA122">PEDA122 - Skolen i samfunnet</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAKDI101">SAKDI101 - Samfunnskunnskapsdidaktikk 1</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAKDI111">SAKDI111 - Samfunnskunnskapsdidaktikk 2</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS101">SOS101 - Klassisk og moderne sosiologisk teori</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS103-L">SOS103-L - Samfunnsstrukturer i endring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS201">SOS201 - Sosiologisk forskning: Teori og metode</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS105-L">SOS105-L - Arbeid under kapitalismen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SOS113-L">SOS113-L - Velferd og ulikhet</a></div>
+<div class="tablerow"><div id="MASV-LÆSF_21H_FAG2" class="tablcell emnekombinasjon niva1 harVeivalg">Fag 2 - Lektorutdanning i sosiologi<span class="krav"></span></div></div>
+<div class="tablerow"><div id="14H-FAG2ENG" class="tablcell emnekombinasjon niva2 erVeivalg">Engelsk som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2 Utgått">ENG107 - Engelsk grammatikk II (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENG107">ENG107 - Engelsk grammatikk II</a></div>
+<div class="tablerow"><a class="tablcell niva2 Utgått">ENG114 - Engelsk grammatikk I (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENG114">ENG114 - Engelsk grammatikk I</a></div>
+<div class="tablerow"><a class="tablcell niva2 Utgått">ENG115 - Engelsk fonetikk og fonologi (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENG115">ENG115 - Engelsk fonetikk og fonologi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENG122">ENG122 - Amerikansk litteratur og kultur </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENGDI101">ENGDI101 - Fagdidaktikk i engelsk i lektorutdanningen</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENG261">ENG261 - Semesteroppgave i engelsk lingvistikk: språkhistorie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENG263">ENG263 - Semesteroppgave i engelsk lingvistikk: moderne lingvistikk</a></div>
+<div class="tablerow"><div id="14H-FAG2TYS" class="tablcell emnekombinasjon niva2 erVeivalg">Tysk som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS105">TYS105 - Grunnemne i tysk språk I</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS106">TYS106 - Tyskspråklig kultur og historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS107">TYS107 - Tysk språk og tekstkunnskap</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS115">TYS115 - Grunnemne i tysk språk II</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS116">TYS116 - Tyskspråklig litteratur</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYSDI101">TYSDI101 - Fagdidaktikk i tysk i lektorutdanningen 1</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS251L">TYS251L - Fordypning i tysk språk med semesteroppgave for lektorstudenter</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYS256">TYS256 - Fordypning i tyskspråklig litteratur med semesteroppgave</a></div>
+<div class="tablerow"><div id="14H-FAG2FRAN" class="tablcell emnekombinasjon niva2 erVeivalg">Fransk som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN120">FRAN120 - Fransk grammatikk 1</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN121">FRAN121 - Fransk grammatikk 2</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN122">FRAN122 - Innføring i moderne franskspråkleg litteratur</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN123">FRAN123 - Innføring i franske litterære klassikere</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN124">FRAN124 - Fransk kulturkunnskap og frankofoni</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRANDI101">FRANDI101 - Fagdidaktikk i fransk i lektorutdanningen 1</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN254">FRAN254 - Fordypning i fransk litteratur med bacheloroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRAN255L">FRAN255L - Fordypning i fransk grammatikk og tekstlingvistikk med bacheloroppgave for lektorutdanningen</a></div>
+<div class="tablerow"><div id="14H-FAG2NOR" class="tablcell emnekombinasjon niva2 erVeivalg">Nordisk som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NODI101">NODI101 - Nordisk fagdidaktikk</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOLI102">NOLI102 - Nordisk: Litteratur etter 1900 </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOLI103-L">NOLI103-L - Nordisk: Den eldre litteraturen for integrert lærerutdanning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOSP104">NOSP104 - Nordisk: Språksystem og språkbruk</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOSP105">NOSP105 - Nordisk: Språkhistorie og talemål</a></div>
+<div class="tablerow"><a class="tablcell niva2 Utgått">NOSPAN101 - Moderne norsk (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOSPAN101">NOSPAN101 - Moderne norsk</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOLI250-L">NOLI250-L - Nordisk: Litterær analyse og teori med bacheloroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NOSP256-L">NOSP256-L - Nordisk: Språklig fordjupingsemne med BA-oppgave</a></div>
+<div class="tablerow"><div id="14H-FAG2SPLA" class="tablcell emnekombinasjon niva2 erVeivalg">Spansk som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPANDI101">SPANDI101 - Fagdidaktikk i spansk i lektorutdanningen 1</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPLA107">SPLA107 - Spansk grammatikk I</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPLA108">SPLA108 - Kultur, historie og litteratur: Latinamerikanske revolusjoner</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPLA109">SPLA109 - Latinamerikansk historie og kultur</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPLA117">SPLA117 - Spansk språk II</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPLA119">SPLA119 - Kultur, historie og litteratur: Latin-Amerika i den globale verden</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPLA257">SPLA257 - Fordypning i spansk grammatikk med latinamerikanske varianter med bacheloroppgave</a></div>
+<div class="tablerow"><div id="14H-FAG2REL" class="tablcell emnekombinasjon niva2 erVeivalg">Religionsvitenskap som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELDI111">RELDI111 - Fagdidaktikk for religionsvitenskap 1 (for videregående skole) lektorutdanning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELV101">RELV101 - Hva er religionsvitenskap?</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELV102">RELV102 - Kristendommen, jødedommen og islam</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELV103L">RELV103L - Hinduismen og buddhismen - Lektorutdanningen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELV105">RELV105 - Religioner i oltid, antikken og norrøn tid</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELVI250L">RELVI250L - Bacheloroppgave i systematisk religionsvitenskap - Lektorutdanningen</a></div>
+<div class="tablerow"><div id="14H-FAG2HIS" class="tablcell emnekombinasjon niva2 erVeivalg">Historie som fag 2<span class="krav"> (65 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIDID111">HIDID111 - Historiedidaktikk for videregående skole</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS101">HIS101 - Oversikt over eldre historie til 1750</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS102">HIS102 - Oversikt over nyere historie fra 1750</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS120">HIS120 - Fordypningsoppgave i historie for lærerutdanningen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS250L">HIS250L - Bacheloroppgave i historie</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIM101">HIM101 - Oversikt over Midtøstens historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS108">HIS108 - Oversikt over kvinne- og kjønnshistorie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS111">HIS111 - Oversikt over USAs historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS113">HIS113 - Fordypning i eldre historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS114">HIS114 - Fordypning i eldre historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS115">HIS115 - Fordypning i nyere historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS116">HIS116 - Fordypning i nyere historie</a></div>
+<div class="tablerow"><div id="MASV-LÆSF_21H_MAST" class="tablcell emnekombinasjon niva1 harVeivalg">Opptak til masterdel - Lektorutdanning i sosiologi<span class="krav"></span></div></div>
+<div class="tablerow"><div id="MASV-LÆSF_21H_300SOS" class="tablcell emnekombinasjon niva2 erVeivalg">300-nivå i sosiologi - Lektorutdanning i sosiologi<span class="krav"> (115 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/LAPRA101">LAPRA101 - Første praksisperiode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/LAPRA102">LAPRA102 - Andre praksisperiode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/PEDA123">PEDA123 - Lærerens profesjonsutvikling</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SAKDI300">SAKDI300 - Samfunnskunnskapsdidaktikk 3</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS302">SOS302 - Sosiologiske teoritradisjoner </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS303">SOS303 - Metode - statistisk analyse</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS304">SOS304 - Metode - kvalitative tilnærminger</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS340-L">SOS340-L - Prosjektutvikling </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SOS360">SOS360 - Masteroppgaven</a></div>
+<div class="tablerow"><div id="MASV-LÆSF-21H-VEIL" class="tablcell emnekombinasjon niva2 erVeivalg">Veiledningskontrakt - Lektorutdanning i sosiologi<span class="krav"></span></div></div>
+<div class="tablerow"><div id="MASV-LÆSF-21H-300F2" class="tablcell emnekombinasjon niva2 erVeivalg">Fagdidaktikk i fag 2 - Lektorutdanning i sosiologi<span class="krav"> (5 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 - maks 1</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ENGDI111">ENGDI111 - Fagdidaktikk i engelsk for integrert lektorutdanning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/FRANDI111">FRANDI111 - Fagdidaktikk i fransk i lektorutdanningen 3</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIDID112">HIDID112 - Historiedidaktikk for grunnskolen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/NODI111">NODI111 - Fagdidaktikk i nordisk for integrert lektorutdanning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/RELDI112">RELDI112 - Fagdidaktikk i religionsvitenskap 2 (for grunnskolen) lektorutdanning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SPANDI111">SPANDI111 - Fagdidaktikk i spansk for lektorutdanningen 3</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/TYSDI111">TYSDI111 - Fagdidaktikk i tysk i lektorutdanningen 3</a></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

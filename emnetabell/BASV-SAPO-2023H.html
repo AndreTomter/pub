@@ -1,0 +1,137 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-SAPO_H20" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i sammenliknende politikk<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-FORSTESEM_SAPO" class="tablcell emnekombinasjon niva1 ">Førstesemesteremner<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Ex.phil. og ett innføringsemne er obligatorisk for å oppnå en bachelorgrad. De fleste studieprogrammene anbefaler i tillegg ett ekstra innføringsemne som en integrert del av førstesemesterstudiet sitt. NB! Husk at exfac/innføringsemner fra andre studieprogram gir fritak.</div></div><div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva2 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-INNF_SAPO" class="tablcell emnekombinasjon niva2 ">Innføringsemne<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SAMPOL100">SAMPOL100 - Innføring i sammenliknende politikk</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SAMPOL103">SAMPOL103 - Innføring i politiske ideologier</a></div>
+<div class="tablerow"><div id="BASV-SAPOSPES_H13" class="tablcell emnekombinasjon niva1 ">Spesialisering i sammenliknende politikk<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MET102">MET102 - Samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL105">SAMPOL105 - Stats- og nasjonsbygging</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL106">SAMPOL106 - Politiske institusjoner i etablerte demokrati</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL107">SAMPOL107 - Politisk mobilisering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL115">SAMPOL115 - Democracy and Democratization</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL260">SAMPOL260 - Bacheloroppgave i sammenliknende politikk</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 2 emner av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL203">SAMPOL203 - Comparative Arctic Indigenous Governance</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL204">SAMPOL204 - Varieties of Political Regimes: Latin America in Comparative Perspective</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL205">SAMPOL205 - Regions, Federalism and EU Integration</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL214">SAMPOL214 - Political Economy </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL216">SAMPOL216 - Labour Market Policies in Comparative Perspective</a></div>
+<div class="tablerow"><a class="tablcell niva1 Utgått">SAMPOL218 - Constitutions, Courts and Politics (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL218">SAMPOL218 - Constitutions, Courts and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva1 Utgått">SAMPOL219 - Politics in the Developing World (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL219">SAMPOL219 - Politics in the Developing World</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL223">SAMPOL223 - Democratic Transformations in Europe: Trends and Implications</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL225">SAMPOL225 - Rettsstata - domstoler og dommere</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL226">SAMPOL226 - Populism and its Consequences for Liberal Democracy</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL230">SAMPOL230 - Party Politics in Europe and Beyond</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL232">SAMPOL232 - Russian Politics</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL233">SAMPOL233 - Forsvar og totalforsvar i etablerte demokrati</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL234">SAMPOL234 - Youth and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL235">SAMPOL235 - The Politics and Global Governance of International Protection</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL236">SAMPOL236 - The Politics of the Environment</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL237">SAMPOL237 - Dataanalyse og programmering for samfunnsvitere</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL238">SAMPOL238 - The Politics of Contestation</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL270">SAMPOL270 - American Government and Politics</a></div>
+<div class="tablerow"><div id="BASV-SAPO_H13-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-SAPOEURANB" class="tablcell emnekombinasjon niva1 ">Anbefalte valgemner<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL290">SAMPOL290 - Praksis i sammenliknende politikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL291">SAMPOL291 - Praksis i sammenliknende politikk - utland</a></div>
+<div class="tablerow"><div id="BASV-60FRIE" class="tablcell emnekombinasjon niva1 ">Valgfrie emner<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg fritt blant emner som til sammen utgjør 60 studiepoeng.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI100">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI101">DIGI101 - Digital kildekritikk</a></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

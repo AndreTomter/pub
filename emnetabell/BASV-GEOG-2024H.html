@@ -1,0 +1,125 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-GEOG H24" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i geografi<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BA-GEOG FELLES H24" class="tablcell emnekombinasjon niva1 ">Fellesemner i geografi<span class="krav"> (80 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO110">GEO110 - Kartografi og tematiske kart</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO111">GEO111 - Landformdannende prosesser</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO113">GEO113 - Klima, oseanografi og biogeografi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO124">GEO124 - Regional utvikling</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO125">GEO125 - Økonomisk globalisering, produksjonssystemer og miljø</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO131">GEO131 - Mat, miljø og bærekraftig utvikling</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/GEO215">GEO215 - Geografiske informasjonssystemer: Teori og praksis</a></div>
+<div class="tablerow"><div id="BA-GEOG VEIVALG H24" class="tablcell emnekombinasjon niva1 harVeivalg">Valg av studieretning<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BA-GEOG GEOGNATUR" class="tablcell emnekombinasjon niva2 erVeivalg">Naturgeografi<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO204">GEO204 - Kvantitativ metode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO212">GEO212 - Terrestriske klima- og miljøendringer</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO291">GEO291 - Naturgeografisk feltkurs</a></div>
+<div class="tablerow"><div id="BA-GEOG GEOGMILJØ" class="tablcell emnekombinasjon niva2 erVeivalg">Miljø- og landskapsgeografi<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO204">GEO204 - Kvantitativ metode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO206">GEO206 - Kvalitativ analyse</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO283">GEO283 - Geographies of transformation: mitigating and adapting to rapid climate change</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO293">GEO293 - Miljøgeografisk feltkurs</a></div>
+<div class="tablerow"><div id="BA-GEOG GEOGSAMF" class="tablcell emnekombinasjon niva2 erVeivalg">Samfunnsgeografi<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO204">GEO204 - Kvantitativ metode</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO206">GEO206 - Kvalitativ analyse</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO222">GEO222 - Sustainability in an Urbanising World</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/GEO292">GEO292 - Regionalgeografisk feltkurs</a></div>
+<div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva1 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-60FRIE" class="tablcell emnekombinasjon niva1 ">Valgfrie emner<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg fritt blant emner som til sammen utgjør 60 studiepoeng.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI100">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI101">DIGI101 - Digital kildekritikk</a></div>
+<div class="tablerow"><div id="BASV-GEOG_H15-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

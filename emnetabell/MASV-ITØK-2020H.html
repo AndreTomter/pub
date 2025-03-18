@@ -1,0 +1,184 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="MASV-ITØK_H21" class="tablcell emnekombinasjon niva0 ">Integrert masterprogram i informasjonsteknologi og økonomi<span class="krav"> (300 sp)</span></div></div>
+<div class="tablerow"><div id="EXPHIL-ITØK" class="tablcell emnekombinasjon niva1 ">Examen philosophicum<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">None</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-MNEKS">EXPHIL-MNEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-MNSEM">EXPHIL-MNSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="MASV-ITØKOBL_H21" class="tablcell emnekombinasjon niva1 ">Obligatoriske emner i Informasjonsteknologi og økonomi<span class="krav"> (240 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ECON210">ECON210 - Velferd og økonomisk politikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ECON263">ECON263 - Bedriftsøkonomi for samfunnsøkonomer</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ECON310">ECON310 - Mikroøkonomisk analyse</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ECON341">ECON341 - Økonometri II</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF140">INF140 - Introduksjon til datasikkerhet</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF170">INF170 - Modellering og optimering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO132">INFO132 - Innføring i programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO135">INFO135 - Viderekommende programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO284">INFO284 - Machine Learning</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK101">ITØK101 - Mikroøkonomi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK102">ITØK102 - Makroøkonomi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK170">ITØK170 - Energi- og miljøfysikk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK204">ITØK204 - Økonometri og dataanalyse</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK264">ITØK264 - Financial Technology</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK281">ITØK281 - Utplassering i informasjonsteknologi og økonomi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK381">ITØK381 - Eksperter i team</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK391">ITØK391 - Masteroppgave</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MAT111">MAT111 - Grunnkurs i matematikk I</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MNF130">MNF130 - Diskrete strukturer</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/STAT110">STAT110 - Grunnkurs i statistikk</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ECON360">ECON360 - Strategisk bedriftsadferd og markedsmakt</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ECON364">ECON364 - Corporate Finance</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/ITØK320">ITØK320 - Metoder for analyse av forsyningskjeder</a></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INF161">INF161 - Innføring i data science</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO180">INFO180 - Metoder i kunstig intelligens</a></div>
+<div class="tablerow"><div id="MASV-ITØKVALG_H21" class="tablcell emnekombinasjon niva1 ">Valgemner<span class="krav"> (50 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Alle valgemner må være på masternivå</div></div><div class="tablerow"><div id="MASV-ITØKVALG_INFTK" class="tablcell emnekombinasjon niva2 ">Valgemner informasjonsteknologi på masternivå<span class="krav"> (20 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom 20 og 40 studiepoeng innen informatikk/informasjonsvitenskap på masternivå</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF210">INF210 - Datamaskinteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF220">INF220 - Programvarespesifikasjon</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF222">INF222 - Programmeringsspråk</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF223">INF223 - Kategoriteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF225">INF225 - Innføring i programomsetting</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF227">INF227 - Innføring i logikk</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF234">INF234 - Algoritmer</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF235">INF235 - Kompleksitetsteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF236">INF236 - Parallell programmering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF237">INF237 - Algoritmeutvikling</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF240A">INF240A - Grunnleggende verktøy for kodeteori og kryptografi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF241">INF241 - Kvanteinformasjon, kvanteberegning og kvantekryptografi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF242">INF242 - Informasjonsteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF243">INF243 - Algebraisk kodeteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF244">INF244 - Grafbasert kodeteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF247">INF247 - Innføring til kryptoanalyse av symmetriske chiffer</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF250">INF250 - Dataorientert visuell beregning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF251">INF251 - Grafisk databehandling</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF252">INF252 - Visualisering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF270">INF270 - Lineær programmering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF271">INF271 - Kombinatorisk optimering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF272">INF272 - Ikke-lineær optimering</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INF273">INF273 - Metaheuristikker</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO310">INFO310 - Research Topics in Model-Based Information Systems</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO318">INFO318 - Research Topics in Cognitive Computing </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO319">INFO319 - Research Topics in Big Data </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO320">INFO320 - Research Topics in Semantic Information Systems</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO323">INFO323 - Data Architectures for Information Retrieval and Web Intelligence</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO331">INFO331 - Research Topics in Software Engineering </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO333">INFO333 - Research Topics in Information Systems Development</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO345">INFO345 - Research Topics in Recommender Systems</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO352">INFO352 - Research Topics in Technology Enhanced Learning</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO361">INFO361 - Forskningstema i menneske-maskin interaksjon (HCI)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO362">INFO362 - Forskningstema i IKT-støtta samarbeid (CSCW)</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO371">INFO371 - Research Topics in Networks and Text Analysis</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO381">INFO381 - Research Topics in Artificial Intelligence</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO382">INFO382 - Logic for Multi-agent Systems</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO383">INFO383 - Forskningstema i kunstig intelligens og etikk</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/INFO384B">INFO384B - Blokkjede-teknologi</a></div>
+<div class="tablerow"><div id="MASV-ITØKVALG_ECON" class="tablcell emnekombinasjon niva2 ">Valgemner økonomi på masternivå<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom 10 og 30 studiepoeng innen økonomi på masternivå</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON315">ECON315 - Utviklingsøkonomi II</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON316A">ECON316A - Miljøøkonomi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON316B">ECON316B - Ressursøkonomi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON321A">ECON321A - Helseøkonomi</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON324">ECON324 - Public Economics</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON327">ECON327 - Spillteori</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON330">ECON330 - Makroøkonomisk analyse</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON336">ECON336 - Befolkningsutvikling, økonomisk vekst og trygdesystemet</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON341">ECON341 - Økonometri II</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON342">ECON342 - Nytte-kostnadsanalyse</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON343">ECON343 - Empirisk forskningsdesign</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON350">ECON350 - Samfunnsøkonomisk idéhistorie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON351">ECON351 - Marked og moral </a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON360">ECON360 - Strategisk bedriftsadferd og markedsmakt</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON362A">ECON362A - Digital Economics</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON364">ECON364 - Corporate Finance</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/ECON370">ECON370 - Eksperimentell økonomi</a></div>
+<div class="tablerow"><div id="MASV-ITØK-UTVEKS" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-SANT_H20" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i sosialantropologi<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-SANT_FSEM_H16" class="tablcell emnekombinasjon niva1 ">Førstesemesteremner <span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Ex.phil. og innføringsemne/ex.fac. er obligatorisk for å oppnå en bachelorgrad. Ex.fac./innføringsemner fra andre studieprogram gir fritak.</div></div><div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva2 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-INNF_SANT" class="tablcell emnekombinasjon niva2 ">Innføringsemne <span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Du kan ha maksimalt 20 studiepoeng innføringsemner/ex.fac.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SANT100">SANT100 - Invitasjon til sosialantropologi</a></div>
+<div class="tablerow"><div id="BASV-FORSTESEM_SANT" class="tablcell emnekombinasjon niva2 ">Anbefalt førstesemesteremne <span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/SANT150">SANT150 - Akademisk skriving, metode og teori: antropologiske tilnærminger</a></div>
+<div class="tablerow"><div id="BASV-SANTSPES_H09" class="tablcell emnekombinasjon niva1 ">Spesialisering i sosialantropologi<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SANT102">SANT102 - Sosialt liv i globalt perspektiv</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SANT103">SANT103 - Materialitet: miljø, sted og økonomi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SANT104">SANT104 - Kultur, mening og kommunikasjon</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SANT105">SANT105 - Politikk, makt og motstand</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SANT215">SANT215 - Komparativ regional etnografi</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SANT260">SANT260 - Bacheloroppgave</a></div>
+<div class="tablerow"><div id="BASV-SANT_H09-UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-60FRIE" class="tablcell emnekombinasjon niva1 ">Valgfrie emner<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg fritt blant emner som til sammen utgjør 60 studiepoeng.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Valgfritt</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI100">DIGI100 - Digital student - Nettkurs i digitale arbeidsmetoder og teknologi for læring</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/DIGI101">DIGI101 - Digital kildekritikk</a></div>
+</div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

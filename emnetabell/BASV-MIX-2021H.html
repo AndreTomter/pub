@@ -1,0 +1,109 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-MIX_H20" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i medie- og interaksjonsdesign<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-MIX_INNF_H18" class="tablcell emnekombinasjon niva1 ">Innføringsemner<span class="krav"> (20 sp)</span></div></div>
+<div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva2 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-MIX_INNFH18" class="tablcell emnekombinasjon niva2 ">Innføringsemne<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/MIX100">MIX100 - Grunnkurs i medie- og interaksjonsdesign</a></div>
+<div class="tablerow"><div id="BASV-MIX_OBLIG_H20" class="tablcell emnekombinasjon niva1 ">Spesialisering medie- og interaksjonsdesign<span class="krav"> (130 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO125">INFO125 - Datahåndtering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO132">INFO132 - Innføring i programmering</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/INFO263">INFO263 - Brukerinvolvering og prototyping</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MIX114">MIX114 - Frontend-utvikling</a></div>
+<div class="tablerow"><a class="tablcell niva1 Utgått">MIX202 - Design for mediebruk (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MIX202">MIX202 - Design for mediebruk</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MIX203">MIX203 - Design for medieproduksjon</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/MIX250">MIX250 - Bacheloroppgave i medie- og interaksjonsdesign</a></div>
+<div class="tablerow"><div id="BASV-MIX_UTV" class="tablcell emnekombinasjon niva1 ">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Du kan reise på utveksling i 5. semester</div></div><div class="tablerow"><div id="BASV-30FRIE" class="tablcell emnekombinasjon niva1 ">Valgfrie emner<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Vel fritt blant emne som til saman utgjer 30 studiepoeng.</div></div></div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>

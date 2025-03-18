@@ -1,0 +1,168 @@
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
+    function valgtArstallKull(evt, arstallKull) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(arstallKull).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+
+      function visArstall(arstallvar) {
+        var element = document.getElementById(arstallvar);
+        if (element) {
+          element.style.display = "block";
+        } else {
+          console.warn("Element med ID " + arstallvar + " finnes ikke.");
+        }
+      };
+
+
+      function velgArstall(arstallvar) {
+        var tabarstall = "tab_2024"
+        var tabelement = document.getElementById(tabarstall);
+        if (tabelement) {
+          tabelement.className += " active";
+        } else {
+          console.warn("Element med ID " + tabarstall + " finnes ikke.");
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", (e) => {
+        const includeHTML = (el, url, callback) => {
+          const xhr = new XMLHttpRequest();
+
+          xhr.addEventListener("readystatechange", (e) => {
+            if (xhr.readyState !== 4) return;
+
+            if (xhr.status >= 200 && xhr.status < 300) {
+              el.outerHTML = xhr.responseText;
+
+              // Kjør callback når innholdet er satt inn i DOM
+              if (typeof callback === "function") {
+                callback();
+              }
+            } else {
+              let message =
+                xhr.statusText ||
+                "Error: Could not load the file. Make sure the request is via HTTP or HTTPS.";
+              el.outerHTML = `<div><p>${message}</p></div>`;
+            }
+          });
+
+          xhr.open("GET", url);
+          xhr.setRequestHeader("Content-type", "text/html; charset=utf-8");
+          xhr.send();
+        };
+
+        document.querySelectorAll("[data-include]").forEach((el) => {
+          includeHTML(el, el.getAttribute("data-include"), () => {
+            console.log("nav.html er lastet!");
+            var arstall = "2024"
+            visArstall(arstall);
+            velgArstall()
+          });
+        });
+      });
+    </script>
+    </head>
+    <body>
+
+    <div class="flex-container" id="flex-container">
+    <section id="section">
+    <div class="table"> <div class="tablerow"><div id="BASV-EUR H24" class="tablcell emnekombinasjon niva0 ">Bachelorprogram i Europastudier<span class="krav"> (180 sp)</span></div></div>
+<div class="tablerow"><div id="EXPHIL-SV" class="tablcell emnekombinasjon niva1 ">Examen philosophicum<span class="krav"> (10 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Velg mellom seminar- eller eksamensmodell av ex.phil.</div></div><div class="tablerow"><div class="tablcell niva1 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVEKS">EXPHIL-SVEKS - Examen philosophicum - skoleeksamen</a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EXPHIL-SVSEM">EXPHIL-SVSEM - Examen philosophicum - seminarmodell</a></div>
+<div class="tablerow"><div id="BASV-EUR H24 FELLES" class="tablcell emnekombinasjon niva1 ">Programemner<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EUR101">EUR101 - Innføring i europeisk historie og politikk  </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EUR103">EUR103 - Europa etter 1945: Transformations in European Economies and Societies </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/EUR105">EUR105 - European Union Institutions, Politics, and Policies </a></div>
+<div class="tablerow"><a class="tablcell niva1" href="https://www4.uib.no/emner/SAMPOL103">SAMPOL103 - Innføring i politiske ideologier</a></div>
+<div class="tablerow"><div id="BASV-EUR H24 VEIVALG" class="tablcell emnekombinasjon niva1 harVeivalg">Fordypning<span class="krav"></span></div></div>
+<div class="tablerow"><div id="BASV-EUR_HISTORIE" class="tablcell emnekombinasjon niva2 erVeivalg">Spesialisering i historie<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS101">HIS101 - Oversikt over eldre historie til 1750</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS102">HIS102 - Oversikt over nyere historie fra 1750</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS203">HIS203 - Teorier, metoder og historiske kilder</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS250">HIS250 - Bacheloroppgave i historie</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS113">HIS113 - Fordypning i eldre historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS114">HIS114 - Fordypning i eldre historie</a></div>
+<div class="tablerow"><div class="tablcell niva2 valgregl">Minst 1 emne av</div></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS115">HIS115 - Fordypning i nyere historie</a></div>
+<div class="tablerow"><a class="tablcell niva2" href="https://www4.uib.no/emner/HIS116">HIS116 - Fordypning i nyere historie</a></div>
+<div class="tablerow"><div id="BASV-EUR H24 SAMPOL" class="tablcell emnekombinasjon niva2 erVeivalg">Spesialisering i sammenliknende politikk<span class="krav"> (90 sp)</span></div></div>
+<div class="tablerow"><div id="BASV-EUR H24 SAPO O" class="tablcell emnekombinasjon niva3 erVeivalg">Obligatoriske emner i sammenliknende politikk<span class="krav"> (60 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva3 valgregl">Obligatorisk emne</div></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/MET103">MET103 - Kvalitativ samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/MET104">MET104 - Kvantitativ samfunnsvitenskapelig metode</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL105">SAMPOL105 - Stats- og nasjonsbygging</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL106">SAMPOL106 - Politiske institusjoner i etablerte demokrati</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL107">SAMPOL107 - Politisk mobilisering</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL260">SAMPOL260 - Bacheloroppgave i sammenliknende politikk</a></div>
+<div class="tablerow"><div id="BASV-EUR H24 SAPO V" class="tablcell emnekombinasjon niva3 erVeivalg">Valgemner i sammenliknende politikk<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva3 valgregl">Minst 30 studiepoeng</div></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL116">SAMPOL116 - Democracy and Democratization</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL202 - Terrorism and Counterterrorism: Concepts, Controversies, Countermeasures (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL202">SAMPOL202 - Terrorism and Counterterrorism: Concepts, Controversies, Countermeasures</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL203">SAMPOL203 - Comparative Arctic Indigenous Governance</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL204">SAMPOL204 - Varieties of Political Regimes: Latin America in Comparative Perspective</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL205">SAMPOL205 - Regions, Federalism and EU Integration</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL207 - Citizenship: Theories and Policies  (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL207">SAMPOL207 - Citizenship: Theories and Policies </a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL209 - Courts, Law and Politics (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL209">SAMPOL209 - Courts, Law and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL211 - Islamist Movements and Contentious Politics in the Middle East (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL211">SAMPOL211 - Islamist Movements and Contentious Politics in the Middle East</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL214">SAMPOL214 - Political Economy </a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL216">SAMPOL216 - Labour Market Policies in Comparative Perspective</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL218 - Constitutions, Courts and Politics (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL218">SAMPOL218 - Constitutions, Courts and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL219 - Politics in the Developing World (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL219">SAMPOL219 - Politics in the Developing World</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL221 - The Politics of Gender in a Global Perspective  (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL221">SAMPOL221 - The Politics of Gender in a Global Perspective </a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL222 - Chinese Politics and Society (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL222">SAMPOL222 - Chinese Politics and Society</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL223">SAMPOL223 - Democratic Transformations in Europe: Trends and Implications</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL224 - Corruption, Informality and Democracy in the EU Eastern Neighbourhood (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL224">SAMPOL224 - Corruption, Informality and Democracy in the EU Eastern Neighbourhood</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL225 - Rettsstata - domstoler og dommere (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL225">SAMPOL225 - Rettsstata - domstoler og dommere</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL226">SAMPOL226 - Populism and its Consequences for Liberal Democracy</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL230">SAMPOL230 - Party Politics in Europe and Beyond</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL231 - Contemporary Challenges to Representative Government (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL231">SAMPOL231 - Contemporary Challenges to Representative Government</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL232">SAMPOL232 - Russian Politics</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL233">SAMPOL233 - Forsvar og totalforsvar i etablerte demokrati</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL234 - Youth and Politics (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL234">SAMPOL234 - Youth and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL235">SAMPOL235 - The Politics and Global Governance of International Protection</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL236">SAMPOL236 - The Politics of the Environment</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL240 - Norsk politikk; strukturer, institusjoner og prosesser (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL240">SAMPOL240 - Norsk politikk; strukturer, institusjoner og prosesser</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL270">SAMPOL270 - American Government and Politics</a></div>
+<div class="tablerow"><a class="tablcell niva3 Utgått">SAMPOL272 - The politics of care work and the welfare state (Utgått)</a></div>
+<div class="tablerow"><a class="tablcell niva3" href="https://www4.uib.no/emner/SAMPOL272">SAMPOL272 - The politics of care work and the welfare state</a></div>
+<div class="tablerow"><div id="BASV-EUR_5.SEM" class="tablcell emnekombinasjon niva1 harVeivalg">Utvekslingssemester<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva1 beskrivelse">Les mer om <a href="https://www.uib.no/sampol/121486/utveksling-ba-europastudium">utveksling på europastudium</a>.</div></div><div class="tablerow"><div id="BASV-EUR_UTV_OBL" class="tablcell emnekombinasjon niva2 erVeivalg">Utveksling<span class="krav"></span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Les mer om <a href="https://www.uib.no/sampol/121486/utveksling-ba-europastudium">utveksling på europastudium</a>.</div></div><div class="tablerow"><div id="BASV-30FRIE_EUR_H20" class="tablcell emnekombinasjon niva2 erVeivalg">Alternativ til utveksling<span class="krav"> (30 sp)</span></div></div>
+<div class="tablerow"><div class="tablcell niva2 beskrivelse">Alternativ faglig plan (avmelding av utveksling)</div></div></div>
+</section>
+<aside id="aside">
+<div data-include="nav.html">
+</div></aside></div>
+</body>
+</html>
