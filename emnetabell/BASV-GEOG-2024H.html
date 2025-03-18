@@ -1,4 +1,8 @@
-
+<html>
+    <head>
+    <link href="tabellstyles.css" rel="stylesheet">
+    <script src="include-html.min.js"></script>
+    <script>
     function valgtArstallKull(evt, arstallKull) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -57,8 +61,7 @@
 
         document.querySelectorAll("[data-include]").forEach((el) => {
           includeHTML(el, el.getAttribute("data-include"), () => {
-            console.log("nav.html er lastet!");      var arstall = "{arstall}"
-            visArstall(arstall);
+            console.log("nav.html er lastet!");      var arstall = "2024"visArstall(arstall);
             velgArstall()
 
           });
