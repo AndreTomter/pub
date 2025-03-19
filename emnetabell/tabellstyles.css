@@ -11,7 +11,8 @@ body {
 
 .niva0 {
 	background-color: #1b2631;
-	color: white
+	color: white;
+	padding-left: 0.5em !important;
 }
 
 div.niva1 {
