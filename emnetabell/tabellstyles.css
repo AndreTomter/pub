@@ -65,7 +65,7 @@ div.niva3 {
 
 .tablcell {
 	display: table-cell;
-	border-top: solid 1px black;
+	border-top: solid 1px #aeb6bf;
 	height: 100%;
 	padding: 0.2em;
 
@@ -85,7 +85,7 @@ a:hover {
 	color: unset;
 	text-decoration: underline;
 	text-decoration-thickness: from-font;
-	background-color:#f9f9fa;
+	background-color: #f9f9fa;
 }
 
 .flex-container {
@@ -98,7 +98,6 @@ a:hover {
 }
 
 .flex-container aside {
-
 	max-width: 500px;
 }
 
