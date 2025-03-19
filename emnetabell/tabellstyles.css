@@ -81,18 +81,24 @@ div.niva3 {
 }
 
 a {
-	color: unset;
+	color: #00102a;
 	text-decoration: none;
 }
 
 a:hover {
-	color: unset;
+	color: #00102a;
 	text-decoration: underline;
 	text-decoration-color: #00102a;
 	text-decoration-thickness: from-font;
 	background-color: #f9f9fa;
 }
-
+li>a:hover {
+	color: #00102a;
+	text-decoration: underline;
+	text-decoration-color: #00102a;
+	text-decoration-thickness: from-font;
+	background-color: unset;
+}
 .flex-container {
 	display: flex;
 
