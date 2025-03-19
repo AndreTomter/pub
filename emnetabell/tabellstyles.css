@@ -151,7 +151,8 @@ button:hover {
 
 ul > * {
   padding-left: 1em !important;
-
+  padding-right: 1em !important;
+}
 a.Utgått:hover {
   text-decoration: none;
 }
