@@ -143,9 +143,8 @@ button:hover {
 li>* {
 	padding-left: 1em;
 }
-
-.Utgatt:hover {
-	text-decoration: none !important;
+.Utgått:hover {
+  text-decoration: none;
 }
 .prevent-select {
   -webkit-user-select: none; /* Safari */
