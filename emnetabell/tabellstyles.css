@@ -158,3 +158,7 @@ a.utgått:hover {
 #BASV-PERMISJON, #BASV-KOGNI-UTV, #BASV-GEOG_H15-UTV, #BASV-SANT_H09-UTV, #SV-PERM, #BASV-INFO_H12-UTV, #BASV-SANT_H09-UTV, #BASV-MEVI_H11-UTV, #BASV-SAPO_H13-UTV, #BASV-JOU_UTV, #BASV-TVP_UTV, #BASV-AIKI_UTV, #MASV-ITØK-UTVEKS, #BASV-UTV{
 	display:none;
 }
+.beskrivelse{
+	text-indent: 0;
+  padding-left: 1em;
+}
