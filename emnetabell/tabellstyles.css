@@ -5,12 +5,8 @@ body {
 .table {
 	display: table;
 	width: 800px;
-	border: solid 1px ##aeb6bf;
+	border: solid 1px #aeb6bf;
 
-}
-
-.emnekombinasjon {
-	background-color: red;
 }
 
 .niva0 {
