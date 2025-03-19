@@ -140,9 +140,9 @@ button:hover {
 	text-underline-offset: 0.3em;
 }
 
-li>* {
-	padding-left: 1em;
-}
+ul > * {
+  padding-left: 1em !important;
+
 a.Utgått:hover {
   text-decoration: none;
 }
