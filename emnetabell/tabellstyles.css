@@ -22,15 +22,24 @@ div.niva1 {
 .niva1 {
 	text-indent: 1em;
 }
-
+.tablcell.niva1.beskrivelse {
+	text-indent: 0;
+	padding-left:1em;
+}
 .niva2 {
 	text-indent: 2em;
 }
-
+.tablcell.niva2.beskrivelse {
+	text-indent: 0;
+	padding-left:2em;
+}
 .niva3 {
 	text-indent: 3em;
 }
-
+.tablcell.niva3.beskrivelse {
+	text-indent: 0;
+	padding-left:3em;
+}
 div.niva2 {
 	background-color: #5d6d7e;
 	color: white;
