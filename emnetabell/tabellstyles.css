@@ -151,15 +151,18 @@ a.utgått:hover {
   text-decoration: none;
 }
 .prevent-select {
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
 }
 #BASV-PERMISJON, #BASV-KOGNI-UTV, #BASV-GEOG_H15-UTV, #BASV-SANT_H09-UTV, #SV-PERM, #BASV-INFO_H12-UTV, #BASV-MEVI_H11-UTV, #BASV-SAPO_H13-UTV, #BASV-JOU_UTV, #BASV-TVP_UTV, #BASV-AIKI_UTV, #MASV-ITØK-UTVEKS, #BASV-UTV {
-	display:none;
+	display: none !important;
+}
+	.tablerow #BASV-PERMISJON, #BASV-KOGNI-UTV, #BASV-GEOG_H15-UTV, #BASV-SANT_H09-UTV, #SV-PERM, #BASV-INFO_H12-UTV, #BASV-MEVI_H11-UTV, #BASV-SAPO_H13-UTV, #BASV-JOU_UTV, #BASV-TVP_UTV, #BASV-AIKI_UTV, #MASV-ITØK-UTVEKS, #BASV-UTV {
+	display: none;
 }
 #BASV-SANT_H09-UTV{
-	display:none;
+	display: none;
 }
 .beskrivelse{
 	text-indent: 0;
