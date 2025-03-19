@@ -88,6 +88,7 @@ a {
 a:hover {
 	color: unset;
 	text-decoration: underline;
+	text-decoration-color: #00102a;
 	text-decoration-thickness: from-font;
 	background-color: #f9f9fa;
 }
@@ -109,7 +110,7 @@ a:hover {
 aside * {
 	text-indent: 0;
 	text-decoration: none;
-	
+	line-height: 1.9em;
 	
 }
 
@@ -128,12 +129,13 @@ ul {
 
 .tab {
 	padding-left: 0.7em;
-	border: solid 1px #aaaaaa;
+	border: solid 1px #aeb6bf;
 	margin-bottom: -1.1em;
+	line-height: 2em;
 }
 
 .tabcontent {
-	border: solid 1px #aaaaaa;
+	border: solid 1px #aeb6bf;
 	border-top: unset;
 	line-height: 1.5em;
 }
@@ -142,11 +144,13 @@ ul {
 	text-decoration: underline;
 	text-underline-offset: 0.3em;
 	font-weight: 600;
+	text-decoration-color: #00102a;
 }
 
 button:hover {
 	text-decoration: underline;
 	text-underline-offset: 0.3em;
+	text-decoration-color: #00102a;
 }
 
 ul > * {
