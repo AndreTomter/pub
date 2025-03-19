@@ -6,7 +6,7 @@ body {
 .table {
 	display: table;
 	width: 800px;
-	border: solid 1px black;
+	border: solid 1px ##aeb6bf;
 
 }
 
@@ -59,7 +59,8 @@ div.niva3 {
 
 .tablerow {
 	display: table-row;
-	border-bottom: solid 1px black;
+	border-bottom: solid 1px #aeb6bf;
+	line-height: 1.6em;
 }
 
 .tablcell {
