@@ -103,7 +103,7 @@ a:hover {
 
 aside * {
 	text-indent: 0;
-	text-decoration: none
+	text-decoration: none;
 }
 
 button {
@@ -143,7 +143,10 @@ button:hover {
 li>* {
 	padding-left: 1em;
 }
-.Utgått:hover {
+a.Utgått:hover {
+  text-decoration: none;
+}
+a.utgått:hover {
   text-decoration: none;
 }
 .prevent-select {
